@@ -1,4 +1,3 @@
-[gd_scene load_steps=8 format=4 uid="uid://bttd8yutmt2ns"]
 [gd_scene load_steps=10 format=4 uid="uid://bttd8yutmt2ns"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_clde6"]
