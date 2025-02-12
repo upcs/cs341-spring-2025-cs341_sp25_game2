@@ -4176,7 +4176,7 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_55bi0")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ut87k"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eq1vk"]
 texture = ExtResource("3_ssebx")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -5054,7 +5054,7 @@ texture_region_size = Vector2i(32, 32)
 30:31/0 = 0
 31:31/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qyvf2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vxdbi"]
 texture = ExtResource("5_dwtft")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -5228,8 +5228,8 @@ tile_size = Vector2i(32, 32)
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
-sources/0 = SubResource("TileSetAtlasSource_ut87k")
-sources/1 = SubResource("TileSetAtlasSource_qyvf2")
+sources/0 = SubResource("TileSetAtlasSource_eq1vk")
+sources/1 = SubResource("TileSetAtlasSource_vxdbi")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6427h"]
 size = Vector2(78, 59)
