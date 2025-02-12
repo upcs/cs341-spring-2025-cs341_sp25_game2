@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=4 uid="uid://bj0gqjqlkfxda"]
+[gd_scene load_steps=14 format=4 uid="uid://bj0gqjqlkfxda"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_0aj1t"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_p5lkv"]
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="3_hv4vi"]
-[ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://player.tscn" id="4_8gpmx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ip3a"]
 texture = ExtResource("1_0aj1t")
@@ -10661,7 +10660,7 @@ tile_set = SubResource("TileSet_1aba8")
 
 [node name="rails" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAgAAMAAAAsADIAAAAgAAQAAAAsADMAAAAhAAMAAAAqADIAAAAhAAQAAAAqADMAAAAiAAMAAAArADIAAAAiAAQAAAArADMAAAAjAAMAAAAsADIAAAAjAAQAAAAsADMAAAAdAAMAAAApADIAAAAdAAQAAAApADMAAAAeAAMAAAAqADIAAAAeAAQAAAAqADMAAAAfAAMAAAArADIAAAAfAAQAAAArADMAAAAcAAQAAAAtADAAAAAcAAUAAAAtADAAAAAcAAYAAAAtADAAAAAcAAcAAAAtADAAAAAcAAgAAAAtADAAAAAcAAkAAAAtADAAAAAcAAoAAAAtADAAAAA=")
+tile_map_data = PackedByteArray("AAAgAAMAAAAsADIAAAAgAAQAAAAsADMAAAAhAAMAAAAqADIAAAAhAAQAAAAqADMAAAAiAAMAAAArADIAAAAiAAQAAAArADMAAAAjAAMAAAAsADIAAAAjAAQAAAAsADMAAAAdAAMAAAApADIAAAAdAAQAAAApADMAAAAeAAMAAAAqADIAAAAeAAQAAAAqADMAAAAfAAMAAAArADIAAAAfAAQAAAArADMAAAAcAAQAAAAtADAAAAAcAAUAAAAtADAAAAAcAAYAAAAtADAAAAAcAAcAAAAtADAAAAAcAAgAAAAtADAAAAAcAAkAAAAtADAAAAA=")
 tile_set = SubResource("TileSet_phs3r")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -10669,6 +10668,3 @@ tile_set = SubResource("TileSet_phs3r")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 polygon = PackedVector2Array(0, 103, 1153, 102, 1148, 162, 928, 159, 929, 322, 955, 325, 964, 352, 1149, 351, 1152, 674, -1, 673)
-
-[node name="Node2D" parent="." instance=ExtResource("4_8gpmx")]
-position = Vector2(148, 29)

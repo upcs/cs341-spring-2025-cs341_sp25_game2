@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Game2"
-run/main_scene="res://player.tscn"
+run/main_scene="res://Shiley.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 [input]
 
