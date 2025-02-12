@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bn2lw1dvqg6fh"]
+[gd_scene load_steps=26 format=4 uid="uid://bn2lw1dvqg6fh"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_vob4j"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="3_4x5dc"]
@@ -3371,6 +3371,35 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_uj5bj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gf7fh"]
+size = Vector2(20, 640)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncp81"]
+size = Vector2(1173, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_30olp"]
+size = Vector2(320, 522)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_42b6l"]
+radius = 45.0
+height = 116.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tuj41"]
+radius = 42.0
+height = 118.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mwg48"]
+radius = 47.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v8klc"]
+radius = 47.0
+height = 94.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s7yxa"]
+radius = 47.0
+height = 94.0
+
 [node name="Shiley" type="Node2D"]
 
 [node name="Ground" type="TileMapLayer" parent="."]
@@ -3390,5 +3419,64 @@ tile_map_data = PackedByteArray("AAALAA8AAAAFAAMAAAAIABMAAAACAAMAAAAWAA4AAAAJAAI
 tile_set = SubResource("TileSet_t57g3")
 
 [node name="Roof stuff" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAbAA8AAAAMABYAAAAbABAAAAAMABYAAAAdAAkAAAABABkAAFAdAAoAAAABABkAAFAcAAkAAAABABoAAFAcAAoAAAABABoAAFAbAAkAAAABABoAAFAbAAoAAAABABoAAFAaAAkAAAABABsAAFAaAAoAAAABABsAAFAdAAgAAAABABkAAFAcAAgAAAABABkAAFAbAAgAAAABABkAAFAbAAsAAAABABkAAFAcAAsAAAABABkAAFAdAAsAAAABABkAAFAaAAgAAAABABsAAFAaAAsAAAABABsAAFAXAAsAAAAVABgAAAAXAAgAAAAVABgAADAZAAYAAAABABsAAAAaAAYAAAABABsAAAAbAAYAAAABABsAAAAcAAYAAAABABsAAAAdAAYAAAABABsAAAAdAAUAAAABABsAAFAdAAQAAAABABsAAFAdAAMAAAABABsAAFAdAAIAAAABABsAAFAdAAEAAAABABsAADAcAAEAAAABABsAADAbAAEAAAABABsAADAaAAEAAAABABsAADAZAAEAAAABABsAADAYAAEAAAABABsAADAYAAIAAAABABsAAGAYAAMAAAABABsAAGAYAAQAAAABABsAAGAYAAUAAAABABsAAGAYAAYAAAABABsAAAAYAA4AAAABABsAAAAZAA4AAAABABsAAAAaAA4AAAABABsAAAAbAA4AAAABABsAAAAcAA4AAAABABsAAAAdAA4AAAABABsAAAAeAA4AAAABABsAAGAeAA8AAAABABsAAGAeABAAAAABABsAAGAeAAEAAAABABsAADAfAAEAAAABABsAADAgAAEAAAABABsAADAhAAEAAAABABsAADAhAAIAAAABABsAAFAhAAMAAAABABsAAFAhAAQAAAABABsAAFAhAAUAAAABABsAAFAhAAYAAAABABsAAFAhAAcAAAABABsAAFAhAAgAAAABABsAAFAhAAkAAAABABsAAFAhAAoAAAABABsAAFAhAAsAAAABABsAAFAhAAwAAAABABsAAFAhAA0AAAABABsAAFAhAA4AAAABABsAAFAhAA8AAAABABsAAFAhABAAAAABABsAAFAhABEAAAABABsAAFAeABEAAAABABsAAGAeABIAAAABABsAAAAfABIAAAABABsAAAAgABIAAAABABsAAAAhABIAAAABABsAAAAXAA4AAAABABsAAFAXAA8AAAABABsAAFAXABAAAAABABsAAFAXABEAAAABABsAAFAYABEAAAABABsAADAZABEAAAABABsAADAaABEAAAABABsAADAbABEAAAABABsAADAcABEAAAABABsAADAdABEAAAABABsAADAdAAcAAAABABsAADAcAAcAAAABABsAADAbAAcAAAABABsAADAbAAwAAAABABsAAAAcAAwAAAABABsAAAAdAAwAAAABABsAAAAeAAgAAAABABsAAGAeAAkAAAABABsAAGAeAAoAAAABABsAAGAeAAsAAAABABsAAGA=")
+tile_map_data = PackedByteArray("AAAbAA8AAAAMABYAAAAbABAAAAAMABYAAAAdAAkAAAABABkAAFAdAAoAAAABABkAAFAcAAkAAAABABoAAFAcAAoAAAABABoAAFAbAAkAAAABABoAAFAbAAoAAAABABoAAFAaAAkAAAABABsAAFAaAAoAAAABABsAAFAdAAgAAAABABkAAFAcAAgAAAABABkAAFAbAAgAAAABABkAAFAbAAsAAAABABkAAFAcAAsAAAABABkAAFAdAAsAAAABABkAAFAaAAgAAAABABsAAFAaAAsAAAABABsAAFAXAAsAAAAVABgAAAAXAAgAAAAVABgAADAdAAUAAAABABsAAFAdAAQAAAABABsAAFAdAAMAAAABABsAAFAdAAIAAAABABsAAFAdAAEAAAABABsAADAcAAEAAAABABsAADAbAAEAAAABABsAADAaAAEAAAABABsAADAZAAEAAAABABsAADAYAAEAAAABABsAADAYAAIAAAABABsAAGAYAAMAAAABABsAAGAYAAQAAAABABsAAGAYAAUAAAABABsAAGAYAAYAAAAHABkAAFAYAA4AAAAHABkAAFAeAAEAAAABABsAADAfAAEAAAABABsAADAgAAEAAAABABsAADAhAAEAAAABABsAADAhAAIAAAABABsAAFAhAAMAAAABABsAAFAhAAQAAAABABsAAFAhAAUAAAABABsAAFAhAAYAAAABABsAAFAhAAcAAAABABsAAFAhAAgAAAABABsAAFAhAAkAAAABABsAAFAhAAoAAAABABsAAFAhAAsAAAABABsAAFAhAAwAAAABABsAAFAhAA0AAAABABsAAFAhAA4AAAABABsAAFAhAA8AAAABABsAAFAhABAAAAABABsAAFAhABEAAAABABsAAFAeABIAAAABABsAAAAfABIAAAABABsAAAAgABIAAAABABsAAAAhABIAAAABABsAAAAYABEAAAAHABkAAFAdAAcAAAABABsAADAcAAcAAAABABsAADAbAAcAAAABABsAADAbAAwAAAABABsAAAAcAAwAAAABABsAAAAdAAwAAAABABsAAAAeAAgAAAABABsAAGAeAAkAAAABABsAAGAeAAoAAAABABsAAGAeAAsAAAABABsAAGAYAA8AAAAHABkAAFAYABAAAAAHABkAAFAYAA0AAAAHABkAAFAdABIAAAAHABkAADAcABIAAAAHABkAADAbABIAAAAHABkAADAaABIAAAAHABkAADAZABIAAAAHABkAADAYABIAAAAHABkAADAdAA4AAAAHABkAAGAdAA8AAAAHABkAAGAdABAAAAAHABkAAGAdABEAAAAHABkAAGAYAAwAAAAHABkAAFAYAAsAAAAHABkAAFAYAAoAAAAHABkAAFAYAAkAAAAHABkAAFAYAAgAAAAHABkAAFAYAAcAAAAHABkAAFAZAA0AAAAVABkAAAAaAA0AAAAVABkAAAAbAA0AAAAVABkAAAAcAA0AAAAVABkAAAAZAAUAAAAVABkAAAAaAAUAAAAVABkAAAAbAAUAAAAVABkAAAAcAAUAAAAVABkAAAA=")
 tile_set = SubResource("TileSet_leelw")
+
+[node name="wall 1" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall 1"]
+polygon = PackedVector2Array(0, 0, 0, 640, -297, 268)
+
+[node name="wall2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="wall2"]
+polygon = PackedVector2Array(0, 0, 1152, 0, -1, -215)
+
+[node name="wall3" type="Area2D" parent="."]
+position = Vector2(1152, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
+position = Vector2(10, 320)
+shape = SubResource("RectangleShape2D_gf7fh")
+
+[node name="wall4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
+position = Vector2(586.5, 650)
+shape = SubResource("RectangleShape2D_ncp81")
+
+[node name="Shiley2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shiley2"]
+position = Vector2(928, 320)
+shape = SubResource("RectangleShape2D_30olp")
+
+[node name="tree1" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree1"]
+position = Vector2(496, 59)
+shape = SubResource("CapsuleShape2D_42b6l")
+
+[node name="tree2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree2"]
+position = Vector2(496, 184)
+shape = SubResource("CapsuleShape2D_tuj41")
+
+[node name="tree3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree3"]
+position = Vector2(477, 403)
+shape = SubResource("CapsuleShape2D_mwg48")
+
+[node name="tree4" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree4"]
+position = Vector2(478, 498)
+shape = SubResource("CapsuleShape2D_v8klc")
+
+[node name="tree5" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tree5"]
+position = Vector2(494, 593)
+shape = SubResource("CapsuleShape2D_s7yxa")
