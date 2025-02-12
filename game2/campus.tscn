@@ -5238,7 +5238,7 @@ size = Vector2(78, 59)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5be5"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Campus" type="Node2D"]
 script = ExtResource("1_83lbc")
 
 [node name="GroundandBackgroundRoof" type="TileMapLayer" parent="."]
@@ -5290,6 +5290,7 @@ offset_top = -638.0
 offset_right = -336.0
 offset_bottom = -380.0
 theme_override_fonts/font = ExtResource("10_cldto")
+theme_override_font_sizes/font_size = 10
 label_settings = SubResource("LabelSettings_go3qg")
 
 [node name="Score" type="Label" parent="Wally"]
@@ -5318,6 +5319,7 @@ polygon = PackedVector2Array(65, 5, 101, 272, 8, 272, 2, 608, 568, 635, 988, 638
 
 [node name="ClassTimer" type="Timer" parent="."]
 wait_time = 30.0
+one_shot = true
 autostart = true
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
