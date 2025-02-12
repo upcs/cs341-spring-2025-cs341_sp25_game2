@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bkexcwtkaaxku"]
+[gd_scene load_steps=8 format=4 uid="uid://c6ryxufllj54w"]
 
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="1_ifojf"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_rqr87"]
