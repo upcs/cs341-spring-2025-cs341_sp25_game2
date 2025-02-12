@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=26 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://campus.gd" id="1_83lbc"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_0en8t"]
@@ -8,7 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="5_dwtft"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://new_player.tscn" id="6_7mc3h"]
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="8_0cwn0"]
+[ext_resource type="PackedScene" uid="uid://dorfg126gn2p3" path="res://josh_map_5+7.tscn" id="10_7psrl"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="10_cldto"]
+[ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
+[ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://Shiley.tscn" id="12_kupdq"]
+[ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="13_03b3x"]
+[ext_resource type="PackedScene" uid="uid://blgfmw8g6ec2y" path="res://Franz_tile.tscn" id="14_ir170"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
 texture = ExtResource("3_5x1hp")
@@ -5272,6 +5277,41 @@ polygon = PackedVector2Array(2, 479, 2, 599, 35, 641, 580, 632, 613, 596, 604, 4
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2"]
 polygon = PackedVector2Array(-7, 2, 2, 608, 568, 635, 988, 638, 988, 707, -94, 665, -67, -49, 988, -46, 988, -7)
 
+[node name="DB2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DB2"]
+polygon = PackedVector2Array(92, 2, 98, 269, 604, 272, 604, 233, 697, 224, 733, 191, 733, 2)
+
+[node name="PHouse2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHouse2"]
+polygon = PackedVector2Array(2, 479, 2, 599, 35, 641, 580, 632, 613, 596, 604, 476)
+
+[node name="Boundary" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
+polygon = PackedVector2Array(65, 5, 101, 272, 8, 272, 2, 608, 568, 635, 988, 638, 988, 707, -94, 665, -67, -49, 988, -46, 988, -7, 833, -2, 993, 0, 991, 193, 827, 191, 732, 190)
+
+[node name="ClassTimer" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Library" parent="." instance=ExtResource("10_7psrl")]
+position = Vector2(2144, 544)
+
+[node name="Node2D-Buckley" parent="." instance=ExtResource("11_5mtnu")]
+position = Vector2(992, -672)
+
+[node name="Shiley" parent="." instance=ExtResource("12_kupdq")]
+position = Vector2(4736, 248)
+
+[node name="Node2D3" parent="." instance=ExtResource("14_ir170")]
+position = Vector2(3768, 376)
+
+[node name="Franz" parent="." instance=ExtResource("13_03b3x")]
+position = Vector2(1712, 832)
+
 [node name="Wally" parent="." instance=ExtResource("6_7mc3h")]
 position = Vector2(134, 356)
 scale = Vector2(0.5, 0.5)
@@ -5301,26 +5341,6 @@ offset_bottom = -344.0
 theme_override_fonts/font = ExtResource("10_cldto")
 theme_override_font_sizes/font_size = 50
 label_settings = SubResource("LabelSettings_x5be5")
-
-[node name="DB2" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DB2"]
-polygon = PackedVector2Array(92, 2, 98, 269, 604, 272, 604, 233, 697, 224, 733, 191, 733, 2)
-
-[node name="PHouse2" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHouse2"]
-polygon = PackedVector2Array(2, 479, 2, 599, 35, 641, 580, 632, 613, 596, 604, 476)
-
-[node name="Boundary" type="StaticBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
-polygon = PackedVector2Array(65, 5, 101, 272, 8, 272, 2, 608, 568, 635, 988, 638, 988, 707, -94, 665, -67, -49, 988, -46, 988, -7, 833, -2, 993, 0, 991, 193, 827, 191, 732, 190)
-
-[node name="ClassTimer" type="Timer" parent="."]
-wait_time = 30.0
-one_shot = true
-autostart = true
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]

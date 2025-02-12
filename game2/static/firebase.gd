@@ -1,37 +1,34 @@
 extends Node
-# Allows interaction with firebase/firestore
 
-# Called when the node enters the scene tree for the first time
-func _ready():
-	print("Firebase Manager Ready")
+#const API_KEY := ""
+const PROJECT_ID := "upgame-f59f3"
 
-# Function to add data to Firestore
-func add_data_to_firestore():
-	var js_code = """
-	(async () => {
-		const docRef = firestore.collection('players').doc();
-		await docRef.set({
-			name: 'Joshua',
-			score: 1000
-		});
-		console.log('Document written with ID: ', docRef.id);
-	})();
-	"""
-#	Don't worry about the error, it works in HTML5
-	JavaScript.eval(js_code, true)  # Execute the JavaScript code
+const FIRESTORE_URL := "https://firestore.googleapis.com/v1/projects/%s/databases/(default)/documents/" % PROJECT_ID
 
-# Function to read data from Firestore
-func get_data_from_firestore():
-	var js_code = """
-	(async () => {
-		const docRef = firestore.collection('players').doc('your-document-id');
-		const docSnap = await docRef.get();
-		if (docSnap.exists()) {
-			console.log('Document data:', docSnap.data());
-		} else {
-			console.log('No such document!');
-		}
-	})();
-	"""
-	#	Don't worry about the error, it works in HTML5
-	JavaScript.eval(js_code, true)  # Execute the JavaScript code
+func _get_request_headers() -> PackedStringArray:
+	return PackedStringArray([
+		"Content-Type: application/json"
+	])
+
+
+func save_document(path: String, fields: Dictionary, http: HTTPRequest) -> void:
+	var document := { "fields": fields }
+	var body := JSON.stringify(document)
+	var url := FIRESTORE_URL + path
+	http.request(url, _get_request_headers(), HTTPClient.METHOD_POST, body)
+	
+
+func get_document(path: String, http: HTTPRequest) -> void:
+	var url := FIRESTORE_URL + path
+	http.request(url, _get_request_headers(), HTTPClient.METHOD_GET)
+
+func update_document(path: String, fields: Dictionary, http: HTTPRequest) -> void:
+	var document := { "fields": fields }
+	var body := JSON.stringify(document)
+	var url := FIRESTORE_URL + path
+	http.request(url, _get_request_headers(), HTTPClient.METHOD_PATCH, body)
+
+# not going to use, but keeping for convenience
+func delete_document(path: String, http: HTTPRequest) -> void:
+	var url := FIRESTORE_URL + path
+	http.request(url, _get_request_headers(), HTTPClient.METHOD_DELETE)

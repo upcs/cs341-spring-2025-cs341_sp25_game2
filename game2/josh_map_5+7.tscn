@@ -28905,7 +28905,7 @@ texture = ExtResource("3_6ob6y")
 sources/0 = SubResource("TileSetAtlasSource_6vcoy")
 sources/1 = SubResource("TileSetAtlasSource_mod3e")
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Grass and path" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
@@ -28929,7 +28929,6 @@ tile_map_data = PackedByteArray("AAAAAAMAAAApADIAAAAAAAQAAAApADMAAAABAAMAAAAqADI
 tile_set = SubResource("TileSet_rb3qn")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="building" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-3, 349, 201, 346, 194, 359, 196, 511, 196, 654, 695, 654, 695, 669, -3, 671)
@@ -28958,5 +28957,4 @@ scale = Vector2(1, 0.916667)
 polygon = PackedVector2Array(21, 145.091, 63, 134.182, 75, 152.727, 66, 172.363, 24, 169.091)
 
 [node name="Node2D" parent="." instance=ExtResource("4_cvfvh")]
-visible = false
 position = Vector2(-1152, 0)
