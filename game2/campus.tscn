@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=21 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://campus.gd" id="1_83lbc"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_0en8t"]
@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="5_dwtft"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://new_player.tscn" id="6_7mc3h"]
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="8_0cwn0"]
-[ext_resource type="FontFile" uid="uid://bfu3jxfxjup1r" path="res://Fonts/fonts/poco/Poco.ttf" id="9_7mx0d"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="10_cldto"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
@@ -5288,18 +5287,18 @@ scale = Vector2(0.1, 0.1)
 [node name="Objective" type="Label" parent="Wally"]
 offset_left = -1140.0
 offset_top = -638.0
-offset_right = -654.0
-offset_bottom = -474.0
-theme_override_fonts/font = ExtResource("9_7mx0d")
+offset_right = -336.0
+offset_bottom = -380.0
+theme_override_fonts/font = ExtResource("10_cldto")
 label_settings = SubResource("LabelSettings_go3qg")
 
 [node name="Score" type="Label" parent="Wally"]
-offset_left = 774.0
+offset_left = 482.0
 offset_top = -644.0
 offset_right = 1152.0
-offset_bottom = -524.0
+offset_bottom = -344.0
 theme_override_fonts/font = ExtResource("10_cldto")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 50
 label_settings = SubResource("LabelSettings_x5be5")
 
 [node name="DB2" type="StaticBody2D" parent="."]
