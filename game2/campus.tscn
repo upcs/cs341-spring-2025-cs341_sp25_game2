@@ -11,9 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://library_map.tscn" id="8_f0uqm"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="10_cldto"]
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
+[ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://Franz_tile_2.tscn" id="11_113it"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://Shiley.tscn" id="12_kupdq"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="13_03b3x"]
-[ext_resource type="PackedScene" uid="uid://blgfmw8g6ec2y" path="res://Franz_tile.tscn" id="14_ir170"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
 texture = ExtResource("3_5x1hp")
@@ -5304,13 +5304,13 @@ position = Vector2(992, -640)
 position = Vector2(2144, 544)
 
 [node name="Shiley" parent="." instance=ExtResource("12_kupdq")]
-position = Vector2(4736, 248)
+position = Vector2(3904, 256)
 
-[node name="Node2D3" parent="." instance=ExtResource("14_ir170")]
+[node name="Node2D" parent="." instance=ExtResource("11_113it")]
 position = Vector2(3768, 384)
 
 [node name="Franz" parent="." instance=ExtResource("13_03b3x")]
-position = Vector2(1560, 672)
+position = Vector2(1568, 672)
 
 [node name="Wally" parent="." instance=ExtResource("6_7mc3h")]
 position = Vector2(134, 356)
