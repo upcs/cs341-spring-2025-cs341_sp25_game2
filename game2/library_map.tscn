@@ -58941,7 +58941,7 @@ tile_set = SubResource("TileSet_fss6s")
 [node name="bounds" type="StaticBody2D" parent="."]
 
 [node name="Building" type="CollisionPolygon2D" parent="bounds"]
-polygon = PackedVector2Array(-1151, 95, 195, 91, 196, 154, -220, 147, -221, 319, -195, 322, -193, 351, 184, 357, 208, 648, 608, 648, 624, 664, 200, 672, 184, 960, 392, 960, 496, 1224, 520, 1808, 464, 2000, -1016, 1336, -1160, 768)
+polygon = PackedVector2Array(-1151, 95, 195, 91, 196, 154, -220, 147, -221, 319, -195, 322, -193, 351, 184, 357, 208, 648, 608, 648, 624, 664, 200, 672, 184, 960, 392, 960, 392, 1672, 376, 1952, -664, 1960, -672, 1280, -1024, 1280, -1032, 352)
 
 [node name="rails bushes" type="CollisionPolygon2D" parent="bounds"]
 polygon = PackedVector2Array(323, 95, 323, 347, 673, 350, 672, 328, 329, 329, 335, 96)
@@ -58957,6 +58957,26 @@ polygon = PackedVector2Array(417, 299, 430, 238, 463, 236, 479, 296)
 [node name="rails building" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(17, 238)
 polygon = PackedVector2Array(243, 324, 432, 323, 432, 302, 240, 304)
+
+[node name="tree big2" type="CollisionPolygon2D" parent="bounds"]
+position = Vector2(0, 1912)
+polygon = PackedVector2Array(408, 288, 421, 198, 473, 198, 484, 292)
+
+[node name="tree little2" type="CollisionPolygon2D" parent="bounds"]
+position = Vector2(32, 632)
+polygon = PackedVector2Array(417, 299, 430, 238, 463, 236, 479, 296)
+
+[node name="tree little3" type="CollisionPolygon2D" parent="bounds"]
+position = Vector2(-152, 640)
+polygon = PackedVector2Array(400, 288, 430, 238, 463, 236, 480, 288)
+
+[node name="tree little4" type="CollisionPolygon2D" parent="bounds"]
+position = Vector2(72, 968)
+polygon = PackedVector2Array(416, 280, 424, 208, 456, 208, 472, 280)
+
+[node name="tree little5" type="CollisionPolygon2D" parent="bounds"]
+position = Vector2(-16, 1504)
+polygon = PackedVector2Array(416, 280, 416, 216, 440, 216, 448, 280)
 
 [node name="Node2D" parent="." instance=ExtResource("6_nwhqp")]
 position = Vector2(-576, 136)
