@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://b3vhv5pnxxtwq"]
+[gd_scene load_steps=22 format=4 uid="uid://b3vhv5pnxxtwq"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_7bj7v"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_v6kb2"]
@@ -5055,17 +5055,11 @@ sources/1 = SubResource("TileSetAtlasSource_qt87i")
 sources/2 = SubResource("TileSetAtlasSource_2lkdk")
 sources/4 = SubResource("TileSetAtlasSource_opg22")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_shtkw"]
-size = Vector2(19, 1216)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tpqfk"]
 size = Vector2(1715, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pcevj"]
 size = Vector2(20, 1236)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_drb2b"]
-size = Vector2(1735.5, 23.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j66yi"]
 size = Vector2(832, 223)
@@ -5111,12 +5105,6 @@ tile_set = SubResource("TileSet_cgff3")
 tile_map_data = PackedByteArray("AAAgAB8ABAADAAQAAAAkAB8ABAADAAQAAAApAB8ABAADAAQAAAAwABIABAAGAAQAAAAwAAwABAAGAAQAAAAwAAYABAAGAAQAAAAwAAAABAAGAAQAAAAuAA8ABAAJAAYAAAAuAAkABAAJAAYAAAAuAAMABAAJAAYAAAAOACAABAAJAAYAAAAMACAABAAJAAYAAAAKACAABAAJAAYAAAAIACAABAAJAAYAAAAGACAABAAJAAYAAAASAB4ABAAEAAkAAAAgAAsABAAGAAQAAAAjAAwABAAGAAQAAAAfABAABAAGAAQAAAAiABMABAAGAAQAAAAEABoABAAGAAQAAAAHABAABAAJAAYAAAAHABIABAAJAAYAAAA=")
 tile_set = SubResource("TileSet_cgff3")
 
-[node name="wall1" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
-position = Vector2(-9, 608)
-shape = SubResource("RectangleShape2D_shtkw")
-
 [node name="wall2" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
@@ -5130,10 +5118,6 @@ position = Vector2(1706, 598)
 shape = SubResource("RectangleShape2D_pcevj")
 
 [node name="wall4" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall4"]
-position = Vector2(849.25, 1228)
-shape = SubResource("RectangleShape2D_drb2b")
 
 [node name="Roof" type="Area2D" parent="."]
 
