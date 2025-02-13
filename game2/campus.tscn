@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=28 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://campus.gd" id="1_83lbc"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_0en8t"]
@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://library_map.tscn" id="8_f0uqm"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="10_cldto"]
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
-[ext_resource type="PackedScene" path="res://Franz_tile_2.tscn" id="11_113it"]
+[ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://Franz_tile_2.tscn" id="11_113it"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://Shiley.tscn" id="12_kupdq"]
+[ext_resource type="PackedScene" uid="uid://b6pcldaj85y3p" path="res://quad_segment_1.tscn" id="12_xy1op"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="13_03b3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
@@ -5380,6 +5381,9 @@ position = Vector2(3768, 384)
 
 [node name="Franz" parent="." instance=ExtResource("13_03b3x")]
 position = Vector2(1568, 672)
+
+[node name="quad_segment1" parent="." instance=ExtResource("12_xy1op")]
+position = Vector2(2688, -640)
 
 [node name="Wally" parent="." instance=ExtResource("6_7mc3h")]
 position = Vector2(134, 356)
