@@ -8,12 +8,12 @@
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="5_dwtft"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://new_player.tscn" id="6_7mc3h"]
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="8_0cwn0"]
-[ext_resource type="PackedScene" uid="uid://dorfg126gn2p3" path="res://josh_map_5+7.tscn" id="10_7psrl"]
+[ext_resource type="PackedScene" path="res://josh_map_5+7.tscn" id="10_7psrl"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="10_cldto"]
-[ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
-[ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://Shiley.tscn" id="12_kupdq"]
-[ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="13_03b3x"]
-[ext_resource type="PackedScene" uid="uid://blgfmw8g6ec2y" path="res://Franz_tile.tscn" id="14_ir170"]
+[ext_resource type="PackedScene" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
+[ext_resource type="PackedScene" path="res://Shiley.tscn" id="12_kupdq"]
+[ext_resource type="PackedScene" path="res://Franz.tscn" id="13_03b3x"]
+[ext_resource type="PackedScene" path="res://Franz_tile.tscn" id="14_ir170"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
 texture = ExtResource("3_5x1hp")
