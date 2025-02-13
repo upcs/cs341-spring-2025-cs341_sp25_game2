@@ -7,6 +7,7 @@ var scoreLabel;
 var arrow;
 var class_on_time;
 var out_of_time;
+var which_class;
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	score = 0
@@ -14,6 +15,7 @@ func _ready() -> void:
 	label = $Wally/Objective
 	timer = $ClassTimer
 	arrow = $Wally/Arrow
+	which_class = $DB/Marker2D
 	class_on_time = false
 	out_of_time = false
 	scoreLabel.text = "Score: " + str(score)
@@ -23,9 +25,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(score)
-	arrow.rotation = $Wally.position.angle_to_point($DB/Marker2D.position)
+	arrow.rotation = $Wally.position.angle_to_point(which_class.position)
 	if (class_on_time):
 		label.text = "YOU MADE IT!"
+		which_class = $Shiley2/Marker2D
+		timer.wait_time = 30
 		score += 10
 		scoreLabel.text = "Score: " + str(score)
 		class_on_time = false
@@ -44,3 +48,9 @@ func _on_db_body_entered(body: Node2D) -> void:
 
 func _on_class_timer_timeout() -> void:
 	out_of_time = true
+
+
+func _on_shiley_2_body_entered(body: Node2D) -> void:
+	if body.has_method("takehit"):
+		if not out_of_time:
+			class_on_time = true
