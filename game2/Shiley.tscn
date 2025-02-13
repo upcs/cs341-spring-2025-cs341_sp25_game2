@@ -3409,3 +3409,6 @@ polygon = PackedVector2Array(1120, 403, 1130, 401, 1138, 402, 1141, 512, 1121, 5
 
 [node name="CollisionPolygon2D5" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1216, 0, 1166, 0, 1169, -46, 1306, 7, 1216, 640)
+
+[node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(490, 0, 466, 13, 459, 23, 451, 42, 456, 50, 463, 50, 467, 67, 473, 73, 479, 72, 486, 80, 488, 105, 479, 108, 481, 114, 504, 112, 501, 104, 497, 79, 504, 82, 517, 83, 538, 62, 542, 39, 532, 17, 520, 3)
