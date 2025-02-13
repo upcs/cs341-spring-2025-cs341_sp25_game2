@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b3vhv5pnxxtwq"]
+[gd_scene load_steps=14 format=4 uid="uid://b3vhv5pnxxtwq"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_7bj7v"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_v6kb2"]
@@ -5055,12 +5055,6 @@ sources/1 = SubResource("TileSetAtlasSource_qt87i")
 sources/2 = SubResource("TileSetAtlasSource_2lkdk")
 sources/4 = SubResource("TileSetAtlasSource_opg22")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpqfk"]
-size = Vector2(1715, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pcevj"]
-size = Vector2(20, 1236)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0ohw"]
 size = Vector2(192, 19)
 
@@ -5086,20 +5080,6 @@ tile_set = SubResource("TileSet_cgff3")
 [node name="plants" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAgAB8ABAADAAQAAAAkAB8ABAADAAQAAAApAB8ABAADAAQAAAAwABIABAAGAAQAAAAwAAwABAAGAAQAAAAwAAYABAAGAAQAAAAwAAAABAAGAAQAAAAuAA8ABAAJAAYAAAAuAAkABAAJAAYAAAAuAAMABAAJAAYAAAAOACAABAAJAAYAAAAMACAABAAJAAYAAAAKACAABAAJAAYAAAAIACAABAAJAAYAAAAGACAABAAJAAYAAAASAB4ABAAEAAkAAAAgAAsABAAGAAQAAAAjAAwABAAGAAQAAAAfABAABAAGAAQAAAAiABMABAAGAAQAAAAEABoABAAGAAQAAAAHABAABAAJAAYAAAAHABIABAAJAAYAAAA=")
 tile_set = SubResource("TileSet_cgff3")
-
-[node name="wall2" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall2"]
-position = Vector2(838.5, -10)
-shape = SubResource("RectangleShape2D_tpqfk")
-
-[node name="wall3" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall3"]
-position = Vector2(1706, 598)
-shape = SubResource("RectangleShape2D_pcevj")
-
-[node name="wall4" type="Area2D" parent="."]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -5163,6 +5143,10 @@ polygon = PackedVector2Array(1002, 465, 981, 473, 968, 491, 961, 519, 967, 532, 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(97, 2, 96, 224, 114, 224, 114, 319, 97, 319, 96, 764, 114, 765, 112, 704, 160, 704, 161, 766, 175, 766, 177, 704, 191, 704, 191, 447, 929, 449, 927, 0)
 
+[node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(0, 1)
+polygon = PackedVector2Array(0, -1, 1696, -1, 644, -444)
+
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6"]
@@ -5186,5 +5170,3 @@ shape = SubResource("RectangleShape2D_olshn")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9"]
 position = Vector2(963, 1008)
 shape = SubResource("RectangleShape2D_s8ppm")
-
-[node name="Area2D19" type="Area2D" parent="."]
