@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=4 uid="uid://b6pcldaj85y3p"]
+[gd_scene load_steps=6 format=4 uid="uid://begnv6u22wp14"]
 
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="1_8bee0"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_0j5ij"]
@@ -830,4 +830,4 @@ tile_set = SubResource("TileSet_01ocu")
 [node name="bounds" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="bounds"]
-polygon = PackedVector2Array(-360, 320, 1824, 320, 1824, 896, 2008, 896, 2008, 224, -360, 224)
+polygon = PackedVector2Array(0, 315, 1824, 320, 1824, 896, 2008, 896, 2008, 224, -1, 227, 0, 276)

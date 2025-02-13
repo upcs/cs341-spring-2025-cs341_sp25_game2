@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://jacqui_buckleyMap.tscn" id="11_5mtnu"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://Franz_tile_2.tscn" id="11_113it"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://Shiley.tscn" id="12_kupdq"]
-[ext_resource type="PackedScene" uid="uid://b6pcldaj85y3p" path="res://quad_segment_1.tscn" id="12_xy1op"]
+[ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://quad_segment_1.tscn" id="12_xy1op"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="13_03b3x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
