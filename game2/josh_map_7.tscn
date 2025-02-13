@@ -3823,7 +3823,7 @@ sources/0 = SubResource("TileSetAtlasSource_0ip3a")
 sources/1 = SubResource("TileSetAtlasSource_arucq")
 sources/2 = SubResource("TileSetAtlasSource_jmib5")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o63mi"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rcg8"]
 texture = ExtResource("1_0aj1t")
 0:0/0 = 0
 1:0/0 = 0
@@ -6823,7 +6823,7 @@ texture = ExtResource("1_0aj1t")
 61:63/0 = 0
 62:63/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qqqp6"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xhbmg"]
 texture = ExtResource("3_hv4vi")
 1:0/0 = 0
 2:0/0 = 0
@@ -7378,7 +7378,7 @@ texture = ExtResource("3_hv4vi")
 22:25/0 = 0
 23:25/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gjml"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_78xqj"]
 texture = ExtResource("2_p5lkv")
 0:0/0 = 0
 1:0/0 = 0
@@ -7638,11 +7638,11 @@ texture = ExtResource("2_p5lkv")
 15:15/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_1aba8"]
-sources/0 = SubResource("TileSetAtlasSource_o63mi")
-sources/1 = SubResource("TileSetAtlasSource_qqqp6")
-sources/2 = SubResource("TileSetAtlasSource_8gjml")
+sources/0 = SubResource("TileSetAtlasSource_5rcg8")
+sources/1 = SubResource("TileSetAtlasSource_xhbmg")
+sources/2 = SubResource("TileSetAtlasSource_78xqj")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_34ffc"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kgxcv"]
 texture = ExtResource("1_0aj1t")
 0:0/0 = 0
 1:0/0 = 0
@@ -10643,7 +10643,7 @@ texture = ExtResource("1_0aj1t")
 62:63/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_phs3r"]
-sources/0 = SubResource("TileSetAtlasSource_34ffc")
+sources/0 = SubResource("TileSetAtlasSource_kgxcv")
 
 [node name="Node2D2" type="Node2D"]
 
@@ -10664,6 +10664,7 @@ tile_map_data = PackedByteArray("AAAgAAMAAAAsADIAAAAgAAQAAAAsADMAAAAhAAMAAAAqADI
 tile_set = SubResource("TileSet_phs3r")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 103, 1153, 102, 1148, 162, 928, 159, 929, 322, 955, 325, 964, 352, 1149, 351, 1152, 674, -1, 673)
