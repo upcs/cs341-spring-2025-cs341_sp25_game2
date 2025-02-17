@@ -52,5 +52,6 @@ func _on_class_timer_timeout() -> void:
 
 func _on_shiley_2_body_entered(body: Node2D) -> void:
 	if body.has_method("takehit"):
+		#print("here")
 		if not out_of_time:
 			class_on_time = true
