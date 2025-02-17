@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=32 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://campus.gd" id="1_83lbc"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_0en8t"]
@@ -5876,6 +5876,9 @@ radius = 14.3178
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5be5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1dbh7"]
+size = Vector2(40, 150.5)
+
 [node name="Campus" type="Node2D"]
 script = ExtResource("1_83lbc")
 
@@ -5993,5 +5996,14 @@ label_settings = SubResource("LabelSettings_x5be5")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="All-Around Bounds"]
 polygon = PackedVector2Array(2424, -632, 2432, -328, 4576, -328, 4568, 264, 5144, 264, 5152, 912, 4672, 912, 4680, 2048, 3928, 2464, 3192, 2416, 960, 2136, 1000, 704, -96, 680, -72, -64, 1096, -40, 1096, -168, -248, -152, -288, 920, 832, 912, 696, 2400, 4776, 2672, 5304, 2072, 5368, 128, 4744, -760, 3120, -984)
 
+[node name="Library_entrance" type="Area2D" parent="."]
+
+[node name="Library_square" type="CollisionShape2D" parent="Library_entrance"]
+position = Vector2(2352, 976)
+shape = SubResource("RectangleShape2D_1dbh7")
+
+[node name="Library_marker" type="Marker2D" parent="Library_entrance"]
+
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]
+[connection signal="body_shape_entered" from="Library_entrance" to="." method="_on_library_entrance_body_shape_entered"]

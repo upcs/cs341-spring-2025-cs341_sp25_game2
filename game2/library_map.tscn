@@ -1,11 +1,10 @@
-[gd_scene load_steps=29 format=4 uid="uid://b8se0xe8a2bua"]
+[gd_scene load_steps=28 format=4 uid="uid://b8se0xe8a2bua"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_sny8b"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_7syi3"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="3_5l3hl"]
 [ext_resource type="Texture2D" uid="uid://7fllgql220i4" path="res://Tilepngs/roofs.png" id="3_hakgs"]
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="4_x43na"]
-[ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://Franz.tscn" id="6_nwhqp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b22r7"]
 texture = ExtResource("1_sny8b")
@@ -58977,6 +58976,3 @@ polygon = PackedVector2Array(416, 280, 424, 208, 456, 208, 472, 280)
 [node name="tree little5" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(-16, 1504)
 polygon = PackedVector2Array(416, 280, 416, 216, 440, 216, 448, 280)
-
-[node name="Node2D" parent="." instance=ExtResource("6_nwhqp")]
-position = Vector2(-576, 136)
