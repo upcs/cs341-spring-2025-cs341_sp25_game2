@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnqpx1h3hlji4"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_p7jru"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_p7jru"]
 [ext_resource type="Texture2D" uid="uid://ctah53sqxqvvw" path="res://animations/WallEIdle.png" id="2_lcv4n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a3o56"]

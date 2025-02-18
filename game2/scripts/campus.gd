@@ -8,18 +8,19 @@ var arrow;
 var class_on_time;
 var out_of_time;
 var which_class;
+var player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Get get spawn position from Global.gd. Done this way so changing scenes when leaving indoors
 	# puts you in the correct area
-	var player =  get_node("Wally")
-	player.position = Global.spawn_position
+	player =  get_node("Wally")
+	#player.position = Global.spawn_position
 	score = 0
 	scoreLabel = $Wally/Score
 	label = $Wally/Objective
 	timer = $ClassTimer
 	arrow = $Wally/Arrow
-	which_class = $DB/Marker2D
+	which_class = get_node("DB/Marker2D")
 	class_on_time = false
 	out_of_time = false
 	scoreLabel.text = "Score: " + str(score)
@@ -29,10 +30,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(score)
-	arrow.rotation = $Wally.position.angle_to_point(which_class.position)
+	arrow.rotation = player.position.angle_to_point(which_class.position)
 	if (class_on_time):
 		label.text = "YOU MADE IT!"
-		which_class = $Shiley2/Marker2D
+		#which_class = $Shiley2/Marker2D
 		timer.wait_time = 30
 		score += 10
 		scoreLabel.text = "Score: " + str(score)

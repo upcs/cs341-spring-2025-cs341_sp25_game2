@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=4 uid="uid://nxda8ejeiikf"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_iruhs"]
-[ext_resource type="Script" path="res://library_interior.gd" id="1_r6k4f"]
-[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://new_player.tscn" id="2_q0m6e"]
+[ext_resource type="Script" path="res://scripts/library_interior.gd" id="1_r6k4f"]
+[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="2_q0m6e"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5dry"]
 texture = ExtResource("1_iruhs")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_67re0"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="2_coim5"]
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="3_6ob6y"]
-[ext_resource type="PackedScene" uid="uid://bj0gqjqlkfxda" path="res://josh_map_7.tscn" id="4_cvfvh"]
+[ext_resource type="PackedScene" uid="uid://bj0gqjqlkfxda" path="res://scenes/josh_map_7.tscn" id="4_cvfvh"]
 [ext_resource type="Texture2D" uid="uid://7fllgql220i4" path="res://Tilepngs/roofs.png" id="4_p64bm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ip3a"]
