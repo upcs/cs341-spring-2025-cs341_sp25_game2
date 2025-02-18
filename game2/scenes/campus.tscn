@@ -5877,7 +5877,7 @@ radius = 14.3178
 [sub_resource type="LabelSettings" id="LabelSettings_x5be5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dbh7"]
-size = Vector2(40, 150.5)
+size = Vector2(20, 150.5)
 
 [node name="Campus" type="Node2D"]
 script = ExtResource("1_1siug")
@@ -5999,7 +5999,7 @@ polygon = PackedVector2Array(2424, -632, 2432, -328, 4576, -328, 4568, 264, 5144
 [node name="Library_entrance" type="Area2D" parent="."]
 
 [node name="Library_square" type="CollisionShape2D" parent="Library_entrance"]
-position = Vector2(2352, 976)
+position = Vector2(2342, 976)
 shape = SubResource("RectangleShape2D_1dbh7")
 
 [node name="Library_marker" type="Marker2D" parent="Library_entrance"]
