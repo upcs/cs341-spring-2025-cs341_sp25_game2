@@ -11,17 +11,18 @@ config_version=5
 [application]
 
 config/name="Game2"
-run/main_scene="res://scenes/Shiley.tscn"
+run/main_scene="res://scenes/campus.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+Firebase="*res://addons/godot-firebase/firebase/firebase.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot-firebase/plugin.cfg", "res://addons/gut/plugin.cfg")
 
 [input]
 

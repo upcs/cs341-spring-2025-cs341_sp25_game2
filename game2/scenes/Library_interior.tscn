@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://nxda8ejeiikf"]
+[gd_scene load_steps=8 format=4 uid="uid://nxda8ejeiikf"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_iruhs"]
 [ext_resource type="Script" path="res://scripts/library_interior.gd" id="1_r6k4f"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="2_q0m6e"]
+[ext_resource type="PackedScene" uid="uid://b8ela1wlgyuks" path="res://scenes/Leaderboard.tscn" id="4_75cow"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i5dry"]
 texture = ExtResource("1_iruhs")
@@ -294,5 +295,8 @@ shape = SubResource("RectangleShape2D_gxmjp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-104, 280, 632, 272, 632, -112, -120, -112, -104, 264, -144, 288, -152, -176, 672, -160, 680, 320, -176, 320)
+
+[node name="Leaderboard" parent="." instance=ExtResource("4_75cow")]
+position = Vector2(-368, -288)
 
 [connection signal="body_entered" from="Library_exit" to="." method="_on_library_exit_body_entered"]
