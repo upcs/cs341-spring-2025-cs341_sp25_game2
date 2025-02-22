@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=34 format=4 uid="uid://vcqgcy82veid"]
+=======
+[gd_scene load_steps=33 format=4 uid="uid://vcqgcy82veid"]
+>>>>>>> Stashed changes
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -6437,6 +6441,9 @@ radius = 14.3178
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dbh7"]
 size = Vector2(12, 123.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x6y1d"]
+size = Vector2(97, 54.5)
+
 [node name="Campus" type="Node2D"]
 script = ExtResource("1_1siug")
 
@@ -6506,7 +6513,7 @@ wait_time = 30.0
 one_shot = true
 autostart = true
 
-[node name="Node2D-Buckley" parent="." instance=ExtResource("7_bsaxx")]
+[node name="Buckley" parent="." instance=ExtResource("7_bsaxx")]
 position = Vector2(992, -640)
 
 [node name="Library" parent="." instance=ExtResource("8_0kl0q")]
@@ -6568,6 +6575,15 @@ shape = SubResource("RectangleShape2D_1dbh7")
 
 [node name="Library_marker" type="Marker2D" parent="Library_entrance"]
 
+[node name="Buckley_entrance" type="Area2D" parent="."]
+
+[node name="Buckley_square" type="CollisionShape2D" parent="Buckley_entrance"]
+position = Vector2(1583.5, 68.75)
+shape = SubResource("RectangleShape2D_x6y1d")
+
+[node name="Buckley_marker" type="Marker2D" parent="Buckley_entrance"]
+
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]
 [connection signal="body_shape_entered" from="Library_entrance" to="." method="_on_library_entrance_body_shape_entered"]
+[connection signal="body_shape_entered" from="Buckley_entrance" to="." method="_on_buckley_entrance_body_shape_entered"]
