@@ -7,6 +7,7 @@ Tiles: Ground textures, Artist: gfx0, license: https://creativecommons.org/licen
 Tiles: Trees, shrubbery, Artist & license: (see plantsCredits.txt)
 Tiles: Brick buildings/walls, Artist & license: (see CREDITS-colonial.txt)
 Tiles: Roof types, Artist & license: (see CREDITS-roofs.txt)
+Pictures: Classroom pixel art, Artist: LanaOnTheRoad, license: https://www.deviantart.com/lanaontheroad/art/Pixel-Art-Classroom-B-2-807285585
 
 Appendix:
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt)

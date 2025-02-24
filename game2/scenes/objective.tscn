@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl8h2r1dsm23f"]
+
+[ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="1_s6u7g"]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+offset_right = 548.0
+offset_bottom = 210.0
+theme_override_fonts/normal_font = ExtResource("1_s6u7g")
+theme_override_font_sizes/normal_font_size = 25

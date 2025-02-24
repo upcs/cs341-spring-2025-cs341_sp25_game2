@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cds2teq4ymjwh"]
+
+[ext_resource type="Script" path="res://scripts/paper.gd" id="1_nafwu"]
+[ext_resource type="Texture2D" uid="uid://dse50urnqwi6q" path="res://animations/Paper.png" id="2_en3h7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdojo"]
+atlas = ExtResource("2_en3h7")
+region = Rect2(0, 0, 20, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gp3gg"]
+atlas = ExtResource("2_en3h7")
+region = Rect2(20, 0, 20, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7y6g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdojo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gp3gg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sc3w6"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+top_level = true
+scale = Vector2(3, 3)
+script = ExtResource("1_nafwu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_c7y6g")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_sc3w6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 11.0
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

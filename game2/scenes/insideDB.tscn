@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://c5ct54kysbmhm"]
+[gd_scene load_steps=5 format=3 uid="uid://c5ct54kysbmhm"]
+
+[ext_resource type="Texture2D" uid="uid://dp0c6wciay16q" path="res://Tilepngs/classroom.jpg" id="1_d4gob"]
+[ext_resource type="Script" path="res://scripts/inside_db.gd" id="1_gxixq"]
+[ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="3_pkeua"]
+[ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="4_nbej0"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_gxixq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1123.0
+offset_bottom = 711.0
+texture = ExtResource("1_d4gob")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="RichTextLabel" parent="." instance=ExtResource("3_pkeua")]
+offset_left = 7.0
+offset_top = 614.0
+offset_right = 555.0
+offset_bottom = 824.0
+text = "Pick up as many of the papers before the time runs out!"
+
+[node name="RichTextLabel2" parent="." instance=ExtResource("4_nbej0")]
+offset_left = 642.0
+offset_top = 613.0
+offset_right = 1460.0
+offset_bottom = 703.0
+
+[node name="GameTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
