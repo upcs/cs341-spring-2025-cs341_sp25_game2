@@ -5087,7 +5087,7 @@ tile_set = SubResource("TileSet_cgff3")
 polygon = PackedVector2Array(143, 784, 123, 788, 103, 816, 99, 844, 96, 845, 96, 864, 97, 947, 97, 958, 192, 959, 196, 928, 197, 864, 192, 864, 192, 846, 190, 825, 179, 798, 164, 787)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(256, 448, 272, 640, 304, 640, 304, 672, 336, 672, 336, 704, 400, 704, 400, 736, 552, 736, 552, 680, 640, 680, 640, 736, 832, 736, 832, 704, 896, 704, 896, 672, 928, 672, 928, 448)
+polygon = PackedVector2Array(256, 449, 256, 502, 272, 512, 275, 640, 306, 640, 306, 673, 339, 672, 338, 704, 403, 705, 403, 735, 832, 736, 832, 704, 896, 705, 896, 672, 929, 672, 928, 448)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(960, 0, 960, 223, 979, 223, 978, 382, 1032, 383, 1031, 427, 1053, 427, 1048, 383, 1089, 383, 1092, 402, 1119, 414, 1127, 414, 1129, 453, 1120, 462, 1150, 462, 1145, 448, 1144, 416, 1171, 412, 1184, 391, 1175, 352, 1153, 337, 1152, 0)
@@ -5146,9 +5146,6 @@ polygon = PackedVector2Array(97, 2, 96, 224, 114, 224, 114, 319, 97, 319, 96, 76
 [node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(0, 1)
 polygon = PackedVector2Array(0, -1, 1696, -1, 644, -444)
-
-[node name="CollisionPolygonDoor" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(552, 736, 552, 688, 640, 688, 640, 736)
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
