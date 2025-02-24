@@ -34,3 +34,4 @@ func _on_timer_timeout() -> void:
 
 func _on_game_timer_timeout() -> void:
 	get_tree().change_scene_to_file("res://scenes/campus.tscn")
+	Global.spawn_position = Vector2(650, 356)

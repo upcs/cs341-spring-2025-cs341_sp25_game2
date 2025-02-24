@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 		timer.wait_time = 30
 		scoreLabel.text = "Score: " + str(Global.score)
 		class_on_time = false
+		player.position = Global.spawn_position
 	elif (out_of_time):
 		out_of_time = false
 		label.text = "You did not make it to class on time :("
