@@ -6,7 +6,7 @@ func _ready() -> void:
 	$Timer.start()
 func _physics_process(delta: float) -> void:
 	# Add the gravity
-	if can_click and Input.is_action_pressed("Click"):
+	if can_click and Input.is_action_just_pressed("Click"):
 		can_click = false
 		scoreChange.emit()
 		queue_free()
