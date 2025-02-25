@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj0qcu8hocimo"]
+[gd_scene load_steps=6 format=3 uid="uid://bj0qcu8hocimo"]
 
+[ext_resource type="Script" path="res://scenes/dino.gd" id="1_1uxml"]
 [ext_resource type="Texture2D" uid="uid://ctah53sqxqvvw" path="res://animations/WallEIdle.png" id="1_uqubt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5elqq"]
@@ -19,7 +20,9 @@ size = Vector2(128, 180)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qnhy"]
 size = Vector2(130, 114)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Pilot" type="CharacterBody2D"]
+z_index = 1
+script = ExtResource("1_1uxml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5elqq")

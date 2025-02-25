@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsbf1468eody7"]
+
+[ext_resource type="Texture2D" uid="uid://d0p5s00dj31dy" path="res://Tilepngs/hallway_floor.png" id="1_gdwqa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ib7"]
+size = Vector2(1370, 29)
+
+[node name="Ground" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(680, 0)
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(0, 31)
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(680, 31)
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(0, 62)
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(680, 62)
+texture = ExtResource("1_gdwqa")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(680, 266)
+shape = SubResource("RectangleShape2D_i0ib7")
