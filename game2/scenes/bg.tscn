@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://drj7r6xwtk1ok"]
+
+[ext_resource type="Texture2D" uid="uid://ks1koihtm3h8" path="res://Tilepngs/hallway.jpg" id="1_lgvwr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hj31b"]
+size = Vector2(682, 20)
+
+[node name="Bg" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lgvwr")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(682, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("1_lgvwr")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParallaxLayer"]
+position = Vector2(339, 200)
+shape = SubResource("RectangleShape2D_hj31b")
