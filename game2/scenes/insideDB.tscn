@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dp0c6wciay16q" path="res://Tilepngs/classroom.jpg" id="1_d4gob"]
 [ext_resource type="Script" path="res://scripts/inside_db.gd" id="1_gxixq"]
-[ext_resource type="PackedScene" path="res://scenes/objective.tscn" id="3_pkeua"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="4_nbej0"]
+[ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="3_pkeua"]
+[ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="4_nbej0"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gxixq")

@@ -11,7 +11,7 @@ var leaderboard_collection: FirestoreCollection
 @onready var _delta = 10.0
 
 const COLLECTION_NAME = "leaderboard"
-const MAX_ENTRIES = 5
+const MAX_ENTRIES = 10
 const MAX_USERNAME_LENGTH = 20
 
 func _ready():
@@ -26,9 +26,9 @@ func _ready():
 	# fetch and display the leaderboard initially
 	await fetch_and_display_leaderboard()
 
-# Fetch the top 10 scores from Firestore and display them
+# Fetch the top 5 scores from Firestore and display them
 func fetch_and_display_leaderboard():
-	# Create a query to get the top 10 scores, ordered by score descending
+	# Create a query to get the top 5 scores, ordered by score descending
 	var query = FirestoreQuery.new()
 	query.from(COLLECTION_NAME, false)
 	query.order_by("score", FirestoreQuery.DIRECTION.DESCENDING)
@@ -42,11 +42,16 @@ func fetch_and_display_leaderboard():
 	if results.is_empty():
 		leaderboard_text += "No scores yet!"
 	else:
+		var j = 0;
 		for i in range(results.size()):
 			var doc: FirestoreDocument = results[i]
 			var username = doc.doc_name
 			var score = doc.get_value("score")
-			leaderboard_text += "%d. %s - %d\n" % [i + 1, username, score]
+			# only display score if it's over 0
+			if (score > 0):
+				leaderboard_text += "%d. %s - %d\n" % [j + 1, username, score]
+				j += 1
+			
 	
 	# update the leaderboard
 	leaderboard_label.text = leaderboard_text
@@ -113,4 +118,5 @@ func submit_score(username: String, score: int):
 
 # update global score incrementally
 func _process(delta):
+	Global.score = 30
 	score_input.text = str(Global.score)

@@ -45,10 +45,11 @@ offset_bottom = 55.0
 text = "Score:"
 
 [node name="InfoLabel" type="Label" parent="."]
-offset_left = 272.0
+offset_left = 248.0
 offset_top = 216.0
-offset_right = 424.0
+offset_right = 448.0
 offset_bottom = 239.0
+horizontal_alignment = 1
 
 [node name="LeaderboardTitle" type="Label" parent="."]
 offset_left = 8.0
