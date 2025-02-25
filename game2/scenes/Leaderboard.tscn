@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4vgawqfjyxjp"]
+
+[ext_resource type="Script" path="res://scripts/Leaderboard.gd" id="1_md5e4"]
+
+[node name="Leaderboard" type="Node2D"]
+script = ExtResource("1_md5e4")
+
+[node name="LeaderboardLabel" type="RichTextLabel" parent="."]
+offset_left = 8.0
+offset_top = 64.0
+offset_right = 240.0
+offset_bottom = 328.0
+
+[node name="UsernameLineEdit" type="LineEdit" parent="."]
+offset_left = 256.0
+offset_top = 112.0
+offset_right = 456.0
+offset_bottom = 143.0
+
+[node name="ScoreLabelContent" type="Label" parent="."]
+offset_left = 312.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 63.0
+
+[node name="SubmitButton" type="Button" parent="."]
+offset_left = 272.0
+offset_top = 160.0
+offset_right = 424.0
+offset_bottom = 200.0
+text = "Submit"
+
+[node name="UsernameLabel" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 80.0
+offset_right = 448.0
+offset_bottom = 103.0
+text = "Enter username:"
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 256.0
+offset_top = 32.0
+offset_right = 304.0
+offset_bottom = 55.0
+text = "Score:"
+
+[node name="InfoLabel" type="Label" parent="."]
+offset_left = 272.0
+offset_top = 216.0
+offset_right = 424.0
+offset_bottom = 239.0
+
+[node name="LeaderboardTitle" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 224.0
+offset_bottom = 56.0
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
