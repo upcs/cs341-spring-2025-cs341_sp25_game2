@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bj0qcu8hocimo"]
 
-[ext_resource type="Script" path="res://scenes/dino.gd" id="1_1uxml"]
+[ext_resource type="Script" path="res://scenes/Pilot.gd" id="1_1uxml"]
 [ext_resource type="Texture2D" uid="uid://ctah53sqxqvvw" path="res://animations/WallEIdle.png" id="1_uqubt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5elqq"]

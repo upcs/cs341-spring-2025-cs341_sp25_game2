@@ -8,12 +8,11 @@ const JUMP_SPEED = -1800
 func _physics_process(delta: float):
 	velocity.y += GRAVITY * delta
 	if is_on_floor():
-		#$RunCol.disabled = false
+		$PilotRun.disabled = false
 		if Input.is_action_pressed("ui_accept"):
 			velocity.y = JUMP_SPEED
 		elif Input.is_action_pressed("ui_down"):
-			#$RunCol.disabled = true
-			const intr = 2
+			$PilotDuck.disabled = true
 	move_and_slide()
 
 #func _physics_process(delta: float) -> void:

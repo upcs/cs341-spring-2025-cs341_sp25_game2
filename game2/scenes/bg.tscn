@@ -12,5 +12,6 @@ centered = false
 motion_mirroring = Vector2(682, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+scale = Vector2(1, 1.6)
 texture = ExtResource("1_lgvwr")
 centered = false
