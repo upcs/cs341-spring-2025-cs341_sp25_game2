@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://2o716c1mb7ce"]
+[gd_scene load_steps=4 format=3 uid="uid://byitrpxo1cftx"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_gaapw"]
 [ext_resource type="Texture2D" uid="uid://d25w0mjqtlb0r" path="res://Tilepngs/bellTower.jpg" id="2_s1ivv"]

@@ -50,14 +50,14 @@ const _AUTH_PROVIDERS : String = "firebase/auth_providers"
 # These values can be found in your Firebase Project
 # See the README checked Github for how to access
 var _config : Dictionary = {
-	"apiKey": "",
-	"authDomain": "",
+	"apiKey": "AIzaSyCA5-YDrYOmpiS6KNq-dQDVCByr_Cnrtn0",
+	"authDomain": "upgame-f59f3.firebaseapp.com",
 	"databaseURL": "",
-	"projectId": "",
-	"storageBucket": "",
-	"messagingSenderId": "",
-	"appId": "",
-	"measurementId": "",
+	"projectId": "upgame-f59f3",
+	"storageBucket": "upgame-f59f3.firebasestorage.app",
+	"messagingSenderId": "1011014639601",
+	"appId": "1:1011014639601:web:1942e00eed84dab5a1ee50",
+	"measurementId": "G-21EJ6TCZFV",
 	"clientId": "",
 	"clientSecret" : "",
 	"domainUriPrefix" : "",
