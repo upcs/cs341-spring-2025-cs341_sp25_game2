@@ -5,6 +5,10 @@
 [node name="Leaderboard" type="Node2D"]
 script = ExtResource("1_md5e4")
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.207843, 0.207843, 0.207843, 0.6)
+polygon = PackedVector2Array(2, 0, 432, 0, 432, 320, 0, 320)
+
 [node name="LeaderboardLabel" type="RichTextLabel" parent="."]
 offset_left = 8.0
 offset_top = 64.0

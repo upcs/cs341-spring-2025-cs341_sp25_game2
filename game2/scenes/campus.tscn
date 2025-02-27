@@ -6573,7 +6573,7 @@ shape = SubResource("RectangleShape2D_et522")
 [node name="BC_marker" type="Marker2D" parent="BC_entrance"]
 
 [node name="Leaderboard" parent="." instance=ExtResource("17_6yfi2")]
-position = Vector2(-413, -25)
+position = Vector2(-400, -72)
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]
