@@ -8,16 +8,26 @@ func _ready() -> void:
 	add_to_group("Player")
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_pressed("up"): 
-		position.y -= 10
+	var direction = Vector2.ZERO
+	if Input.is_action_pressed("up"):
+		direction.y -= 1
 	if Input.is_action_pressed("down"):
-		position.y += 10
+		direction.y += 1
 	if Input.is_action_pressed("right"):
-		position.x += 10
+		direction.x += 1
 	if Input.is_action_pressed("left"):
-		position.x -= 10
+		direction.x -= 1
+	
+	
+	var speed = 550.0
+	if direction != Vector2.ZERO:
+		direction = direction.normalized()
+		velocity = direction * speed
 	else:
+		velocity = Vector2.ZERO
 		sprite.play("default")
+	
+	# Move the character
 	move_and_slide()
 
 func takehit():

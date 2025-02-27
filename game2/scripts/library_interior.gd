@@ -1,9 +1,15 @@
 extends Node2D
 
+@onready var library_text = $CanvasLayer/LibraryText
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	library_text.visible = true
+	library_text.modulate.a = 0.0
+	var tween = create_tween()
+	tween.tween_property(library_text, "modulate:a", 0.9, 1.0)
 	preload("res://scenes/campus.tscn")
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

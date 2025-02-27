@@ -44,9 +44,10 @@ text = "Score:"
 
 [node name="InfoLabel" type="Label" parent="."]
 offset_left = 248.0
-offset_top = 216.0
+offset_top = 184.0
 offset_right = 448.0
-offset_bottom = 239.0
+offset_bottom = 207.0
+scale = Vector2(0.8, 0.8)
 horizontal_alignment = 1
 
 [node name="LeaderboardTitle" type="Label" parent="."]

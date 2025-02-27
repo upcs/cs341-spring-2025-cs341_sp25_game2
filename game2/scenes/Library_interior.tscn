@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="2_q0m6e"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="3_55e5o"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="4_8avei"]
-[ext_resource type="PackedScene" uid="uid://c4vgawqfjyxjp" path="res://scenes/Leaderboard.tscn" id="4_v60ns"]
+[ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_3afau"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6iqtm"]
 texture = ExtResource("3_55e5o")
@@ -9511,13 +9511,33 @@ shape = SubResource("RectangleShape2D_gxmjp")
 [node name="Borders" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
-polygon = PackedVector2Array(1137, -9, 1153, 324, 728, 321, 725, 286, 700, 285, 698.783, 338.838, 988, 346, 1011, 658, -50, 684, 95, -4, 701, 14, 705, 81, 723, 80, 725, 15, 1132, 17, 1135, -10, 57, -36, -156, 732, 1262, 692, 1210, -8)
+polygon = PackedVector2Array(1153, -10, 1153, 324, 728, 321, 725, 286, 700, 285, 698.783, 338.838, 988, 346, 1011, 658, -50, 684, 95, -4, 701, 14, 705, 81, 723, 80, 725, 15, 1147, 20, 1145, -13, 57, -36, -156, 732, 1262, 692, 1210, -8)
 
 [node name="TablesAndChairsRed" type="CollisionShape2D" parent="Borders"]
 position = Vector2(570, 541)
 shape = SubResource("RectangleShape2D_xsyfb")
 
-[node name="Leaderboard" parent="." instance=ExtResource("4_v60ns")]
-position = Vector2(-490, 263)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LibraryText" type="RichTextLabel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -435.0
+offset_top = 8.0
+offset_right = 938.0
+offset_bottom = 468.0
+grow_horizontal = 0
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("6_3afau")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "[center]Clark Library
+A student favorite, this library got a facelift with flexible study areas, collaborative spaces, and high-tech resources. It's perfect for both focused study and group work."
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/LibraryText"]
+modulate = Color(0.729412, 0.329412, 0.211765, 0.843137)
+show_behind_parent = true
+polygon = PackedVector2Array(-53.3335, 0, -53.3335, 453.333, 637.655, 453.333, 1413.33, 453.333, 1413.33, 0)
 
 [connection signal="body_entered" from="Library_exit" to="." method="_on_library_exit_body_entered"]
