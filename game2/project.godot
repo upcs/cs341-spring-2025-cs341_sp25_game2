@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Game2"
-run/main_scene="res://scenes/campus.tscn"
+run/main_scene="res://start.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -64,4 +64,3 @@ Click={
 [rendering]
 
 textures/vram_compression/import_etc2_astc=true
-environment/defaults/default_clear_color=Color(0, 0, 0, 1)
