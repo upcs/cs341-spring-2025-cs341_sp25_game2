@@ -4,7 +4,8 @@ extends Node
 var leaderboard_collection: FirestoreCollection
 
 @onready var leaderboard_label = $LeaderboardLabel
-@onready var username_input = $UsernameLineEdit
+#@onready var username_input = $UsernameLineEdit no longer need
+@onready var username_label = $UsernameLabel
 @onready var score_input = $ScoreLabelContent
 @onready var submit_button = $SubmitButton
 @onready var info_label = $InfoLabel
@@ -18,8 +19,7 @@ func _ready():
 	# initialize the Firestore collection
 	leaderboard_collection = Firebase.Firestore.collection(COLLECTION_NAME)
 	
-	# for testing
-	#Global.score = 50
+	username_label.text = "Username: " + Global.username
 	
 	score_input.text = str(Global.score)
 	
@@ -40,7 +40,7 @@ func fetch_and_display_leaderboard():
 	# Process the results into a readable format
 	var leaderboard_text = ""
 	if results.is_empty():
-		leaderboard_text += "No scores yet!"
+		leaderboard_text += "No scores yet"
 	else:
 		var j = 0;
 		for i in range(results.size()):
@@ -51,7 +51,8 @@ func fetch_and_display_leaderboard():
 			if (score > 0):
 				leaderboard_text += "%d. %s - %d\n" % [j + 1, username, score]
 				j += 1
-			
+		if j == 0:
+			leaderboard_text += "No scores yet"
 	
 	# update the leaderboard
 	leaderboard_label.text = leaderboard_text
@@ -59,23 +60,10 @@ func fetch_and_display_leaderboard():
 # handle score submission when the button is pressed
 func _on_submit_button_pressed():
 	
-	var username = username_input
+	var username = Global.username
 	if username == null:
 		print('No username input')
 		return
-	
-	username = username.text.strip_edges()
-	var score_text = score_input
-	if score_text == null:
-		print("score is null")
-		return
-	
-	# check username length
-	if username.length() > MAX_USERNAME_LENGTH:
-		info_label.text = "Username must be 20 characters or fewer"
-		return
-	
-	score_text = score_text.text.strip_edges()
 	
 	# validate input
 	if username == "":
@@ -91,8 +79,6 @@ func _on_submit_button_pressed():
 	# refresh the leaderboard after submission
 	await fetch_and_display_leaderboard()
 	
-	# clear username
-	username_input.text = ""
 
 # submit a score to Firestore, updating only if higher than the existing score
 func submit_score(username: String, score: int):
@@ -118,5 +104,4 @@ func submit_score(username: String, score: int):
 
 # update global score incrementally
 func _process(delta):
-	Global.score = 30
 	score_input.text = str(Global.score)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=35 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="14_es7mx"]
 [ext_resource type="PackedScene" path="res://scenes/objective.tscn" id="15_mlqc4"]
 [ext_resource type="PackedScene" path="res://scenes/score.tscn" id="16_ls3dj"]
+[ext_resource type="PackedScene" uid="uid://c4vgawqfjyxjp" path="res://scenes/Leaderboard.tscn" id="17_6yfi2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
 texture = ExtResource("2_t5k2c")
@@ -6570,6 +6571,9 @@ position = Vector2(1592, 88)
 shape = SubResource("RectangleShape2D_et522")
 
 [node name="BC_marker" type="Marker2D" parent="BC_entrance"]
+
+[node name="Leaderboard" parent="." instance=ExtResource("17_6yfi2")]
+position = Vector2(-413, -25)
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]

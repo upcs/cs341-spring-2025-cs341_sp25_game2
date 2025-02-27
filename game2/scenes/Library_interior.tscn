@@ -9518,5 +9518,6 @@ position = Vector2(570, 541)
 shape = SubResource("RectangleShape2D_xsyfb")
 
 [node name="Leaderboard" parent="." instance=ExtResource("4_v60ns")]
+position = Vector2(-490, 263)
 
 [connection signal="body_entered" from="Library_exit" to="." method="_on_library_exit_body_entered"]
