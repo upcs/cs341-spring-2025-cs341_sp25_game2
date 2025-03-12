@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://byitrpxo1cftx"]
+[gd_scene load_steps=5 format=3 uid="uid://byitrpxo1cftx"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_gaapw"]
 [ext_resource type="Texture2D" uid="uid://d25w0mjqtlb0r" path="res://Tilepngs/bellTower.jpg" id="2_s1ivv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_ed01v"]
+[ext_resource type="Script" path="res://scripts/usernameInput.gd" id="4_n35t5"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gaapw")
@@ -34,6 +35,7 @@ offset_left = 434.0
 offset_top = 407.0
 offset_right = 695.0
 offset_bottom = 475.0
+script = ExtResource("4_n35t5")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 152.0

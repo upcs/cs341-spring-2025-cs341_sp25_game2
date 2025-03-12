@@ -70,3 +70,11 @@ func _on_library_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_s
 func _on_bc_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://scenes/BC_interior.tscn")
+		
+		
+# Touchscreen controls
+func _on_gui_input(event):
+	if event is InputEventScreenTouch and event.pressed:  # Use ScreenTouch for mobile
+		player.position = event.position
+		print("touched at" + event.position)
+# Forces focus to trigger the keyboard
