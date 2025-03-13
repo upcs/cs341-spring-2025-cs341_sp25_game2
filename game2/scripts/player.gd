@@ -12,7 +12,7 @@ func _ready() -> void:
 	target_position = global_position
 
 func _input(event):
-	if event is InputEventScreenTouch and event.pressed:
+	if event and event.pressed:
 		# convert screen coordinates to world coordinates
 		var camera = get_viewport().get_camera_2d()
 		if camera:
@@ -54,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		sprite.play("default")
 	
+	# move the character
 	move_and_slide()
 
 func takehit():
