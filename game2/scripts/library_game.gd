@@ -54,22 +54,3 @@ func game_over():
 		game_message.text = "You Win!"
 	else:
 		_spawn_book()
-
-#func _on_ground_body_entered(book: Node2D) -> void:
-	#if book.is_in_group("ground"):
-		#return
-	#
-	#if book.is_in_group("active_book"):
-		#print("Book is active book")
-		#if !game_active: return
-		#var velocity = book.linear_velocity.length()
-		#var noise_increase = clamp(velocity / 50.0, 0, 50)
-		#noise_level = clamp(noise_level + noise_increase, 0, MAX_NOISE)
-		#stacked_books += 1
-		#stack_counter.text = "Books: %d/%d" % [stacked_books, WIN_COUNT]
-		#if stacked_books >= WIN_COUNT:
-			#game_active = false
-			#game_message.text = "You Win!"
-		#else:
-			#_spawn_book()  # Spawn a new book, which will automatically be the new "active_book"
-		
