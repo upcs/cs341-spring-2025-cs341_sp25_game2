@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=9 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
 [ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="2_0e5sr"]
+[ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_koyeq"]
 
 [sub_resource type="GDScript" id="GDScript_2o2kd"]
 script/source = "extends Node2D
@@ -3037,5 +3038,30 @@ scale = Vector2(2, 2)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 952.0
+offset_top = 664.0
+offset_right = 1112.0
+offset_bottom = 800.0
+theme_override_colors/default_color = Color(0.941176, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("4_koyeq")
+theme_override_font_sizes/normal_font_size = 24
+text = "EXIT HERE!"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 616.0
+offset_right = 1120.0
+offset_bottom = 192.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0.34909, 0.183154, 0.819573, 1)
+theme_override_fonts/normal_font = ExtResource("4_koyeq")
+theme_override_font_sizes/normal_font_size = 20
+text = "Welcome to Buckley Center Auditorium! 
+This space is the home of many events, acitivites, and lectures. Follow the exit sign below to leave, or play a minigame!"
 
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
