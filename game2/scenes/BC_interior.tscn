@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=8 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
+[ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
 [ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="2_0e5sr"]
 
 [sub_resource type="GDScript" id="GDScript_2o2kd"]
@@ -3009,22 +3010,32 @@ texture = ExtResource("1_33pql")
 sources/0 = SubResource("TileSetAtlasSource_w531a")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0twm"]
-size = Vector2(745, 117)
+size = Vector2(22.25, 213.25)
 
 [node name="BcInterior" type="Node2D"]
 script = SubResource("GDScript_2o2kd")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1120.0
+offset_bottom = 712.0
+texture = ExtResource("1_bciuw")
+
 [node name="place_holder" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray(0, 0, 23, 0, 6, 0, 0, 0, 48, 0, 52, 0, 0, 0, 72, 0, 7, 0, 0, 0, 48, 0, 52, 0, 0, 0)
 tile_set = SubResource("TileSet_po80d")
 
 [node name="BC_exit" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BC_exit"]
-position = Vector2(763.5, 93.5)
+position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
 
 [node name="Wally" parent="." instance=ExtResource("2_0e5sr")]
-position = Vector2(224, 264)
+position = Vector2(544, 592)
+scale = Vector2(2, 2)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
 
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
