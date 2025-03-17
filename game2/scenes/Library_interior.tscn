@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://nxda8ejeiikf"]
+[gd_scene load_steps=18 format=4 uid="uid://nxda8ejeiikf"]
 
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="1_iruhs"]
 [ext_resource type="Script" path="res://scripts/library_interior.gd" id="1_r6k4f"]
@@ -9475,8 +9475,11 @@ sources/0 = SubResource("TileSetAtlasSource_cqa73")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxmjp"]
 size = Vector2(10, 128)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xsyfb"]
-size = Vector2(845.5, 209)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5e2p2"]
+size = Vector2(63.75, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmxgt"]
+size = Vector2(188, 34)
 
 [node name="Library_interior" type="Node2D"]
 script = ExtResource("1_r6k4f")
@@ -9510,12 +9513,15 @@ shape = SubResource("RectangleShape2D_gxmjp")
 
 [node name="Borders" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Borders"]
-polygon = PackedVector2Array(1153, -10, 1153, 324, 728, 321, 725, 286, 700, 285, 698.783, 338.838, 988, 346, 1011, 658, -50, 684, 95, -4, 701, 14, 705, 81, 723, 80, 725, 15, 1147, 20, 1145, -13, 57, -36, -156, 732, 1262, 692, 1210, -8)
+[node name="World_border" type="CollisionPolygon2D" parent="Borders"]
+polygon = PackedVector2Array(1153, -10, 1163, 322, 728, 321, 725, 286, 700, 285, 698.783, 338.838, 1143, 342, 1153, 800, -245, 800, -217, 159, 97, 157, 101, -107, 301, -107, 371, -43, 701, 14, 705, 81, 723, 80, 725, 15, 1147, 20, 1145, -13, 377, -114, 332, -138, 97, -144, -390, -48, -364, 852, 1238, 968, 1210, -8)
 
-[node name="TablesAndChairsRed" type="CollisionShape2D" parent="Borders"]
-position = Vector2(570, 541)
-shape = SubResource("RectangleShape2D_xsyfb")
+[node name="Red_chairs" type="CollisionPolygon2D" parent="Borders"]
+polygon = PackedVector2Array(142, 478, 229, 478, 258, 458, 387, 432, 552, 429, 559, 496, 654, 509, 658, 446, 911, 449, 929, 431, 993, 434, 993, 536, 1072, 525, 1074, 451, 1135, 449, 1133, 507, 1066, 547, 1065, 610, 995, 640, 874, 641, 877, 515, 790, 550, 788, 626, 718, 625, 653, 595, 583, 600, 568, 642, 535, 650, 539, 725, 453, 723, 461, 638, 493, 526, 337, 513, 335, 566, 372, 573, 371, 640, 259, 657, 190, 657, 191, 547, 142, 544)
+
+[node name="Pillar" type="CollisionShape2D" parent="Borders"]
+position = Vector2(656.125, 704.5)
+shape = SubResource("RectangleShape2D_5e2p2")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -9540,4 +9546,13 @@ modulate = Color(0.729412, 0.329412, 0.211765, 0.843137)
 show_behind_parent = true
 polygon = PackedVector2Array(-53.3335, 0, -53.3335, 453.333, 637.655, 453.333, 1413.33, 453.333, 1413.33, 0)
 
+[node name="Lower_floor_entrance" type="Area2D" parent="."]
+
+[node name="Lower_floor_square" type="CollisionShape2D" parent="Lower_floor_entrance"]
+position = Vector2(198, -114)
+shape = SubResource("RectangleShape2D_nmxgt")
+
+[node name="Lower_floor_marker" type="Marker2D" parent="Lower_floor_entrance"]
+
 [connection signal="body_entered" from="Library_exit" to="." method="_on_library_exit_body_entered"]
+[connection signal="body_entered" from="Lower_floor_entrance" to="." method="_on_lower_floor_entrance_body_entered"]

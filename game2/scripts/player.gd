@@ -12,7 +12,7 @@ func _ready() -> void:
 	target_position = global_position
 
 func _input(event):
-	if event and event.pressed:
+	if event is InputEventMouseButton and event.pressed:
 		# convert screen coordinates to world coordinates
 		var camera = get_viewport().get_camera_2d()
 		if camera:
