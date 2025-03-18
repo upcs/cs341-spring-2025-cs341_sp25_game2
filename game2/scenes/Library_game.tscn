@@ -42,10 +42,10 @@ autostart = true
 
 [node name="GameMessage" type="RichTextLabel" parent="."]
 top_level = true
-offset_left = 437.0
-offset_top = 295.0
-offset_right = 675.0
-offset_bottom = 328.0
+offset_left = 352.0
+offset_top = 296.0
+offset_right = 744.0
+offset_bottom = 329.0
 bbcode_enabled = true
 text = "[center]"
 
@@ -63,6 +63,13 @@ polygon = PackedVector2Array(240, 536, 240, 552, 824, 552, 824, 536)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(532, 550.75)
 shape = SubResource("RectangleShape2D_yec0o")
+
+[node name="GameScore" type="Label" parent="."]
+offset_left = 912.0
+offset_top = 120.0
+offset_right = 1032.0
+offset_bottom = 152.0
+text = "SCORE: 0"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

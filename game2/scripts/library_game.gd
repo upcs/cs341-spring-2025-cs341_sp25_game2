@@ -5,6 +5,7 @@ extends Node2D
 @onready var stack_counter = $StackCounter
 @onready var game_message = $GameMessage
 @onready var spawn_timer = $SpawnTimer
+@onready var game_score = $GameScore
 
 var book_scene = preload("res://scenes/Book.tscn")
 var stacked_books = 0
@@ -12,6 +13,8 @@ var noise_level = 0.0
 const MAX_NOISE = 100.0
 const WIN_COUNT = 10
 var game_active = true
+var game_lost = false
+var multiplier = 10
 
 func _ready():
 	noise_meter.max_value = MAX_NOISE
@@ -38,7 +41,9 @@ func _on_spawn_timer_timeout():
 
 func _spawn_book():
 	var book = book_scene.instantiate()
-	book.global_position = spawn_point.global_position
+	var random_int = randi_range(-200, 200)
+	var spawn = Vector2((512 + random_int), 100)
+	book.global_position = spawn
 	book.add_to_group("active_book")
 	add_child(book)
 
@@ -48,9 +53,15 @@ func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Library_interior.tscn")
 
 func game_over():
-	stack_counter.text = "Books: %d/%d" % [stacked_books, WIN_COUNT]
-	if stacked_books >= WIN_COUNT:
+	stack_counter.text = "BOOKS: %d/%d" % [stacked_books, WIN_COUNT]
+	game_score.text = "SCORE: %d" % [multiplier * stacked_books]
+	
+	if game_lost:
 		game_active = false
-		game_message.text = "You Win!"
+		game_message.text = "You Lost"
+	elif stacked_books >= WIN_COUNT:
+		game_active = false
+		game_message.text = "You Win! Points added to total score!"
+		Global.score += multiplier * stacked_books
 	else:
 		_spawn_book()

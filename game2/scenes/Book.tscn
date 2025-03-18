@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/book.gd" id="1_m874x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_001b3"]
-size = Vector2(282, 29)
+size = Vector2(149, 27)
 
 [node name="Book" type="RigidBody2D"]
 collision_layer = 3
@@ -15,12 +15,12 @@ script = ExtResource("1_m874x")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(176, 28.5)
+position = Vector2(109.5, 29.5)
 shape = SubResource("RectangleShape2D_001b3")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(-41.5821, 11.5499)
-scale = Vector2(2.18806, 0.175009)
+position = Vector2(-5.42636, 13.7188)
+scale = Vector2(1.15504, 0.16294)
 color = Color(0.407843, 0.623529, 1, 1)
 polygon = PackedVector2Array(35, 14, 35, 179.705, 162.739, 179.705, 163.881, 179.705, 164, 14)
 
