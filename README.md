@@ -19,4 +19,4 @@ Code coverage: ##% (estimated directly by the CS341Game2 team as regular test co
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt)
 [CREDITS-colonial.txt](https://github.com/user-attachments/files/18759367/CREDITS-colonial.txt)
 [CREDITS-roofs.txt](https://github.com/user-attachments/files/18759389/CREDITS-roofs.txt)
-[CREDITS - Knowledge Vectors by Vecteezy]("https://www.vecteezy.com/free-vector/knowledge")
+[CREDITS - Knowledge Vectors by Vecteezy](https://www.vecteezy.com/free-vector/knowledge)
