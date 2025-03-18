@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=36 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://scenes/jacqui_buckleyMap.tscn" id="7_bsaxx"]
 [ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map.tscn" id="8_0kl0q"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
+[ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://scenes/Franz.tscn" id="11_rm3jr"]
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
@@ -6513,6 +6514,9 @@ position = Vector2(992, -640)
 
 [node name="Library" parent="." instance=ExtResource("8_0kl0q")]
 position = Vector2(2144, 544)
+
+[node name="Church" parent="." instance=ExtResource("9_bfw4y")]
+position = Vector2(2696, -3336)
 
 [node name="Shiley" parent="." instance=ExtResource("9_4hicw")]
 position = Vector2(3904, 256)
