@@ -1,12 +1,11 @@
 ## ARTISTIC CREDITS
 
-The tile maps found in the artwork of the game have been put together from the original tile sets created by various artists as indicated below.\
-All artists' work was found through the database OpenGameArt.org.
+The tile maps found in the artwork of the game have been put together from the original tile sets created by various artists as indicated below. All artists' work was found through the database OpenGameArt.org.
 
 |          Tiles        |         Artist - License           |
 |-----------------------|------------------------------------|
 | Ground textures       | gfx0 - [Creative Commons](https://creativecommons.org/licenses/by/4.0/)            |
-| Trees, shrubbery      | (see Appendix: plantsCredits.txt) |
+| Trees, shrubbery      | (see APPENDIX: plantsCredits.txt) |
 | Brick buildings/walls | (see CREDITS-colonial.txt)         |
 | Roof types            | (see CREDITS-roofs.txt)            |
 --------------------------------------------------------------
@@ -15,14 +14,14 @@ All artists' work was found through the database OpenGameArt.org.
 |---------------|-----------------------------|
 | Classroom pixel art | [LanaOnTheRoad](https://www.deviantart.com/lanaontheroad/art/Pixel-Art-Classroom-B-2-807285585) |
 | Menu scene background | Found at *[stockcake.com](https://www.google.com/url?) |
-| Books for library minigame | (see Appendix: CREDITS - Knowledge Vectors by Vecteezy ) |
+| Books for library minigame | (see APPENDIX: CREDITS - Knowledge Vectors by Vecteezy ) |
 -----------------------------------------------------------------------------------------
 *stockcake.com is currently not a working site.
 
 ## BADGES
 Code coverage: ##% (estimated directly by the CS341Game2 team as regular test code badges are not implemented in Godot's testing framework yet).
 
-## Appendix
+## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
 [CREDITS-colonial.txt](https://github.com/user-attachments/files/18759367/CREDITS-colonial.txt) \
 [CREDITS-roofs.txt](https://github.com/user-attachments/files/18759389/CREDITS-roofs.txt) \
