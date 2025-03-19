@@ -3,8 +3,8 @@
 The tile maps found in the artwork of the game have been put together from the original tile sets created by various artists as indicated below.\
 All artists' work was found through the database OpenGameArt.org.
 
----------------------------------------------------------------\
-|         ### Tiles         | ### Artist - License |
+-------------------------------------------------------------|\
+|         ### Tiles        | ### Artist - License               |
 | Ground textures       | gfx0 - [Creative Commons](https://creativecommons.org/licenses/by/4.0/)            |\
 | Trees, shrubbery      | (see Appendix - plantsCredits.txt) |\
 | Brick buildings/walls | (see CREDITS-colonial.txt)         |\
