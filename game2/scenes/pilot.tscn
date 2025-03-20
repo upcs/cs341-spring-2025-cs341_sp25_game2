@@ -1,17 +1,39 @@
-[gd_scene load_steps=6 format=3 uid="uid://bj0qcu8hocimo"]
+[gd_scene load_steps=8 format=3 uid="uid://bj0qcu8hocimo"]
 
 [ext_resource type="Script" path="res://scenes/Pilot.gd" id="1_1uxml"]
-[ext_resource type="Texture2D" uid="uid://ctah53sqxqvvw" path="res://animations/WallEIdle.png" id="1_uqubt"]
+[ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="2_xaevr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j1ed5"]
+atlas = ExtResource("2_xaevr")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvxia"]
+atlas = ExtResource("2_xaevr")
+region = Rect2(200, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5elqq"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_uqubt")
+"texture": SubResource("AtlasTexture_j1ed5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvxia")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j1ed5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvxia")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 2.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wi12"]
@@ -25,11 +47,13 @@ z_index = 1
 script = ExtResource("1_1uxml")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(106, -1)
 sprite_frames = SubResource("SpriteFrames_5elqq")
-frame_progress = 0.771791
+animation = &"Walking"
+autoplay = "Idle"
 
 [node name="PilotRun" type="CollisionShape2D" parent="."]
-position = Vector2(104, 10)
+position = Vector2(105, 14)
 shape = SubResource("RectangleShape2D_8wi12")
 
 [node name="PilotDuck" type="CollisionShape2D" parent="."]

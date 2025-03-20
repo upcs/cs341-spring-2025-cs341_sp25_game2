@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=39 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://scenes/jacqui_buckleyMap.tscn" id="7_bsaxx"]
 [ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map.tscn" id="8_0kl0q"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
-[ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
+[ext_resource type="PackedScene" path="res://Church.tscn" id="9_bfw4y"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://scenes/Franz.tscn" id="11_rm3jr"]
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="15_mlqc4"]
 [ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
 [ext_resource type="PackedScene" uid="uid://c4vgawqfjyxjp" path="res://scenes/Leaderboard.tscn" id="17_6yfi2"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
+[ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
 texture = ExtResource("2_t5k2c")
@@ -6430,6 +6432,9 @@ sources/0 = SubResource("TileSetAtlasSource_y208n")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6427h"]
 size = Vector2(98, 79.5)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_kxyaa"]
+radius = 140.089
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_1e4e1"]
 radius = 14.3178
 
@@ -6475,10 +6480,11 @@ shape = SubResource("RectangleShape2D_6427h")
 [node name="Marker2D" type="Marker2D" parent="DB"]
 position = Vector2(656, 239)
 
-[node name="PHouse" type="Area2D" parent="."]
+[node name="Oak_PilotHouse" type="Area2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHouse"]
-polygon = PackedVector2Array(2, 479, 2, 599, 35, 641, 580, 632, 613, 596, 604, 476)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Oak_PilotHouse"]
+position = Vector2(769, 461)
+shape = SubResource("CircleShape2D_kxyaa")
 
 [node name="Area2D2" type="Area2D" parent="."]
 
@@ -6579,7 +6585,27 @@ shape = SubResource("RectangleShape2D_et522")
 [node name="Leaderboard" parent="." instance=ExtResource("17_6yfi2")]
 position = Vector2(-392, -44)
 
+[node name="Panel" type="Panel" parent="."]
+top_level = true
+offset_left = 903.0
+offset_top = 123.0
+offset_right = 1214.0
+offset_bottom = 375.0
+theme = ExtResource("19_1m8dr")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 302.0
+offset_bottom = 230.0
+theme_override_fonts/bold_font = ExtResource("20_qc34m")
+theme_override_font_sizes/bold_font_size = 0
+text = "Hi! I am the Pilot Oak of University of Portland! I am estimated to be 300 years old and was most likely part of a huge oak savanna that was originally on the campus before Portland even existed."
+
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
+[connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]
+[connection signal="body_exited" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_exited"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]
 [connection signal="body_shape_entered" from="Library_entrance" to="." method="_on_library_entrance_body_shape_entered"]
 [connection signal="body_shape_entered" from="BC_entrance" to="." method="_on_bc_entrance_body_shape_entered"]
