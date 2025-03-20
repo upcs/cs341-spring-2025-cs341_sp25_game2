@@ -12,41 +12,43 @@ extends Node2D
 var book_scene = preload("res://scenes/Book.tscn")
 var stacked_books = 0
 const WIN_COUNT = 10
-var game_active = true
+var game_active = false
 var game_lost = false
 var multiplier = 10
 
 func _ready():
-	_spawn_book()
-	game_active = true
+	#preload("res://scenes/Library_interior.tscn")
 	back_button.disabled = true
 	restart_button.disabled = true
-
-
-func _input(event):
-	if event is InputEventMouse:
-		var books = get_tree().get_nodes_in_group("active_book")
-		
-		if books.size() > 0:
-			var active_book = books[0]
-			active_book.global_position.x = event.position.x
-			
-
+	_spawn_book()
+	await get_tree().create_timer(0.5).timeout
+	game_active = true
+	
+	
 func _on_spawn_timer_timeout():
 	var active_count = get_tree().get_nodes_in_group("active_book").size()
+	var active_books = get_tree().get_nodes_in_group("active_book")
+	
+	if game_active:
+		if active_books.size() > 0:
+			#print(books.size())
+			var active_book = active_books[0]
+			#print("active book exists")
+			active_book.global_position.x = get_global_mouse_position().x
+	
 	
 	# check if a book has fallen too far
-	var active_books = get_tree().get_nodes_in_group("active_book")
-	var stacked_books = get_tree().get_nodes_in_group("stacked_book")
-	if active_books.size() > 0:
+	active_books = get_tree().get_nodes_in_group("active_book")
+	var stacked_books_arr = get_tree().get_nodes_in_group("stacked_book")
+	if active_count > 0:
 		var active_book = active_books[0]
-		if active_book.global_position.y > 600:
+		if active_book.global_position.y > 550:
 			game_lost = true
 			game_over()
 			return
-	if stacked_books.size() > 0:
-		for i in range(active_books.size()):
-			var stacked_book = stacked_books[i]
+	if stacked_books_arr.size() > 0:
+		for i in range(stacked_books_arr.size()):
+			var stacked_book = stacked_books_arr[i]
 			if stacked_book.global_position.y > 550:
 				game_lost = true
 				game_over()
@@ -66,7 +68,7 @@ func _spawn_book():
 	book.global_position = spawn
 	
 	book.add_to_group("active_book")
-	#print("Spawned book at: ", book.global_position)
+	print("Spawned book at: ", book.global_position)
 	
 
 func _on_back_button_pressed() -> void:

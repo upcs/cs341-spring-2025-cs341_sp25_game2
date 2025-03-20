@@ -105,3 +105,7 @@ func submit_score(username: String, score: int):
 # update global score incrementally
 func _process(delta):
 	score_input.text = str(Global.score)
+
+
+func _on_back_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://start.tscn")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=38 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://scenes/jacqui_buckleyMap.tscn" id="7_bsaxx"]
 [ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map.tscn" id="8_0kl0q"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
-[ext_resource type="PackedScene" path="res://Church.tscn" id="9_bfw4y"]
+[ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
 [ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://scenes/Franz.tscn" id="11_rm3jr"]
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="14_es7mx"]
 [ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="15_mlqc4"]
 [ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
-[ext_resource type="PackedScene" uid="uid://c4vgawqfjyxjp" path="res://scenes/Leaderboard.tscn" id="17_6yfi2"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 
@@ -6581,9 +6580,6 @@ position = Vector2(1600, 48)
 shape = SubResource("RectangleShape2D_et522")
 
 [node name="BC_marker" type="Marker2D" parent="BC_entrance"]
-
-[node name="Leaderboard" parent="." instance=ExtResource("17_6yfi2")]
-position = Vector2(-392, -44)
 
 [node name="Panel" type="Panel" parent="."]
 top_level = true

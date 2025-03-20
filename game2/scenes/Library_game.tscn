@@ -11,6 +11,8 @@ size = Vector2(586.5, 20)
 size = Vector2(640, 31.5)
 
 [node name="LibraryGame" type="Node2D"]
+process_mode = 3
+physics_interpolation_mode = 1
 script = ExtResource("1_n6113")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -54,6 +56,7 @@ text = "BOOKS: 0/10
 "
 
 [node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [node name="GameMessage" type="RichTextLabel" parent="."]

@@ -57,8 +57,8 @@ func _on_body_entered(body: Node) -> void:
 			
 
 func random_scale():
-		var random_x = randf_range(1.0,1.7)
-		var random_y = randf_range(1.0,1.7)
+		var random_x = randf_range(0.2,2.1)
+		var random_y = randf_range(0.4,2.1)
 		var book_scale_x = $BlueBook.scale.x
 		var book_scale_y = $BlueBook.scale.y
 		

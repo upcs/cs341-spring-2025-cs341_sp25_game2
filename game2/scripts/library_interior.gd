@@ -1,6 +1,8 @@
 extends Node2D
 
-@onready var library_text = $CanvasLayer/LibraryText
+@onready var library_text_panel = $CanvasLayer/LibraryTextPanel
+@onready var library_text = $CanvasLayer/LibraryTextPanel/LibraryText
+
 var player
 
 
@@ -10,10 +12,10 @@ func _ready() -> void:
 	player = get_node("Wally")
 	player.position = Global.library_interior_spawn_position
 	
-	library_text.visible = true
-	library_text.modulate.a = 0.0
+	library_text_panel.visible = true
+	library_text_panel.modulate.a = 0.0
 	var tween = create_tween()
-	tween.tween_property(library_text, "modulate:a", 0.9, 1.0)
+	tween.tween_property(library_text_panel, "modulate:a", 0.9, 1.0)
 	
 	preload("res://scenes/campus.tscn")
 	

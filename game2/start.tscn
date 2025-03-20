@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bijjacehyf2fm"]
+[gd_scene load_steps=6 format=3 uid="uid://bijjacehyf2fm"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_gaapw"]
 [ext_resource type="Texture2D" uid="uid://d25w0mjqtlb0r" path="res://Tilepngs/bellTower.jpg" id="2_s1ivv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_ed01v"]
 [ext_resource type="Script" path="res://scripts/usernameInput.gd" id="4_n35t5"]
+[ext_resource type="PackedScene" uid="uid://ddkcuchf7m4kq" path="res://scenes/LoadingScreen.tscn" id="5_sae6w"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gaapw")
@@ -23,6 +24,7 @@ theme_override_font_sizes/normal_font_size = 50
 text = "WHERES WALLY?"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 offset_left = 515.0
 offset_top = 411.0
 offset_right = 630.0
@@ -56,5 +58,18 @@ offset_bottom = 543.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "Submit"
 
+[node name="LeaderboardButton" type="Button" parent="."]
+visible = false
+offset_left = 488.0
+offset_top = 480.0
+offset_right = 664.0
+offset_bottom = 544.0
+theme_override_fonts/font = ExtResource("3_ed01v")
+text = "LEADERBOARD"
+
+[node name="LoadingScreen" parent="." instance=ExtResource("5_sae6w")]
+visible = false
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
