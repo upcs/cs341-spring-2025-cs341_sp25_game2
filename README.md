@@ -19,7 +19,7 @@ The tile maps found in the artwork of the game have been put together from the o
 *stockcake.com is currently not a working site.
 
 ## BADGES
-Code coverage: ##% (estimated directly by the CS341Game2 team as regular test code badges are not implemented in Godot's testing framework yet).
+Code coverage: 28.5% (estimated directly by the CS341Game2 team as regular test code badges are not implemented in Godot's testing framework yet).
 
 ## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
