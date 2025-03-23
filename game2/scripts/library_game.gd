@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var spawn_point = $SpawnPoint
 @onready var stack_counter = $StackCounter
 @onready var game_message = $GameMessage
 @onready var spawn_timer = $SpawnTimer

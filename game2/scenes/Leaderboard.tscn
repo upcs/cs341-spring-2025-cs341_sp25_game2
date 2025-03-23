@@ -22,6 +22,7 @@ polygon = PackedVector2Array(49.3855, 16.1763, 296, 16, 296, 68, 49.3855, 68)
 
 [node name="Background" type="Panel" parent="."]
 show_behind_parent = true
+layout_mode = 0
 offset_left = -16.0
 offset_top = 88.0
 offset_right = 880.0
@@ -29,6 +30,7 @@ offset_bottom = 600.0
 theme = ExtResource("2_ncevq")
 
 [node name="LeaderboardLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 120.0
 offset_right = 357.0
@@ -36,6 +38,7 @@ offset_bottom = 419.0
 scale = Vector2(1.5, 1.5)
 
 [node name="ScoreLabelContent" type="Label" parent="."]
+layout_mode = 0
 offset_left = 656.0
 offset_top = 160.0
 offset_right = 744.0
@@ -43,6 +46,7 @@ offset_bottom = 191.0
 scale = Vector2(1.5, 1.5)
 
 [node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 536.0
 offset_top = 328.0
 offset_right = 696.0
@@ -52,6 +56,7 @@ theme = ExtResource("2_ncevq")
 text = "SUBMIT SCORE"
 
 [node name="UsernameLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 520.0
 offset_top = 232.0
 offset_right = 744.0
@@ -60,6 +65,7 @@ scale = Vector2(1.5, 1.5)
 text = "Username:"
 
 [node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 520.0
 offset_top = 160.0
 offset_right = 582.0
@@ -68,6 +74,7 @@ scale = Vector2(1.5, 1.5)
 text = "Score:"
 
 [node name="InfoLabel" type="Label" parent="."]
+layout_mode = 0
 offset_left = 512.0
 offset_top = 416.0
 offset_right = 742.0
@@ -76,6 +83,7 @@ scale = Vector2(1.2, 1.2)
 horizontal_alignment = 1
 
 [node name="LeaderboardTitle" type="Label" parent="."]
+layout_mode = 0
 offset_left = -72.0
 offset_top = -40.0
 offset_right = 144.0
@@ -87,6 +95,7 @@ vertical_alignment = 1
 uppercase = true
 
 [node name="BackButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 664.0
 offset_top = -24.0
 offset_right = 824.0
@@ -96,5 +105,5 @@ theme = ExtResource("2_ncevq")
 text = "Go Back"
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

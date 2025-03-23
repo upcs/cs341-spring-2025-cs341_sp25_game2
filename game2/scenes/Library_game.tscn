@@ -1,11 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://daqnmur45seel"]
+[gd_scene load_steps=5 format=3 uid="uid://daqnmur45seel"]
 
 [ext_resource type="Script" path="res://scripts/library_game.gd" id="1_n6113"]
 [ext_resource type="Texture2D" uid="uid://dacw58mbt1tkr" path="res://Tilepngs/library_game_background.png" id="2_1dmuo"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="2_7i751"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w1m0"]
-size = Vector2(586.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yec0o"]
 size = Vector2(640, 31.5)
@@ -42,9 +39,6 @@ scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("2_7i751")
 text = "RESTART"
 
-[node name="SpawnPoint" type="Node2D" parent="."]
-position = Vector2(512, 100)
-
 [node name="StackCounter" type="Label" parent="."]
 offset_left = 904.0
 offset_top = 16.0
@@ -69,22 +63,14 @@ scale = Vector2(2, 2)
 theme_override_fonts/normal_font = ExtResource("2_7i751")
 bbcode_enabled = true
 
-[node name="Ground" type="Area2D" parent="." groups=["ground"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(532, 544)
-shape = SubResource("RectangleShape2D_8w1m0")
-
-[node name="Polygon2D" type="Polygon2D" parent="Ground"]
-visible = false
-color = Color(0.325255, 0.245596, 0.168376, 1)
-polygon = PackedVector2Array(240, 536, 240, 576, 336, 576, 336, 792, 368, 792, 368, 576, 696, 576, 696, 792, 728, 792, 728, 576, 824, 576, 824, 536)
-
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["ground"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(568, 544)
 shape = SubResource("RectangleShape2D_yec0o")
+
+[node name="candle" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(336, 528, 360, 504, 352, 456, 368, 440, 384, 440, 400, 456, 400, 504, 408, 528)
 
 [node name="GameScore" type="Label" parent="."]
 offset_left = 912.0
@@ -95,14 +81,8 @@ scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("2_7i751")
 text = "SCORE: 0"
 
-[node name="Candle" type="StaticBody2D" parent="."]
-
-[node name="candle" type="CollisionPolygon2D" parent="Candle"]
-polygon = PackedVector2Array(336, 528, 360, 504, 352, 456, 368, 440, 384, 440, 400, 456, 400, 504, 408, 528)
-
-[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="RestartButton" to="." method="_on_restart_button_pressed"]
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
-[connection signal="body_entered" from="Ground" to="." method="_on_ground_body_entered"]
