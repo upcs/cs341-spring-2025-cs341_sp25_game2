@@ -19,7 +19,16 @@ The tile maps found in the artwork of the game have been put together from the o
 *stockcake.com is currently not a working site.
 
 ## BADGES
-Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular test code badges are not implemented in Godot's testing framework yet).
+Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code coverage estimation is not implemented in Godot's testing framework yet).
+
+### HOW WE ESTIMATED
+- Summed the total lines of code the team has written. This total excludes test code and code automatically written by the Godot system. (383 lines)
+- Summed the total lines of our own code that the test files called. (179 lines)
+- Divided the total code called by tests by the total lines of code we wrote.
+
+### CAVEATS
+- Scripts excluded from total lines of code sum: shiley.gd, scene.gd, josh_map_5+7.gd, bc_interior.gd, enemy.gd, and global.gd; this is because they are based on functions automatically written into Godot.
+- Need testing: inside_db.gd and start.gd
 
 ## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
