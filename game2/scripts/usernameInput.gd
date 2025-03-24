@@ -1,9 +1,9 @@
 extends LineEdit
 
 func _ready():
-	connect("gui_input", _on_gui_input)  # Corrected for Godot 4.x
+	connect("gui_input", _on_gui_input)
 
 func _on_gui_input(event):
-	if event is InputEventScreenTouch and event.pressed:  # Use ScreenTouch for mobile
-		grab_focus()  # Forces focus to trigger the keyboard
-		print("LineEdit tapped!")  # Debug to confirm it’s working
+	# use touchscreen for mobile
+	if event is InputEventScreenTouch and event.pressed:
+		grab_focus()

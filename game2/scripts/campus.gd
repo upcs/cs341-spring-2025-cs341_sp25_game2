@@ -13,6 +13,7 @@ var building
 func _ready() -> void:
 	# Get get spawn position from Global.gd. Done this way so changing scenes when leaving indoors
 	# puts you in the correct area
+	$Panel.visible = false
 	player =  get_node("Wally")
 	player.position = Global.spawn_position
 	scoreLabel = $Wally/Score
@@ -78,3 +79,13 @@ func _on_gui_input(event):
 		player.position = event.position
 		print("touched at" + event.position)
 # Forces focus to trigger the keyboard
+
+
+func _on_oak_pilot_house_body_entered(body: Node2D) -> void:
+	if body.has_method("takehit"):
+		$Panel.visible = true
+
+
+func _on_oak_pilot_house_body_exited(body: Node2D) -> void:
+	if body.has_method("takehit"):
+		$Panel.visible = false

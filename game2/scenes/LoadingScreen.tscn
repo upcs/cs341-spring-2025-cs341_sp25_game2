@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddkcuchf7m4kq"]
+
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_ijjrj"]
+
+[node name="LoadingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_ijjrj")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.39532, 0.170289, 0.663523, 1)
+polygon = PackedVector2Array(0, 0, 1128, 0, 1128, 712, 0, 712)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 624.0
+offset_right = 988.0
+offset_bottom = 656.0
+scale = Vector2(2, 2)
+text = "Loading..."

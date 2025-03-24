@@ -1,28 +1,39 @@
 [gd_scene load_steps=7 format=3 uid="uid://bnqpx1h3hlji4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p7jru"]
-[ext_resource type="Texture2D" uid="uid://ctah53sqxqvvw" path="res://animations/WallEIdle.png" id="2_lcv4n"]
+[ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="2_sq3cl"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a3o56"]
-atlas = ExtResource("2_lcv4n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_mra10"]
+atlas = ExtResource("2_sq3cl")
 region = Rect2(0, 0, 200, 200)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4anhp"]
-atlas = ExtResource("2_lcv4n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn7ot"]
+atlas = ExtResource("2_sq3cl")
 region = Rect2(200, 0, 200, 200)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rpjjj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a3o56")
+"texture": SubResource("AtlasTexture_mra10")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4anhp")
+"texture": SubResource("AtlasTexture_rn7ot")
 }],
 "loop": true,
-"name": &"default",
+"name": &"Idle",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mra10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn7ot")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkmin"]
@@ -32,8 +43,11 @@ size = Vector2(126, 207)
 script = ExtResource("1_p7jru")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -10.5)
+scale = Vector2(1, 1.105)
 sprite_frames = SubResource("SpriteFrames_rpjjj")
-autoplay = "default"
+animation = &"Walking"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -3.5)
