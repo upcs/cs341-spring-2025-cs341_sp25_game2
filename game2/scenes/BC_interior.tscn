@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=10 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
 [ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="2_0e5sr"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_koyeq"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="4_vjder"]
 
 [sub_resource type="GDScript" id="GDScript_2o2kd"]
 script/source = "extends Node2D
@@ -3039,9 +3040,30 @@ scale = Vector2(2, 2)
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="TextPanel" type="Panel" parent="."]
+theme = ExtResource("4_vjder")
 
-[node name="ExitLayer" type="RichTextLabel" parent="CanvasLayer"]
+[node name="BCTextbox" type="RichTextLabel" parent="TextPanel"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 608.0
+offset_right = 1112.0
+offset_bottom = 192.0
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("4_vjder")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/bold_font = ExtResource("4_koyeq")
+theme_override_font_sizes/normal_font_size = 20
+text = "Welcome to Buckley Center Auditorium! 
+This space is the home of many events, acitivites, and lectures. Follow the exit sign below to leave, or play a minigame!"
+
+[node name="Panel" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ExitLayer" type="RichTextLabel" parent="Panel"]
 offset_left = 952.0
 offset_top = 664.0
 offset_right = 1112.0
@@ -3050,30 +3072,5 @@ theme_override_colors/default_color = Color(0.941176, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("4_koyeq")
 theme_override_font_sizes/normal_font_size = 24
 text = "EXIT HERE!"
-
-[node name="BCTextbox" type="RichTextLabel" parent="CanvasLayer"]
-anchors_preset = -1
-anchor_left = 0.997
-anchor_top = -0.011
-anchor_right = 0.997
-anchor_bottom = -0.011
-offset_left = -495.631
-offset_top = 15.821
-offset_right = 8.3689
-offset_bottom = 207.821
-grow_vertical = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("4_koyeq")
-theme_override_font_sizes/normal_font_size = 20
-text = "Welcome to Buckley Center Auditorium! 
-This space is the home of many events, acitivites, and lectures. Follow the exit sign below to leave, or play a minigame!"
-
-[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/BCTextbox"]
-modulate = Color(0.552941, 0.239216, 0.0470588, 0.709804)
-show_behind_parent = true
-position = Vector2(-8, -8)
-polygon = PackedVector2Array(-16, 0, -16, 160, 504, 160, 504, 0)
 
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
