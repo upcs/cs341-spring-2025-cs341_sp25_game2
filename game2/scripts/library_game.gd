@@ -17,6 +17,7 @@ var multiplier = 4
 
 func _ready():
 	#preload("res://scenes/Library_interior.tscn")
+		
 	back_button.disabled = true
 	restart_button.disabled = true
 	_spawn_book()

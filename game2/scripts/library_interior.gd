@@ -12,7 +12,14 @@ var tween = create_tween()
 func _ready() -> void:
 	# Set spawn position
 	player = get_node("Wally")
-	player.position = Global.library_interior_spawn_position
+	
+	# PROCEDURE FOR PAUSE: 
+	# Basically copy the code below but for your scene
+	if Global.spawn_scene == "res://scenes/Library_interior.tscn":
+		player.position = Global.pause_position
+		Global.spawn_scene = ""
+	else:
+		player.position = Global.library_interior_spawn_position
 	
 	library_text_panel.modulate.a = 0.0
 	tween.tween_property(library_text_panel, "modulate:a", 0.9, 1.0)

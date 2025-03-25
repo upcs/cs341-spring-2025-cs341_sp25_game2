@@ -18,7 +18,14 @@ func _ready() -> void:
 	# puts you in the correct area
 	$Panel.visible = false
 	player =  get_node("Wally")
-	player.position = Global.spawn_position
+	
+	# Set player position
+	if Global.spawn_scene == "res://scenes/campus.tscn":
+		player.position = Global.pause_position
+		Global.spawn_scene = ""
+	else:
+		player.position = Global.spawn_position
+	
 	scoreLabel = $Wally/Score
 	label = $Wally/Objective
 	timer = $ClassTimer

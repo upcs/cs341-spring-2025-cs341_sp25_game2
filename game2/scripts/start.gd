@@ -10,7 +10,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#load('res://scenes/campus.tscn')
 	
 	if Global.username == "":
 		start_button.disabled = true
@@ -28,7 +27,10 @@ func _ready() -> void:
 func _on_button_pressed() -> void:
 	loading_screen.visible = true
 	await get_tree().create_timer(0.1).timeout
-	get_tree().change_scene_to_file("res://scenes/campus.tscn")
+	if Global.spawn_scene != "":
+		get_tree().change_scene_to_file(Global.spawn_scene)
+	else:
+		get_tree().change_scene_to_file("res://scenes/campus.tscn")
 
 func _on_submit_button_pressed() -> void:
 	var input_text = username_input.text.strip_edges()  # Remove leading/trailing whitespace
