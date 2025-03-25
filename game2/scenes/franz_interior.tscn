@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d2trnp7wlkquw"]
+[gd_scene load_steps=9 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
@@ -17,9 +17,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+	
 
-
-func _on_bc_exit_body_entered(body: Node2D) -> void:
+func _on_franz_exit_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
 	print(\"Body entered:\", body.name)  # Print the name of the body entering the area
 	if body.is_in_group(\"Player\"):
 		print(\"Player entered. Changing spawn and changing scene...\")
@@ -3013,7 +3014,7 @@ sources/0 = SubResource("TileSetAtlasSource_w531a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0twm"]
 size = Vector2(22.25, 213.25)
 
-[node name="BcInterior" type="Node2D"]
+[node name="FranzInterior" type="Node2D"]
 script = SubResource("GDScript_2o2kd")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -3025,9 +3026,9 @@ texture = ExtResource("1_4n1de")
 [node name="place_holder" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_po80d")
 
-[node name="BC_exit" type="Area2D" parent="."]
+[node name="Franz_exit" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BC_exit"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Franz_exit"]
 position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
 
@@ -3094,4 +3095,4 @@ position = Vector2(-8, -8)
 scale = Vector2(1, 1.5)
 polygon = PackedVector2Array(-16, 0, -16, 160, 504, 160, 504, 0)
 
-[connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
+[connection signal="body_entered" from="Franz_exit" to="." method="_on_franz_exit_body_entered"]

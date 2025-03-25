@@ -72,9 +72,9 @@ func _on_bc_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_
 	if body.is_in_group("Player"):
 		get_tree().change_scene_to_file("res://scenes/BC_interior.tscn")
 
-func _on_franz_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("Player"):
-		get_tree().change_scene_to_file("res://scenes/franz_interior.tscn")
+#func _on_franz_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	#if body.is_in_group("Player"):
+		#get_tree().change_scene_to_file("res://scenes/franz_interior.tscn")
 		
 # Touchscreen controls
 func _on_gui_input(event):
@@ -92,3 +92,8 @@ func _on_oak_pilot_house_body_entered(body: Node2D) -> void:
 func _on_oak_pilot_house_body_exited(body: Node2D) -> void:
 	if body.has_method("takehit"):
 		$Panel.visible = false
+
+
+func _on_franz_entrance_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Player"):
+		get_tree().change_scene_to_file("res://scenes/franz_interior.tscn")

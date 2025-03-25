@@ -6612,6 +6612,6 @@ text = "Hi! I am the Pilot Oak of University of Portland! I am estimated to be 3
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]
 [connection signal="body_exited" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_exited"]
 [connection signal="timeout" from="ClassTimer" to="." method="_on_class_timer_timeout"]
-[connection signal="body_entered" from="franz_entrance" to="." method="_on_db_body_entered"]
+[connection signal="body_entered" from="franz_entrance" to="." method="_on_franz_entrance_body_entered"]
 [connection signal="body_shape_entered" from="Library_entrance" to="." method="_on_library_entrance_body_shape_entered"]
 [connection signal="body_shape_entered" from="BC_entrance" to="." method="_on_bc_entrance_body_shape_entered"]
