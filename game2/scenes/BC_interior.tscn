@@ -1,44 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
+[ext_resource type="Script" path="res://scripts/BC_interior.gd" id="1_75syo"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
 [ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="2_0e5sr"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_koyeq"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="4_vjder"]
-
-[sub_resource type="GDScript" id="GDScript_2o2kd"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func _on_bc_exit_body_entered(body: Node2D) -> void:
-	print(\"Body entered:\", body.name)  # Print the name of the body entering the area
-	if body.is_in_group(\"Player\"):
-		print(\"Player entered. Changing spawn and changing scene...\")
-		#Global.spawn_position = Vector2(2400, 940)
-		get_tree().change_scene_to_file(\"res://scenes/campus.tscn\")
-	else:
-		print(\"This body is not in the Player group\")
-
-
-func _on_minigame_entrance_body_entered(body: Node2D) -> void:
-	print(\"Body entered:\", body.name)  # Print the name of the body entering the area
-	if body.is_in_group(\"Player\"):
-		print(\"Player entered. Changing spawn and changing scene...\")
-		#Global.spawn_position = Vector2(2400, 940)
-		get_tree().change_scene_to_file(\"res://scenes/BC_maze_minigame.tscn\")
-	else:
-		print(\"This body is not in the Player group\")
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
 texture = ExtResource("1_33pql")
@@ -3028,7 +2995,7 @@ size = Vector2(22.25, 213.25)
 size = Vector2(33, 217)
 
 [node name="BcInterior" type="Node2D"]
-script = SubResource("GDScript_2o2kd")
+script = ExtResource("1_75syo")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1120.0
