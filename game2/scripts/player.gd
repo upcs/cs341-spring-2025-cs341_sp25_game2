@@ -2,16 +2,23 @@ extends CharacterBody2D
 
 class_name Player
 
+@onready var pause_menu = $CanvasLayer/PauseMenu
+@onready var pause_button = $CanvasLayer/PauseButton
+
 var sprite
 var target_position = Vector2.ZERO
 var is_moving_to_target = false
+var is_paused = false
 
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
 	add_to_group("Player")
 	target_position = global_position
 
-func _input(event):
+func _unhandled_input(event):
+	if is_paused:
+		return
+	
 	if event is InputEventMouseButton and event.pressed:
 		# convert screen coordinates to world coordinates
 		var camera = get_viewport().get_camera_2d()
@@ -22,7 +29,11 @@ func _input(event):
 		is_moving_to_target = true
 		print("Tapped at (world): ", target_position)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
+	
+	if is_paused:
+		return
+	
 	var direction = Vector2.ZERO
 	
 	# keyboard controls
@@ -60,3 +71,18 @@ func _physics_process(delta: float) -> void:
 
 func takehit():
 	return "hit taken"
+
+
+func _on_pause_button_pressed() -> void:
+	is_paused = true
+	target_position = global_position
+	is_moving_to_target = false
+	pause_menu.visible = true
+	pause_button.visible = false
+
+
+func remove_pause_menu() -> void:
+	is_paused = false
+	pause_menu.visible = false
+	pause_button.visible = true
+	

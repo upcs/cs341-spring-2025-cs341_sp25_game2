@@ -11,6 +11,9 @@ var player
 var building
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# preload so we only have to load it once
+	preload("res://scenes/campus.tscn")
+	
 	# Get get spawn position from Global.gd. Done this way so changing scenes when leaving indoors
 	# puts you in the correct area
 	$Panel.visible = false
@@ -39,11 +42,11 @@ func _process(delta: float) -> void:
 		scoreLabel.text = "Score: " + str(Global.score)
 		class_on_time = false
 		player.position = Global.spawn_position
-	elif (out_of_time):
-		out_of_time = false
-		label.text = "You did not make it to class on time :("
-	else:
-		label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
+	#elif (out_of_time):
+		#out_of_time = false
+		#label.text = "You did not make it to class on time :("
+	#else:
+		#label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
 	
 
 func _on_db_body_entered(body: Node2D) -> void:

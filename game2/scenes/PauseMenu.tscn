@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://gw5c6eponige"]
+
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_58vhg"]
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_0j8cm"]
+
+[node name="PauseMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_58vhg")
+script = ExtResource("2_0j8cm")
+
+[node name="Background" type="Polygon2D" parent="."]
+color = Color(0.0941176, 0.0941176, 0.0941176, 0.882353)
+polygon = PackedVector2Array(-1, -6, 0, 712, 1128, 712, 1128, -8)
+
+[node name="ResumeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 272.0
+offset_right = 768.0
+offset_bottom = 328.0
+text = "BACK TO GAME"
+
+[node name="Polygon2D" type="Polygon2D" parent="ResumeButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 360.0
+offset_right = 768.0
+offset_bottom = 416.0
+text = "QUIT TO TITLE"
+
+[node name="Polygon2D" type="Polygon2D" parent="QuitButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+polygon = PackedVector2Array(0, 0, 408, 0, 408, 56, 0, 56)
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

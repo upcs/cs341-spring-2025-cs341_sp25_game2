@@ -30,7 +30,7 @@ offset_top = 411.0
 offset_right = 630.0
 offset_bottom = 472.0
 theme_override_fonts/font = ExtResource("3_ed01v")
-text = "Start!"
+text = "START"
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 434.0

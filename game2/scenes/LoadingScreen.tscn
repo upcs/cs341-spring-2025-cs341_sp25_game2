@@ -8,7 +8,7 @@ anchors_preset = 0
 theme = ExtResource("1_ijjrj")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
-color = Color(0.39532, 0.170289, 0.663523, 1)
+color = Color(0.117647, 0.0862745, 0.337255, 1)
 polygon = PackedVector2Array(0, 0, 1128, 0, 1128, 712, 0, 712)
 
 [node name="Label" type="Label" parent="."]

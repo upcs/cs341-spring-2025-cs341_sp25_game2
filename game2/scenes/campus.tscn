@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="13_ejgb7"]
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="14_es7mx"]
-[ext_resource type="PackedScene" path="res://scenes/objective.tscn" id="15_mlqc4"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="16_ls3dj"]
+[ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="15_mlqc4"]
+[ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 
@@ -6541,12 +6541,10 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 3
 
 [node name="Arrow" type="Sprite2D" parent="Wally"]
+visible = false
 position = Vector2(210, 19.9999)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_es7mx")
-
-[node name="Camera2D" type="Camera2D" parent="Wally"]
-scale = Vector2(0.1, 0.1)
 
 [node name="Objective" parent="Wally" instance=ExtResource("15_mlqc4")]
 offset_left = -1124.0
@@ -6555,10 +6553,10 @@ offset_right = -164.0
 offset_bottom = -482.0
 
 [node name="Score" parent="Wally" instance=ExtResource("16_ls3dj")]
-offset_left = 304.0
-offset_top = -708.0
-offset_right = 1122.0
-offset_bottom = -618.0
+offset_left = 584.0
+offset_top = -668.0
+offset_right = 1402.0
+offset_bottom = -578.0
 
 [node name="All-Around Bounds" type="StaticBody2D" parent="."]
 
