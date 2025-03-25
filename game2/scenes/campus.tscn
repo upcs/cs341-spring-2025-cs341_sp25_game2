@@ -6441,7 +6441,7 @@ radius = 14.3178
 size = Vector2(12, 123.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et522"]
-size = Vector2(224, 24)
+size = Vector2(224, 52)
 
 [node name="Campus" type="Node2D"]
 script = ExtResource("1_1siug")
@@ -6585,7 +6585,7 @@ shape = SubResource("RectangleShape2D_1dbh7")
 [node name="BC_entrance" type="Area2D" parent="."]
 
 [node name="BC_square" type="CollisionShape2D" parent="BC_entrance"]
-position = Vector2(1600, 48)
+position = Vector2(1600, 96)
 shape = SubResource("RectangleShape2D_et522")
 
 [node name="BC_marker" type="Marker2D" parent="BC_entrance"]

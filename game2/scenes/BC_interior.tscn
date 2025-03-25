@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=11 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
@@ -26,6 +26,16 @@ func _on_bc_exit_body_entered(body: Node2D) -> void:
 		print(\"Player entered. Changing spawn and changing scene...\")
 		#Global.spawn_position = Vector2(2400, 940)
 		get_tree().change_scene_to_file(\"res://scenes/campus.tscn\")
+	else:
+		print(\"This body is not in the Player group\")
+
+
+func _on_minigame_entrance_body_entered(body: Node2D) -> void:
+	print(\"Body entered:\", body.name)  # Print the name of the body entering the area
+	if body.is_in_group(\"Player\"):
+		print(\"Player entered. Changing spawn and changing scene...\")
+		#Global.spawn_position = Vector2(2400, 940)
+		get_tree().change_scene_to_file(\"res://scenes/BC_maze_minigame.tscn\")
 	else:
 		print(\"This body is not in the Player group\")
 "
@@ -3014,6 +3024,9 @@ sources/0 = SubResource("TileSetAtlasSource_w531a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0twm"]
 size = Vector2(22.25, 213.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u4sxf"]
+size = Vector2(33, 217)
+
 [node name="BcInterior" type="Node2D"]
 script = SubResource("GDScript_2o2kd")
 
@@ -3076,4 +3089,22 @@ theme_override_fonts/normal_font = ExtResource("4_koyeq")
 theme_override_font_sizes/normal_font_size = 24
 text = "EXIT HERE!"
 
+[node name="MazeMinigame" type="RichTextLabel" parent="Panel"]
+offset_left = 16.0
+offset_top = 624.0
+offset_right = 352.0
+offset_bottom = 760.0
+theme_override_colors/default_color = Color(0.623529, 0.133333, 0.890196, 1)
+theme_override_fonts/normal_font = ExtResource("4_koyeq")
+theme_override_font_sizes/normal_font_size = 24
+text = "Move over here to play a minigame!"
+
+[node name="Minigame_entrance" type="Area2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame_entrance"]
+position = Vector2(15.5, 604.5)
+shape = SubResource("RectangleShape2D_u4sxf")
+
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
+[connection signal="body_entered" from="Minigame_entrance" to="." method="_on_minigame_entrance_body_entered"]
