@@ -19,7 +19,7 @@ The tile maps found in the artwork of the game have been put together from the o
 *stockcake.com is currently not a working site.
 
 ## BADGES
-Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code coverage estimation is not implemented in Godot's testing framework yet).
+Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code coverage estimation is not implemented in Godot's testing framework yet and we are not using json).
 
 ### HOW WE ESTIMATED
 - Summed the total lines of code the team has written. This total excludes test code and code automatically written by the Godot system. (383 lines)
