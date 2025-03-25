@@ -3041,14 +3041,19 @@ scale = Vector2(2, 2)
 polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
 
 [node name="TextPanel" type="Panel" parent="."]
+offset_left = 576.0
+offset_right = 1120.0
+offset_bottom = 176.0
 theme = ExtResource("4_vjder")
 
 [node name="BCTextbox" type="RichTextLabel" parent="TextPanel"]
+top_level = true
 layout_mode = 1
 anchors_preset = -1
-offset_left = 608.0
-offset_right = 1112.0
-offset_bottom = 192.0
+offset_left = 600.0
+offset_top = 16.0
+offset_right = 1104.0
+offset_bottom = 208.0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -3059,9 +3064,7 @@ theme_override_font_sizes/normal_font_size = 20
 text = "Welcome to Buckley Center Auditorium! 
 This space is the home of many events, acitivites, and lectures. Follow the exit sign below to leave, or play a minigame!"
 
-[node name="Panel" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Panel" type="CanvasLayer" parent="."]
 
 [node name="ExitLayer" type="RichTextLabel" parent="Panel"]
 offset_left = 952.0
