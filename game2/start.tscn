@@ -25,12 +25,18 @@ text = "WHERES WALLY?"
 
 [node name="Button" type="Button" parent="."]
 visible = false
-offset_left = 515.0
+offset_left = 520.0
 offset_top = 411.0
-offset_right = 630.0
+offset_right = 635.0
 offset_bottom = 472.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "START"
+
+[node name="Polygon2D" type="Polygon2D" parent="Button"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.281863, 1.14286)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 53.375, 0, 53.375)
 
 [node name="LineEdit" type="LineEdit" parent="."]
 offset_left = 434.0
@@ -58,6 +64,12 @@ offset_bottom = 543.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "Submit"
 
+[node name="Polygon2D" type="Polygon2D" parent="SubmitButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.409314, 1.08929)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
 [node name="LeaderboardButton" type="Button" parent="."]
 visible = false
 offset_left = 488.0
@@ -66,6 +78,12 @@ offset_right = 664.0
 offset_bottom = 544.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "LEADERBOARD"
+
+[node name="Polygon2D" type="Polygon2D" parent="LeaderboardButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.431373, 1.14286)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="LoadingScreen" parent="." instance=ExtResource("5_sae6w")]
 visible = false

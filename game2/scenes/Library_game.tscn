@@ -28,6 +28,12 @@ scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("2_7i751")
 text = "GO BACK"
 
+[node name="Polygon2D" type="Polygon2D" parent="BackButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
 [node name="RestartButton" type="Button" parent="."]
 visible = false
 top_level = true
@@ -38,6 +44,12 @@ offset_bottom = 365.0
 scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("2_7i751")
 text = "RESTART"
+
+[node name="Polygon2D" type="Polygon2D" parent="RestartButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.448893, 0.662308)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="StackCounter" type="Label" parent="."]
 offset_left = 904.0

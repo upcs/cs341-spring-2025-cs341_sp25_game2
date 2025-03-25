@@ -13,7 +13,7 @@ var stacked_books = 0
 const WIN_COUNT = 10
 var game_active = false
 var game_lost = false
-var multiplier = 10
+var multiplier = 4
 
 func _ready():
 	#preload("res://scenes/Library_interior.tscn")

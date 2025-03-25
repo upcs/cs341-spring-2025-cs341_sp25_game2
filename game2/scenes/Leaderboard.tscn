@@ -55,6 +55,12 @@ scale = Vector2(1.5, 1.5)
 theme = ExtResource("2_ncevq")
 text = "SUBMIT SCORE"
 
+[node name="Polygon2D" type="Polygon2D" parent="SubmitButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.392157, 0.714286)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
 [node name="UsernameLabel" type="Label" parent="."]
 layout_mode = 0
 offset_left = 520.0
@@ -102,7 +108,7 @@ offset_right = 824.0
 offset_bottom = 16.0
 scale = Vector2(1.5, 1.5)
 theme = ExtResource("2_ncevq")
-text = "Go Back"
+text = "GO BACK"
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
