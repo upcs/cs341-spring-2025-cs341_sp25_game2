@@ -1,34 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
+[ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="3_2o8fo"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_yjd2d"]
-
-[sub_resource type="GDScript" id="GDScript_2o2kd"]
-script/source = "extends Node2D
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
-
-func _on_franz_exit_body_entered(body: Node2D) -> void:
-	pass # Replace with function body.
-	print(\"Body entered:\", body.name)  # Print the name of the body entering the area
-	if body.is_in_group(\"Player\"):
-		print(\"Player entered. Changing spawn and changing scene...\")
-		#Global.spawn_position = Vector2(2400, 940)
-		get_tree().change_scene_to_file(\"res://scenes/campus.tscn\")
-	else:
-		print(\"This body is not in the Player group\")
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
 texture = ExtResource("2_rybls")
@@ -3015,7 +2991,7 @@ sources/0 = SubResource("TileSetAtlasSource_w531a")
 size = Vector2(22.25, 213.25)
 
 [node name="FranzInterior" type="Node2D"]
-script = SubResource("GDScript_2o2kd")
+script = ExtResource("1_lgwf3")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 4667.0
