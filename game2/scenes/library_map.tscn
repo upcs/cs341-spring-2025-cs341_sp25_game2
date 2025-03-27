@@ -58937,6 +58937,7 @@ tile_map_data = PackedByteArray("AAD8/ycAAQA7ACoAAAD9/ycAAQA7ACoAAAD+/ycAAQA7ACo
 tile_set = SubResource("TileSet_fss6s")
 
 [node name="bounds" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="Building" type="CollisionPolygon2D" parent="bounds"]
 polygon = PackedVector2Array(-1151, 95, 195, 91, 196, 154, -220, 147, -221, 319, -195, 322, -193, 351, 184, 357, 208, 648, 608, 648, 624, 664, 200, 672, 184, 960, 392, 960, 392, 1672, 376, 1952, -664, 1960, -672, 1280, -1024, 1280, -1032, 352)

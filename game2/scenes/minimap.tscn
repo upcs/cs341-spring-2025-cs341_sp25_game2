@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://du14ganj5bntr"]
+
+[ext_resource type="Texture2D" uid="uid://dx6fbi43m1ldm" path="res://map.png" id="1_sfffr"]
+[ext_resource type="Script" path="res://scripts/minimapwally.gd" id="2_6mfb7"]
+[ext_resource type="Texture2D" uid="uid://otpxkx0km57e" path="res://text_box.png" id="3_n5iuj"]
+
+[node name="Minimap" type="Node2D"]
+
+[node name="Map" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("1_sfffr")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_6mfb7")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_n5iuj")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(0.1, 0.1)

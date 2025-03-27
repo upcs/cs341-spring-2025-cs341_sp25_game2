@@ -58,7 +58,16 @@ func _physics_process(_delta: float) -> void:
 			direction = Vector2.ZERO
 	
 	# apply movement
-	if direction != Vector2.ZERO:
+	
+	if direction != Vector2.ZERO and velocity.x > 0:
+		sprite.play("Right")
+		direction = direction.normalized()
+		velocity = direction * speed
+	elif direction != Vector2.ZERO and velocity.x < 0:
+		sprite.play("Left")
+		direction = direction.normalized()
+		velocity = direction * speed
+	elif direction != Vector2.ZERO and velocity.x == 0:
 		sprite.play("Walking")
 		direction = direction.normalized()
 		velocity = direction * speed

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqq67n6rwsbr6"
-path="res://.godot/imported/pixel-art-frames-retro-8-260nw-2302164699.webp-3f8a0efb1c91e37f19a34f49e485c422.ctex"
+uid="uid://otpxkx0km57e"
+path="res://.godot/imported/text_box.png-2b0edc92862ac1ec8ec987cce024e3b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://pixel-art-frames-retro-8-260nw-2302164699.webp"
-dest_files=["res://.godot/imported/pixel-art-frames-retro-8-260nw-2302164699.webp-3f8a0efb1c91e37f19a34f49e485c422.ctex"]
+source_file="res://text_box.png"
+dest_files=["res://.godot/imported/text_box.png-2b0edc92862ac1ec8ec987cce024e3b3.ctex"]
 
 [params]
 

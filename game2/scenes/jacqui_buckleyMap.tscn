@@ -5082,6 +5082,7 @@ tile_map_data = PackedByteArray("AAAgAB8ABAADAAQAAAAkAB8ABAADAAQAAAApAB8ABAADAAQ
 tile_set = SubResource("TileSet_cgff3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(143, 784, 123, 788, 103, 816, 99, 844, 96, 845, 96, 864, 97, 947, 97, 958, 192, 959, 196, 928, 197, 864, 192, 864, 192, 846, 190, 825, 179, 798, 164, 787)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://57fhmq7uy12n"
-path="res://.godot/imported/simple-game-ui-button-chat-box-pixel-art-cute-colorful-vibrant-style-purple-background_171508-3468.jpg-528e06ac2206adf738b644864caf75dd.ctex"
+uid="uid://3mwxhuxn38wn"
+path="res://.godot/imported/WallyLeft.png-6a8a46772ffaaf57a46b3f41f0e25071.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://simple-game-ui-button-chat-box-pixel-art-cute-colorful-vibrant-style-purple-background_171508-3468.jpg"
-dest_files=["res://.godot/imported/simple-game-ui-button-chat-box-pixel-art-cute-colorful-vibrant-style-purple-background_171508-3468.jpg-528e06ac2206adf738b644864caf75dd.ctex"]
+source_file="res://animations/WallyLeft.png"
+dest_files=["res://.godot/imported/WallyLeft.png-6a8a46772ffaaf57a46b3f41f0e25071.ctex"]
 
 [params]
 
