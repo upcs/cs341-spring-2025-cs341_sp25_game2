@@ -3146,17 +3146,17 @@ position = Vector2(1, 0)
 position = Vector2(15.5, 604.5)
 shape = SubResource("RectangleShape2D_u4sxf")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="NewWally" type="CharacterBody2D" parent="."]
 script = ExtResource("6_d32n8")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NewWally"]
 position = Vector2(576, 584)
 scale = Vector2(1, 1.105)
 sprite_frames = SubResource("SpriteFrames_8qnwa")
 animation = &"Right"
 autoplay = "Idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewWally"]
 position = Vector2(576, 600)
 shape = SubResource("RectangleShape2D_r7yuf")
 
