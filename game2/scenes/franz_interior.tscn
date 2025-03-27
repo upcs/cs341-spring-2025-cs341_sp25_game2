@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
-[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="3_2o8fo"]
+[ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="3_r3ych"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_yjd2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
@@ -2993,6 +2993,10 @@ size = Vector2(22.25, 213.25)
 [node name="FranzInterior" type="Node2D"]
 script = ExtResource("1_lgwf3")
 
+[node name="Node2D2" parent="." instance=ExtResource("3_r3ych")]
+top_level = true
+position = Vector2(968, 488)
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 4667.0
 offset_bottom = 2970.0
@@ -3007,9 +3011,6 @@ tile_set = SubResource("TileSet_po80d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Franz_exit"]
 position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_2o8fo")]
-position = Vector2(544, 592)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
