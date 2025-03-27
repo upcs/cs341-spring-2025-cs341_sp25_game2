@@ -6471,7 +6471,6 @@ tile_map_data = PackedByteArray("AAAzAAoAAAAGAAoAAAAzAAsAAAAGAAsAAAAzAAwAAAAGAAw
 tile_set = SubResource("TileSet_f4o44")
 
 [node name="DB" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DB"]
 position = Vector2(657, 246.25)
@@ -6481,20 +6480,17 @@ shape = SubResource("RectangleShape2D_6427h")
 position = Vector2(656, 239)
 
 [node name="Oak_PilotHouse" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Oak_PilotHouse"]
 position = Vector2(769, 461)
 shape = SubResource("CircleShape2D_kxyaa")
 
 [node name="DB2" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DB2"]
 polygon = PackedVector2Array(92, 2, 98, 269, 604, 272, 604, 233, 697, 224, 733, 191, 733, 2)
 
 [node name="PHouse2" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PHouse2"]
 polygon = PackedVector2Array(2, 479, 2, 599, 35, 641, 580, 632, 613, 596, 604, 476)
@@ -6504,7 +6500,6 @@ position = Vector2(770, 567)
 shape = SubResource("CircleShape2D_1e4e1")
 
 [node name="Boundary" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundary"]
 polygon = PackedVector2Array(65, 5, 101, 272, 8, 272, 2, 608, 566, 670, 1007, 684, 988, 707, -94, 665, -67, -49, 1104, -48, 1096, 0, 833, -2, 992, 0, 991, 193, 827, 191, 732, 190)
@@ -6541,7 +6536,6 @@ scale = Vector2(0.5, 0.5)
 collision_layer = 3
 
 [node name="Arrow" type="Sprite2D" parent="Wally"]
-visible = false
 position = Vector2(210, 19.9999)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("14_es7mx")
@@ -6559,7 +6553,6 @@ offset_right = 1402.0
 offset_bottom = -578.0
 
 [node name="All-Around Bounds" type="StaticBody2D" parent="."]
-visible = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="All-Around Bounds"]
 polygon = PackedVector2Array(2688, -584, 3008, -2416, 4576, -2432, 4568, 264, 4954, 292, 5152, 912, 4672, 912, 4680, 2048, 3928, 2464, 3192, 2416, 960, 2136, 1000, 704, -96, 680, -72, -64, 1096, -40, 1096, -168, -248, -152, -288, 920, 832, 912, 696, 2400, 4776, 2672, 5304, 2072, 5045, -111, 5025, -2621, 2828, -2530)
@@ -6582,7 +6575,6 @@ shape = SubResource("RectangleShape2D_1dbh7")
 [node name="Library_marker" type="Marker2D" parent="Library_entrance"]
 
 [node name="BC_entrance" type="Area2D" parent="."]
-visible = false
 
 [node name="BC_square" type="CollisionShape2D" parent="BC_entrance"]
 position = Vector2(1600, 96)

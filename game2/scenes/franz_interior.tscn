@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
-[ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="3_r3ych"]
+[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="3_2o8fo"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_yjd2d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
@@ -3008,9 +3008,8 @@ tile_set = SubResource("TileSet_po80d")
 position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
 
-[node name="Wally" parent="." instance=ExtResource("3_r3ych")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_2o8fo")]
 position = Vector2(544, 592)
-scale = Vector2(2, 2)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -3060,8 +3059,9 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("4_yjd2d")
 theme_override_font_sizes/normal_font_size = 20
 text = "Welcome to Franz Center! 
-This is a central bulding on campus where most Business and Core classes are taught. This is where hopes and dreams go to die and where depression and anxiety reign supreme
+This is a central bulding on campus where most Business and Core classes are taught. The building was completed in 1995 and has fostered innovation and collaboration every since. 
 "
+tab_size = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/BCTextbox"]
