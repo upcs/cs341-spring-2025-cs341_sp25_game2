@@ -10,7 +10,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-func _on_minigame_body_entered(body: Node2D) -> void:
+func _on_minigame_entrance_body_entered(body: Node2D) -> void:
 	print("Body entered:", body.name)  # Print the name of the body entering the area
 	if body.is_in_group("Player"):
 		print("Player entered. Changing spawn and changing scene...")

@@ -28,7 +28,6 @@ func _ready():
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("Button").pressed.connect(new_game)
 	new_game() 
-	
 
 func new_game():
 	score = 0

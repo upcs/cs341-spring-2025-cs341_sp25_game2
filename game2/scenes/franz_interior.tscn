@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bf4veea5aqqyo"]
+[gd_scene load_steps=10 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
@@ -2990,6 +2990,9 @@ sources/0 = SubResource("TileSetAtlasSource_w531a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0twm"]
 size = Vector2(22.25, 213.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amm34"]
+size = Vector2(33, 217)
+
 [node name="FranzInterior" type="Node2D"]
 script = ExtResource("1_lgwf3")
 
@@ -3012,9 +3015,12 @@ tile_set = SubResource("TileSet_po80d")
 position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Franz_exit"]
-position = Vector2(8, 602)
-shape = SubResource("RectangleShape2D_n0twm")
+[node name="Minigame_entrance" type="Area2D" parent="."]
+position = Vector2(1, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame_entrance"]
+position = Vector2(15.5, 604.5)
+shape = SubResource("RectangleShape2D_amm34")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -3077,3 +3083,4 @@ scale = Vector2(1, 1.5)
 polygon = PackedVector2Array(-16, 0, -16, 160, 504, 160, 504, 0)
 
 [connection signal="body_entered" from="Franz_exit" to="." method="_on_franz_exit_body_entered"]
+[connection signal="body_entered" from="Minigame_entrance" to="." method="_on_minigame_entrance_body_entered"]
