@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ni3mdmenhd0u" path="res://Tilepngs/chair.png" id="1_pdquv"]
 
 [node name="chair" type="Area2D"]
+scale = Vector2(0.25, 0.25)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

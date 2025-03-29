@@ -5,12 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="3_w0r4t"]
 [ext_resource type="Texture2D" uid="uid://belquhqdmrc6y" path="res://animations/WallyRight.png" id="4_fylu6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wi12"]
-size = Vector2(128, 180)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qnhy"]
-size = Vector2(130, 114)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_mra10"]
 atlas = ExtResource("2_xaevr")
 region = Rect2(0, 0, 200, 200)
@@ -46,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
-"speed": 2.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -82,21 +76,28 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wi12"]
+size = Vector2(128, 197)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qnhy"]
+size = Vector2(130, 114)
+
 [node name="Pilot" type="CharacterBody2D"]
 z_index = 1
+scale = Vector2(8, 8)
 script = ExtResource("1_1uxml")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1, 1.105)
+sprite_frames = SubResource("SpriteFrames_cgkui")
+animation = &"Walking"
+autoplay = "Idle"
+
 [node name="PilotRun" type="CollisionShape2D" parent="."]
-position = Vector2(105, 14)
+position = Vector2(5, 5.5)
 shape = SubResource("RectangleShape2D_8wi12")
 
 [node name="PilotDuck" type="CollisionShape2D" parent="."]
-position = Vector2(103, 47)
+position = Vector2(3, 47)
 shape = SubResource("RectangleShape2D_6qnhy")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(104, 0)
-scale = Vector2(1, 1.105)
-sprite_frames = SubResource("SpriteFrames_cgkui")
-animation = &"Right"
-autoplay = "Idle"

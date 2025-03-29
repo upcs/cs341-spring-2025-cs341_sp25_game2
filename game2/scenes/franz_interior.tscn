@@ -3012,6 +3012,10 @@ tile_set = SubResource("TileSet_po80d")
 position = Vector2(1107.12, 602.625)
 shape = SubResource("RectangleShape2D_n0twm")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Franz_exit"]
+position = Vector2(8, 602)
+shape = SubResource("RectangleShape2D_n0twm")
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
