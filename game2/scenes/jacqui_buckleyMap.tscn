@@ -5033,14 +5033,14 @@ texture_region_size = Vector2i(32, 32)
 3:12/0 = 0
 4:9/size_in_atlas = Vector2i(3, 4)
 4:9/0 = 0
-3:4/size_in_atlas = Vector2i(3, 5)
-3:4/0 = 0
 6:4/size_in_atlas = Vector2i(3, 5)
 6:4/0 = 0
 9:6/size_in_atlas = Vector2i(2, 3)
 9:6/0 = 0
 11:0/size_in_atlas = Vector2i(2, 2)
 11:0/0 = 0
+3:4/size_in_atlas = Vector2i(3, 5)
+3:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_cgff3"]
 tile_size = Vector2i(32, 32)
@@ -5067,6 +5067,9 @@ radius = 24.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_l2bum"]
 radius = 24.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_0xk8k"]
+radius = 24.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_oqbjq"]
 radius = 48.6621
 
@@ -5090,9 +5093,6 @@ radius = 16.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggc4d"]
 size = Vector2(56, 44)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_0xk8k"]
-radius = 40.7922
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0ohw"]
 size = Vector2(192, 19)
@@ -5123,16 +5123,11 @@ tile_set = SubResource("TileSet_cgff3")
 
 [node name="otherGardens" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAJAA4ABAAEAAkAAAATAA0ABAADAAQAAAARAA4ABAADAAQAAAATAA8ABAAJAAYAAAAGAA8ABAAJAAYAAAAEAA8ABAAJAAYAAAARAAYABAAJAAYAAAAPAAcABAAJAAYAAAARAAgABAAJAAYAAAA=")
+tile_map_data = PackedByteArray("AAAJAA4ABAAEAAkAAAATAA0ABAADAAQAAAARAA4ABAADAAQAAAATAA8ABAAJAAYAAAAGAA8ABAAJAAYAAAAEAA8ABAAJAAYAAAARAAYABAAJAAYAAAAPAAcABAAJAAYAAAARAAgABAAJAAYAAAAVAA4ABAADAAQAAAA=")
 tile_set = SubResource("TileSet_cgff3")
 
 [node name="smallerTrees" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAATACEABAALAAAAAAARACEABAALAAAAAAAPACEABAALAAAAAAAKACEABAALAAAAAAALACEABAALAAAAAAAGACEABAALAAAAAAAFACEABAALAAAAAAAEABoABAAGAAQAAAAHAA8ABAAJAAYAAAAHABEABAAJAAYAAAA=")
-tile_set = SubResource("TileSet_cgff3")
-
-[node name="bigTrees" type="TileMapLayer" parent="."]
-scale = Vector2(3, 3)
-tile_map_data = PackedByteArray("AAAOAAkABAADAAQAAAA=")
 tile_set = SubResource("TileSet_cgff3")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -5170,6 +5165,10 @@ shape = SubResource("CircleShape2D_yyjne")
 position = Vector2(1240, 1072)
 shape = SubResource("CircleShape2D_l2bum")
 
+[node name="tree4ScndGarden" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1376, 1040)
+shape = SubResource("CircleShape2D_0xk8k")
+
 [node name="tree1Line" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1504, 648)
 shape = SubResource("CircleShape2D_oqbjq")
@@ -5204,10 +5203,6 @@ polygon = PackedVector2Array(97, 2, 96, 224, 114, 224, 114, 319, 97, 319, 96, 76
 [node name="singleTreePatch" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(144, 898)
 shape = SubResource("RectangleShape2D_ggc4d")
-
-[node name="tree4ScndGarden" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1392, 1072)
-shape = SubResource("CircleShape2D_0xk8k")
 
 [node name="StaticBody2D6" type="StaticBody2D" parent="."]
 
