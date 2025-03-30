@@ -1,11 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://c8off0hb5i0in"]
+[gd_scene load_steps=25 format=4 uid="uid://c8off0hb5i0in"]
 
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="1_q6je7"]
 [ext_resource type="Script" path="res://scripts/bc_maze_minigame.gd" id="1_updje"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_cikc1"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="3_rw0pa"]
-[ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="4_pq3d5"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="5_yihs8"]
+[ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="6_ld5jv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_pv4dk"]
+[ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="7_o5cys"]
+[ext_resource type="Texture2D" uid="uid://belquhqdmrc6y" path="res://animations/WallyRight.png" id="8_1iyel"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wfry6"]
 texture = ExtResource("1_q6je7")
@@ -1280,6 +1283,80 @@ sources/0 = SubResource("TileSetAtlasSource_tv87h")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ny0pg"]
 size = Vector2(77, 209)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_mra10"]
+atlas = ExtResource("6_ld5jv")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rn7ot"]
+atlas = ExtResource("6_ld5jv")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvh1i"]
+atlas = ExtResource("7_o5cys")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1as71"]
+atlas = ExtResource("7_o5cys")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5x0c1"]
+atlas = ExtResource("8_1iyel")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm887"]
+atlas = ExtResource("8_1iyel")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7sphn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mra10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn7ot")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvh1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1as71")
+}],
+"loop": true,
+"name": &"Left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5x0c1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cm887")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mra10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rn7ot")
+}],
+"loop": true,
+"name": &"Walking",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2been"]
+size = Vector2(126, 207)
+
 [node name="BcMazeMinigame" type="Node2D"]
 script = ExtResource("1_updje")
 
@@ -1297,15 +1374,6 @@ tile_set = SubResource("TileSet_yudbk")
 position = Vector2(1102.5, 872.5)
 shape = SubResource("RectangleShape2D_ny0pg")
 
-[node name="Wally" parent="." instance=ExtResource("4_pq3d5")]
-position = Vector2(64, 56)
-scale = Vector2(0.75, 0.75)
-
-[node name="Camera2D" type="Camera2D" parent="Wally"]
-position = Vector2(949.333, 586.667)
-scale = Vector2(0.1, 0.1)
-zoom = Vector2(0.7, 0.7)
-
 [node name="maze_walls" type="StaticBody2D" parent="."]
 
 [node name="Perimeter" type="CollisionPolygon2D" parent="maze_walls"]
@@ -1320,6 +1388,25 @@ polygon = PackedVector2Array(128, 368, 144, 360, 152, 456, 656, 464, 656, 568, 7
 
 [node name="block_entrance" type="CollisionPolygon2D" parent="maze_walls"]
 polygon = PackedVector2Array(120, -8, 120, 16, 24, 16, 24, -8)
+
+[node name="NewWally" type="CharacterBody2D" parent="."]
+scale = Vector2(0.35, 0.35)
+script = ExtResource("5_yihs8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NewWally"]
+position = Vector2(144, 176)
+scale = Vector2(1, 1.105)
+sprite_frames = SubResource("SpriteFrames_7sphn")
+animation = &"Right"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NewWally"]
+position = Vector2(144, 192)
+shape = SubResource("RectangleShape2D_2been")
+
+[node name="Camera2D" type="Camera2D" parent="NewWally"]
+position = Vector2(1645.71, 1394.29)
+zoom = Vector2(0.7, 0.7)
 
 [node name="GameTimer" type="Timer" parent="."]
 wait_time = 60.0
