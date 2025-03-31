@@ -13,6 +13,7 @@ script = ExtResource("1_ldc30")
 [node name="Bg" parent="." instance=ExtResource("2_8pnrt")]
 
 [node name="Ground" parent="." instance=ExtResource("3_cymbo")]
+visible = false
 position = Vector2(0, 88)
 
 [node name="Pilot" parent="." instance=ExtResource("1_d2m2d")]

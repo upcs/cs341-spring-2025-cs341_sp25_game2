@@ -10,10 +10,10 @@ texture = ExtResource("1_lgvwr")
 centered = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="."]
-motion_mirroring = Vector2(682, 0)
+motion_mirroring = Vector2(1364, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
 position = Vector2(0, -48)
-scale = Vector2(1, 3.6)
+scale = Vector2(2.00587, 3.6)
 texture = ExtResource("1_lgvwr")
 centered = false
