@@ -58,7 +58,7 @@ func remove_books():
 	books += get_tree().get_nodes_in_group("first_book")
 	print(books)
 	for book in books:
-		remove_child(book)
+		book.queue_free()
 	
 # move books to mouse position
 func _on_spawn_timer_timeout():
