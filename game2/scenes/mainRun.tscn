@@ -26,3 +26,5 @@ scale = Vector2(1, 1)
 position = Vector2(341, 161)
 
 [node name="HUD" parent="." instance=ExtResource("5_1fdjy")]
+
+[connection signal="pressedb2" from="GameOver" to="." method="_on_game_over_pressedb_2"]

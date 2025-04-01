@@ -77,10 +77,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8wi12"]
-size = Vector2(92, 197)
+size = Vector2(82, 192)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6qnhy"]
-size = Vector2(92, 114)
+size = Vector2(82, 114)
 
 [node name="Pilot" type="CharacterBody2D"]
 z_index = 1
@@ -91,13 +91,13 @@ script = ExtResource("1_1uxml")
 texture_filter = 1
 scale = Vector2(1, 1.105)
 sprite_frames = SubResource("SpriteFrames_cgkui")
-animation = &"Walking"
+animation = &"Right"
 autoplay = "Idle"
 
 [node name="PilotRun" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_8wi12")
 
 [node name="PilotDuck" type="CollisionShape2D" parent="."]
-position = Vector2(0, 47)
+position = Vector2(-1, 47)
 shape = SubResource("RectangleShape2D_6qnhy")

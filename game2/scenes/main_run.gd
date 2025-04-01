@@ -27,8 +27,14 @@ func _ready():
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	$GameOver.get_node("Button").pressed.connect(new_game)
+	$GameOver.get_node("Button2").pressed.connect(exit)
 	new_game() 
-
+func exit():
+	#print("here")
+	Global.score += score
+	#get_tree().paused = false
+	Global.spawn_position = Vector2(3712, 1856)
+	get_tree().change_scene_to_file.bind("res://scenes/campus.tscn").call_deferred()
 func new_game():
 	score = 0
 	show_score()
@@ -124,3 +130,7 @@ func game_over():
 	get_tree().paused = true
 	game_running = false
 	$GameOver.show()
+
+
+func _on_game_over_pressedb_2() -> void:
+	exit()
