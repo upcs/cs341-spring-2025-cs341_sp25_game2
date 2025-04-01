@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=41 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -11,13 +11,16 @@
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
 [ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
-[ext_resource type="PackedScene" uid="uid://c8xnrlc8idoit" path="res://scenes/Franz.tscn" id="11_rm3jr"]
+[ext_resource type="PackedScene" uid="uid://b44c4ec82bdm1" path="res://scenes/Franz.tscn" id="11_rm3jr"]
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
 [ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="13_ejgb7"]
 [ext_resource type="Texture2D" uid="uid://rqwb6n0cds2n" path="res://arrow.png" id="14_es7mx"]
-[ext_resource type="PackedScene" path="res://scenes/objective.tscn" id="15_mlqc4"]
-[ext_resource type="PackedScene" path="res://scenes/score.tscn" id="16_ls3dj"]
+[ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="15_mlqc4"]
+[ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
+[ext_resource type="Script" path="res://scripts/map.gd" id="18_ghv2a"]
+[ext_resource type="Texture2D" uid="uid://dx6fbi43m1ldm" path="res://map.png" id="19_0drlv"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
+[ext_resource type="Texture2D" uid="uid://otpxkx0km57e" path="res://text_box.png" id="20_lhcju"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4l6pc"]
@@ -6551,6 +6554,38 @@ offset_left = 584.0
 offset_top = -668.0
 offset_right = 1402.0
 offset_bottom = -578.0
+
+[node name="UI" type="CanvasLayer" parent="Wally"]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Wally/UI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="SubViewport" type="SubViewport" parent="Wally/UI/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(100, 100)
+render_target_update_mode = 4
+script = ExtResource("18_ghv2a")
+
+[node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer/SubViewport"]
+scale = Vector2(8, 8)
+texture = ExtResource("19_0drlv")
+offset = Vector2(250, -10)
+
+[node name="Camera2D" type="Camera2D" parent="Wally/UI/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer"]
+position = Vector2(50, 50)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_lhcju")
 
 [node name="All-Around Bounds" type="StaticBody2D" parent="."]
 

@@ -10,12 +10,31 @@
 scale = Vector2(10, 10)
 texture = ExtResource("1_sfffr")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="player" type="CharacterBody2D" parent="."]
 script = ExtResource("2_6mfb7")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+[node name="Sprite2D" type="Sprite2D" parent="player"]
+position = Vector2(-2250, 600)
 texture = ExtResource("3_n5iuj")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(0.1, 0.1)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="UI"]
+offset_left = -1813.0
+offset_top = 831.0
+offset_right = -1773.0
+offset_bottom = 871.0
+
+[node name="SubViewport" type="SubViewport" parent="UI/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(40, 40)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="UI/SubViewportContainer/SubViewport"]
+texture = ExtResource("1_sfffr")
+
+[node name="Camera2D" type="Camera2D" parent="UI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)
