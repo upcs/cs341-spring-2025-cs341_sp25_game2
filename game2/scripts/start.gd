@@ -28,9 +28,15 @@ func _on_button_pressed() -> void:
 	loading_screen.visible = true
 	await get_tree().create_timer(0.1).timeout
 	if Global.spawn_scene != "":
-		get_tree().change_scene_to_file(Global.spawn_scene)
+		get_tree().change_scene_to_packed(load(Global.spawn_scene))
 	else:
-		get_tree().change_scene_to_packed(load("res://scenes/LoadingScreen.tscn"))
+		var packed_scene = load("res://scenes/campus.tscn")
+		loading_screen.progress_bar = 100
+		await get_tree().create_timer(0.1).timeout
+		
+		get_tree().change_scene_to_packed(packed_scene)
+	
+	#get_tree().change_scene_to_packed(load("res://scenes/LoadingScreen.tscn"))
 
 func _on_submit_button_pressed() -> void:
 	var input_text = username_input.text.strip_edges()  # Remove leading/trailing whitespace
@@ -55,4 +61,4 @@ func _on_submit_button_pressed() -> void:
 			username_label.text = "[center]Username must be 1-20 characters"
 		
 func _on_leaderboard_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Leaderboard.tscn")
+	get_tree().change_scene_to_packed(load("res://scenes/Leaderboard.tscn"))

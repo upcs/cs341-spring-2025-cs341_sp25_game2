@@ -35,7 +35,7 @@ func _on_library_exit_body_entered(body: Node2D) -> void:
 		# update spawn positions accordingly
 		Global.spawn_position = Vector2(2400, 940)
 		Global.library_interior_spawn_position = Vector2(1080, 52)
-		get_tree().change_scene_to_file("res://scenes/campus.tscn")
+		get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 	else:
 		print("This body is not in the Player group")
 
@@ -46,7 +46,7 @@ func _on_lower_floor_entrance_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("Player entered. Changing spawn and changing scene...")
 		Global.library_interior_spawn_position = Vector2(198, -22)
-		get_tree().change_scene_to_file("res://scenes/Library_game.tscn")
+		get_tree().change_scene_to_packed(load("res://scenes/Library_game.tscn"))
 
 
 func _on_downstairs_mark_body_entered(body: Node2D) -> void:
