@@ -23,9 +23,6 @@ func _ready() -> void:
 	
 	library_text_panel.modulate.a = 0.0
 	tween.tween_property(library_text_panel, "modulate:a", 0.9, 1.0)
-	
-	preload("res://scenes/campus.tscn")
-
 
 func _on_library_exit_body_entered(body: Node2D) -> void:
 	print("Body entered:", body.name) 

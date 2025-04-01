@@ -4,8 +4,7 @@ extends Node2D
 @onready var game_message = $GameMessage
 @onready var spawn_timer = $SpawnTimer
 @onready var game_score = $GameScore
-@onready var back_button = $BackButton
-@onready var restart_button = $RestartButton
+@onready var game_menu = $LibraryGameMenu
 
 
 var book_scene = preload("res://scenes/Book.tscn")
@@ -13,18 +12,55 @@ var stacked_books = 0
 const WIN_COUNT = 10
 var game_active = false
 var game_lost = false
+var difficulty = 0 # 0 for easy, 1, for medium, 2 for hard
+var offset = randi_range(-100,-50) # random range added on each book spawn so you can't hold your mouse in one spot
 var multiplier = 4
 
 func _ready():
-	#preload("res://scenes/Library_interior.tscn")
-		
-	back_button.disabled = true
-	restart_button.disabled = true
+	game_active = false
+	
+func start_game():
+	await remove_books()
+	game_message.text = ""
+	random_offset()
+	stacked_books = 0
+	stack_counter.text = "BOOKS: %d/%d" % [stacked_books, WIN_COUNT]
+	game_score.text = "SCORE: %d" % [multiplier * stacked_books]
+	
 	_spawn_book()
+	stack_counter.show()
+	game_score.show()
+	game_menu.hide()
 	await get_tree().create_timer(0.5).timeout
 	game_active = true
+	game_lost = false
 	
+	# set multiplier depending on difficulty
+	if difficulty == 0:
+		multiplier = 5
+	elif difficulty == 1:
+		multiplier = 10
+	else:
+		multiplier = 20
+		
+# randomizes offset based on difficulty
+func random_offset():
+	if difficulty == 0:
+		offset = randi_range(-100, -50)
+	elif difficulty == 1:
+		offset = randi_range(-200, 0)
+	else:
+		offset = randi_range(-350, 150)
+
+func remove_books():
+	var books = get_tree().get_nodes_in_group("active_book")
+	books += get_tree().get_nodes_in_group("stacked_book")
+	books += get_tree().get_nodes_in_group("first_book")
+	print(books)
+	for book in books:
+		remove_child(book)
 	
+# move books to mouse position
 func _on_spawn_timer_timeout():
 	var active_count = get_tree().get_nodes_in_group("active_book").size()
 	var active_books = get_tree().get_nodes_in_group("active_book")
@@ -34,7 +70,7 @@ func _on_spawn_timer_timeout():
 			#print(books.size())
 			var active_book = active_books[0]
 			#print("active book exists")
-			active_book.global_position.x = get_global_mouse_position().x
+			active_book.global_position.x = (get_global_mouse_position().x + offset)
 	
 	
 	# check if a book has fallen too far
@@ -59,9 +95,19 @@ func _on_spawn_timer_timeout():
 		_spawn_book()
 
 func _spawn_book():
+	random_offset()
 	var book = book_scene.instantiate()
 	call_deferred("add_child", book)
 	await get_tree().process_frame
+	
+	if difficulty == 0:
+		await book.set_random_range(1.0, 1.5, 1.0, 1.5)
+	elif difficulty == 1:
+		await book.set_random_range(0.5, 2.1, 0.4, 2.1)
+	else:
+		await book.set_random_range(0.05, 1.7, 0.5, 2.4)
+
+	
 	await book.random_scale()
 	var random_int = randi_range(-300, 300)
 	var spawn = Vector2((512 + random_int), -100)
@@ -80,23 +126,18 @@ func game_over():
 	
 	if game_lost:
 		game_active = false
-		_view_buttons()
-		game_message.text = "[center]You Lost"
+		game_menu.show()
+		game_menu.refresh_options()
+		
+		game_message.text = "[center]You Lost, But Got Something!"
+		Global.score += multiplier * stacked_books
 	elif stacked_books >= WIN_COUNT:
 		game_active = false
-		_view_buttons()
-		game_message.text = "[center]You Win! Points added to total score!"
-		Global.score += multiplier * stacked_books
+		game_menu.show()
+		game_menu.refresh_options()
+		
+		game_message.text = "[center]You Win! +50 Bonus Points!"
+		game_score.text = "SCORE: %d" % [multiplier * stacked_books + 50]
+		Global.score += multiplier * stacked_books + 50
 	else:
 		_spawn_book()
-
-
-func _on_restart_button_pressed() -> void:
-	get_tree().reload_current_scene()
-	
-
-func _view_buttons():
-	back_button.disabled = false
-	restart_button.disabled = false
-	back_button.show()
-	restart_button.show()

@@ -6,6 +6,8 @@ var is_stacked = false
 var is_being_dragged = false
 var book_options = 5
 
+var random_x = randf_range(0.2,2.1)
+var random_y = randf_range(0.4,2.1)
 
 func _ready():
 	var random_pick = randi_range(1,book_options)
@@ -20,6 +22,12 @@ func _ready():
 		$PinkBook.show()
 	else:
 		$YellowBook.show()
+
+# convenience function to set random range
+func set_random_range(x_low: float, x_high: float, y_low: float, y_high: float):
+	random_x = randf_range(x_low, x_high)
+	random_y = randf_range(y_low, y_high)
+	
 
 func _on_body_entered(body: Node) -> void:	
 	if body.is_in_group("stacked_book") or body.is_in_group("ground") or body.is_in_group("first_book"):
@@ -57,8 +65,6 @@ func _on_body_entered(body: Node) -> void:
 			
 
 func random_scale():
-		var random_x = randf_range(0.2,2.1)
-		var random_y = randf_range(0.4,2.1)
 		var book_scale_x = $BlueBook.scale.x
 		var book_scale_y = $BlueBook.scale.y
 		

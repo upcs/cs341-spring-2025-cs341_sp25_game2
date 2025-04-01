@@ -10,7 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_001b3"]
 size = Vector2(152, 32)
 
-[node name="Book" type="RigidBody2D"]
+[node name="Book" type="RigidBody2D" groups=["boook"]]
 physics_interpolation_mode = 1
 collision_layer = 3
 input_pickable = true

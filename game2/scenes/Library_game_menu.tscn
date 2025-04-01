@@ -1,0 +1,106 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7e58t4p6qcsj"]
+
+[ext_resource type="Script" path="res://scripts/library_game_menu.gd" id="1_dix2i"]
+[ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="2_3k8yb"]
+
+[node name="LibraryGameMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dix2i")
+
+[node name="BackButton" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 832.0
+offset_top = 40.0
+offset_right = 1015.0
+offset_bottom = 77.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_3k8yb")
+text = "BACK
+"
+
+[node name="Polygon2D" type="Polygon2D" parent="BackButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="PlayButton" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 432.0
+offset_top = 536.0
+offset_right = 615.0
+offset_bottom = 573.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_3k8yb")
+text = "PLAY"
+
+[node name="Polygon2D" type="Polygon2D" parent="PlayButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="Easy" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 432.0
+offset_top = 248.0
+offset_right = 615.0
+offset_bottom = 285.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_3k8yb")
+text = "EASY"
+
+[node name="Polygon2D" type="Polygon2D" parent="Easy"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="Medium" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 432.0
+offset_top = 336.0
+offset_right = 615.0
+offset_bottom = 373.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_3k8yb")
+text = "MEDIUM"
+
+[node name="Polygon2D" type="Polygon2D" parent="Medium"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="Hard" type="Button" parent="."]
+top_level = true
+layout_mode = 0
+offset_left = 432.0
+offset_top = 424.0
+offset_right = 615.0
+offset_bottom = 461.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_3k8yb")
+text = "HARD
+"
+
+[node name="Polygon2D" type="Polygon2D" parent="Hard"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.447439, 0.666162)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="Medium" to="." method="_on_medium_pressed"]
+[connection signal="pressed" from="Hard" to="." method="_on_hard_pressed"]
