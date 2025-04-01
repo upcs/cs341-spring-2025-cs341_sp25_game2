@@ -35,9 +35,9 @@ func start_game():
 	game_active = true
 	game_lost = false
 	
-	# set multiplier depending on difficulty
+	# set multiplier depending on difficulty - MAKE SURE IT'S DIVISIBLE BY 2
 	if difficulty == 0:
-		multiplier = 5
+		multiplier = 4
 	elif difficulty == 1:
 		multiplier = 10
 	else:
@@ -105,7 +105,7 @@ func _spawn_book():
 	elif difficulty == 1:
 		await book.set_random_range(0.5, 2.1, 0.4, 2.1)
 	else:
-		await book.set_random_range(0.05, 1.7, 0.5, 2.4)
+		await book.set_random_range(0.05, 0.3, 0.5, 2.4)
 
 	
 	await book.random_scale()
@@ -121,6 +121,9 @@ func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://scenes/Library_interior.tscn")
 	
 func game_over():
+	if !game_active:
+		return
+	
 	stack_counter.text = "BOOKS: %d/%d" % [stacked_books, WIN_COUNT]
 	game_score.text = "SCORE: %d" % [multiplier * stacked_books]
 	
@@ -129,15 +132,22 @@ func game_over():
 		game_menu.show()
 		game_menu.refresh_options()
 		
-		game_message.text = "[center]You Lost, But Got Something!"
-		Global.score += multiplier * stacked_books
+		game_message.text = "[center]You Lost - Points Halved"
+		game_score.text = "SCORE: %d" % [(multiplier / 2) * stacked_books]
+		Global.score += ((multiplier / 2) * stacked_books)
+		print("Global score: ", Global.score)
+
 	elif stacked_books >= WIN_COUNT:
 		game_active = false
 		game_menu.show()
 		game_menu.refresh_options()
 		
-		game_message.text = "[center]You Win! +50 Bonus Points!"
-		game_score.text = "SCORE: %d" % [multiplier * stacked_books + 50]
-		Global.score += multiplier * stacked_books + 50
+		game_message.text = "[center]You Win!"
+		game_score.text = "SCORE: %d" % [multiplier * stacked_books]
+		Global.score += (multiplier * stacked_books)
+		print("Global score: ", Global.score)
+
 	else:
+		print("Global score: ", Global.score)
+
 		_spawn_book()
