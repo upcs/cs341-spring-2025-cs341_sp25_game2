@@ -6575,7 +6575,7 @@ render_target_update_mode = 4
 script = ExtResource("18_ghv2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer/SubViewport"]
-scale = Vector2(8, 8)
+scale = Vector2(9.5, 9.5)
 texture = ExtResource("19_0drlv")
 offset = Vector2(250, -10)
 
@@ -6583,7 +6583,7 @@ offset = Vector2(250, -10)
 zoom = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer"]
-position = Vector2(50, 50)
+position = Vector2(50, 60)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("20_lhcju")
 

@@ -30,7 +30,7 @@ func _on_button_pressed() -> void:
 	if Global.spawn_scene != "":
 		get_tree().change_scene_to_file(Global.spawn_scene)
 	else:
-		get_tree().change_scene_to_packed(load("res://scenes/LoadingScreen"))
+		get_tree().change_scene_to_packed(load("res://scenes/LoadingScreen.tscn"))
 
 func _on_submit_button_pressed() -> void:
 	var input_text = username_input.text.strip_edges()  # Remove leading/trailing whitespace
