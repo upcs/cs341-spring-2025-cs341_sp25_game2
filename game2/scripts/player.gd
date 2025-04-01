@@ -12,10 +12,10 @@ var is_paused = false
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
-		is_paused = true
+		is_paused = !is_paused
 		is_moving_to_target = false
-		pause_menu.visible = true
-		pause_button.visible = false
+		pause_menu.visible = !pause_menu.visible
+		pause_button.visible = !pause_button.visible
 		
 
 func _ready() -> void:
