@@ -10,6 +10,14 @@ var target_position = Vector2.ZERO
 var is_moving_to_target = false
 var is_paused = false
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("escape"):
+		is_paused = true
+		is_moving_to_target = false
+		pause_menu.visible = true
+		pause_button.visible = false
+		
+
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
 	add_to_group("Player")
