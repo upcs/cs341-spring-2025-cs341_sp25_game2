@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=24 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
@@ -2994,6 +2994,12 @@ sources/0 = SubResource("TileSetAtlasSource_w531a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0twm"]
 size = Vector2(22.25, 213.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4n28t"]
+size = Vector2(1138, 506)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p5f3a"]
+size = Vector2(1121, 30.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4sxf"]
 size = Vector2(33, 217)
 
@@ -3069,7 +3075,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r7yuf"]
-size = Vector2(126, 207)
+size = Vector2(126, 215.5)
 
 [node name="BcInterior" type="Node2D"]
 script = ExtResource("1_t3ugx")
@@ -3090,8 +3096,13 @@ shape = SubResource("RectangleShape2D_n0twm")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
+[node name="ceiling" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(559, 243)
+shape = SubResource("RectangleShape2D_4n28t")
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(568, 727.25)
+shape = SubResource("RectangleShape2D_p5f3a")
 
 [node name="TextPanel" type="Panel" parent="."]
 offset_left = 576.0
@@ -3157,7 +3168,7 @@ animation = &"Right"
 autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NewWally"]
-position = Vector2(576, 600)
+position = Vector2(576, 604.25)
 shape = SubResource("RectangleShape2D_r7yuf")
 
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
