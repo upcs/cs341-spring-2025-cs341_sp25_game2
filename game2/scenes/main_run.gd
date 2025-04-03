@@ -71,8 +71,8 @@ func _process(delta):
 		score += speed
 		show_score()
 		
-		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.5:
-			$Ground.position.x += screen_size.x
+		if $Camera2D.position.x - $Ground.position.x > screen_size.x * 1.0:
+			$Ground.position.x += (screen_size.x / 2)
 			
 		for obs in obstacles:
 			if obs.position.x < ($Camera2D.position.x - screen_size.x):

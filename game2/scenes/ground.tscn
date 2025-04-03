@@ -3,18 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://d0p5s00dj31dy" path="res://Tilepngs/hallway_floor.png" id="1_gdwqa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i0ib7"]
-size = Vector2(1357, 29)
+size = Vector2(1805, 29)
 
 [node name="Ground" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 552)
-scale = Vector2(1.99413, 1)
+scale = Vector2(2.65103, 1)
 texture = ExtResource("1_gdwqa")
 centered = false
 region_enabled = true
 region_rect = Rect2(0, 168.25, 682.428, 31.75)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(681.5, 568)
+position = Vector2(905.5, 568)
 shape = SubResource("RectangleShape2D_i0ib7")
