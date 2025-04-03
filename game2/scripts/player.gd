@@ -47,12 +47,17 @@ func _physics_process(_delta: float) -> void:
 	# keyboard controls
 	if Input.is_action_pressed("up"):
 		direction.y -= 1
+		target_position = global_position
 	if Input.is_action_pressed("down"):
 		direction.y += 1
+		target_position = global_position
 	if Input.is_action_pressed("right"):
 		direction.x += 1
+		target_position = global_position
 	if Input.is_action_pressed("left"):
 		direction.x -= 1
+		target_position = global_position
+
 	
 	var speed = 550.0
 	
