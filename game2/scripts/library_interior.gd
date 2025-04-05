@@ -42,7 +42,7 @@ func _on_lower_floor_entrance_body_entered(body: Node2D) -> void:
 	print("Body entered: body.name")
 	if body.is_in_group("Player"):
 		print("Player entered. Changing spawn and changing scene...")
-		Global.library_interior_spawn_position = Vector2(198, -22)
+		Global.library_interior_spawn_position = Vector2(198, 20)
 		get_tree().change_scene_to_packed(load("res://scenes/Library_game.tscn"))
 
 

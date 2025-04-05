@@ -96,15 +96,15 @@ func takehit():
 
 
 func _on_pause_button_pressed() -> void:
-	is_paused = true
-	target_position = global_position
 	is_moving_to_target = false
-	pause_menu.visible = true
-	pause_button.visible = false
+	target_position = global_position
+	is_paused = true
+	pause_menu.show()
+	pause_button.hide()
 
 
 func remove_pause_menu() -> void:
 	is_paused = false
-	pause_menu.visible = false
-	pause_button.visible = true
+	pause_menu.hide()
+	pause_button.show()
 	

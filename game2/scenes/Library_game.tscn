@@ -49,9 +49,6 @@ bbcode_enabled = true
 position = Vector2(568, 544)
 shape = SubResource("RectangleShape2D_yec0o")
 
-[node name="candle" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(336, 528, 360, 504, 352, 456, 368, 440, 384, 440, 400, 456, 400, 504, 408, 528)
-
 [node name="GameScore" type="Label" parent="."]
 offset_left = 16.0
 offset_top = 80.0
@@ -66,5 +63,10 @@ offset_left = 343.776
 offset_top = 452.895
 offset_right = 343.776
 offset_bottom = 452.895
+
+[node name="StaticBody2DCandle" type="StaticBody2D" parent="."]
+
+[node name="candle" type="CollisionPolygon2D" parent="StaticBody2DCandle"]
+polygon = PackedVector2Array(336, 528, 360, 504, 352, 456, 368, 440, 384, 440, 400, 456, 400, 504, 408, 528)
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
