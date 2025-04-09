@@ -32,7 +32,7 @@ func _ready():
 
 func exit():
 	#print("here")
-	Global.score += score
+	Global.score += high_score/100
 	get_tree().paused = false
 	Global.spawn_position = Vector2(3712, 1856)
 	#get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
