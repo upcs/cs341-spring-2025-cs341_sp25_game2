@@ -4,7 +4,6 @@ extends Node
 var leaderboard_collection: FirestoreCollection
 
 @onready var leaderboard_label = $LeaderboardLabel
-#@onready var username_input = $UsernameLineEdit no longer need
 @onready var username_label = $UsernameLabel
 @onready var score_input = $ScoreLabelContent
 @onready var submit_button = $SubmitButton

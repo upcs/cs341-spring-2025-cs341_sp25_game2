@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4vgawqfjyxjp"]
+[gd_scene load_steps=3 format=3 uid="uid://pm52w3pwlxfg"]
 
-[ext_resource type="Script" path="res://scripts/Leaderboard.gd" id="1_md5e4"]
-[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="2_ncevq"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_y412b"]
+[ext_resource type="Script" path="res://scripts/leaderboard_mysql.gd" id="2_ucayv"]
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
@@ -10,8 +10,8 @@ offset_left = 128.0
 offset_top = 64.0
 offset_right = 128.0
 offset_bottom = 64.0
-theme = ExtResource("2_ncevq")
-script = ExtResource("1_md5e4")
+theme = ExtResource("1_y412b")
+script = ExtResource("2_ucayv")
 
 [node name="Background2" type="Polygon2D" parent="."]
 show_behind_parent = true
@@ -27,7 +27,7 @@ offset_left = -16.0
 offset_top = 88.0
 offset_right = 880.0
 offset_bottom = 600.0
-theme = ExtResource("2_ncevq")
+theme = ExtResource("1_y412b")
 
 [node name="LeaderboardLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -52,7 +52,7 @@ offset_top = 328.0
 offset_right = 696.0
 offset_bottom = 368.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("2_ncevq")
+theme = ExtResource("1_y412b")
 text = "SUBMIT SCORE"
 
 [node name="Polygon2D" type="Polygon2D" parent="SubmitButton"]
@@ -107,8 +107,10 @@ offset_top = -24.0
 offset_right = 824.0
 offset_bottom = 16.0
 scale = Vector2(1.5, 1.5)
-theme = ExtResource("2_ncevq")
+theme = ExtResource("1_y412b")
 text = "GO BACK"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
 
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
