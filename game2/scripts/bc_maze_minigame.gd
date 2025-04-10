@@ -29,5 +29,6 @@ func _on_game_timer_timeout() -> void:
 	leave_button.visible = true #let the player leave
 
 func _on_leave_pressed() -> void:
+	Global.markercount += 1
 	get_tree().change_scene_to_file("res://scenes/campus.tscn")
 	Global.spawn_position = Vector2(1600, 192)

@@ -36,6 +36,7 @@ func exit():
 	get_tree().paused = false
 	Global.spawn_position = Vector2(3712, 1856)
 	#get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
+	Global.markercount += 1
 	get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 
 func new_game():
