@@ -8,7 +8,6 @@ var class_on_time;
 var out_of_time;
 var which_class;
 var player
-var building
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# preload so we only have to load it once
@@ -30,8 +29,8 @@ func _ready() -> void:
 	label = $Wally/Objective
 	timer = $ClassTimer
 	arrow = $Wally/Arrow
-	which_class = get_node("DB/Marker2D")
-	building = "res://scenes/insideDB.tscn"
+	which_class = get_node(Global.markers[Global.markercount])
+	Global.building = Global.buildings[Global.markercount]
 	class_on_time = false
 	out_of_time = false
 	scoreLabel.text = "Score: " + str(Global.score)
@@ -41,23 +40,25 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
+	which_class = get_node(Global.markers[Global.markercount])
 	arrow.rotation = player.position.angle_to_point(which_class.position)
 	if (class_on_time):
-		get_tree().change_scene_to_file(building)
-		#which_class = $Shiley2/Marker2D
 		timer.wait_time = 30
 		scoreLabel.text = "Score: " + str(Global.score)
 		class_on_time = false
 		player.position = Global.spawn_position
-	#elif (out_of_time):
-		#out_of_time = false
+		get_tree().change_scene_to_file(Global.buildings[Global.markercount])
+		Global.markercount += 1
+	elif (out_of_time):
+		out_of_time = false
 		#label.text = "You did not make it to class on time :("
+		Global.markercount += 1
 	#else:
 		#label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
 	
 
 func _on_db_body_entered(body: Node2D) -> void:
-	if body.has_method("takehit"):
+	if body.has_method("takehit") and Global.buildings[Global.markercount] == "res://scenes/insideDB.tscn":
 		if not out_of_time:
 			class_on_time = true
 
@@ -74,12 +75,16 @@ func _on_shiley_2_body_entered(body: Node2D) -> void:
 
 
 func _on_library_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and Global.buildings[Global.markercount] == "res://scenes/Library_interior.tscn":
+		if not out_of_time:
+			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/Library_interior.tscn")
 
 
 func _on_bc_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and Global.buildings[Global.markercount] == "res://scenes/BC_interior.tscn":
+		if not out_of_time:
+			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/BC_interior.tscn")
 
 #func _on_franz_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
@@ -105,5 +110,7 @@ func _on_oak_pilot_house_body_exited(body: Node2D) -> void:
 
 
 func _on_franz_entrance_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
+	if body.is_in_group("Player") and Global.buildings[Global.markercount] == "res://scenes/franz_interior.tscn":
+		if not out_of_time:
+			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/franz_interior.tscn")

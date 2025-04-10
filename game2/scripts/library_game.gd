@@ -41,7 +41,7 @@ func start_game():
 	elif difficulty == 1:
 		multiplier = 10
 	else:
-		multiplier = 20
+		multiplier = 30
 		
 # randomizes offset based on difficulty
 func random_offset():
@@ -59,9 +59,11 @@ func remove_books():
 	print(books)
 	for book in books:
 		book.queue_free()
-	
+
+
+
 # move books to mouse position
-func _on_spawn_timer_timeout():
+func _physics_process(delta: float) -> void:
 	var active_count = get_tree().get_nodes_in_group("active_book").size()
 	var active_books = get_tree().get_nodes_in_group("active_book")
 	
@@ -71,6 +73,13 @@ func _on_spawn_timer_timeout():
 			var active_book = active_books[0]
 			#print("active book exists")
 			active_book.global_position.x = (get_global_mouse_position().x + offset)
+			
+			# keyboard controls
+			if Input.is_action_pressed("right"):
+				offset += 5
+			if Input.is_action_pressed("left"):
+				offset -= 5
+	
 	
 	
 	# check if a book has fallen too far
@@ -89,10 +98,8 @@ func _on_spawn_timer_timeout():
 				game_lost = true
 				game_over()
 				return
-	
-	#print("Active books: ", active_count)
-	if game_active and active_count == 0:
-		_spawn_book()
+
+
 
 func _spawn_book():
 	random_offset()
@@ -103,7 +110,7 @@ func _spawn_book():
 	if difficulty == 0:
 		await book.set_random_range(1.0, 1.5, 1.0, 1.5)
 	elif difficulty == 1:
-		await book.set_random_range(0.5, 2.1, 0.4, 2.1)
+		await book.set_random_range(0.2, 2.1, 0.3, 2.1)
 	else:
 		await book.set_random_range(0.05, 0.3, 0.5, 2.4)
 
@@ -118,7 +125,7 @@ func _spawn_book():
 	
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Library_interior.tscn")
+	get_tree().change_scene_to_packed(load("res://scenes/Library_interior.tscn"))
 	
 func game_over():
 	if !game_active:
@@ -146,8 +153,13 @@ func game_over():
 		game_score.text = "SCORE: %d" % [multiplier * stacked_books]
 		Global.score += (multiplier * stacked_books)
 		print("Global score: ", Global.score)
+		
+		if difficulty == 2:
+			for i in range(70):
+				await get_tree().create_timer(0.1).timeout
+				_spawn_book()
+		
 
 	else:
 		print("Global score: ", Global.score)
-
 		_spawn_book()

@@ -32,6 +32,7 @@ func _on_library_exit_body_entered(body: Node2D) -> void:
 		# update spawn positions accordingly
 		Global.spawn_position = Vector2(2400, 940)
 		Global.library_interior_spawn_position = Vector2(1080, 52)
+		#Global.markercount += 1
 		get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 	else:
 		print("This body is not in the Player group")

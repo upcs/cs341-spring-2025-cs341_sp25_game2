@@ -1,0 +1,117 @@
+[gd_scene load_steps=3 format=3 uid="uid://pm52w3pwlxfg"]
+
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_y412b"]
+[ext_resource type="Script" path="res://scripts/leaderboard_mysql.gd" id="2_ucayv"]
+
+[node name="Leaderboard" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+theme = ExtResource("1_y412b")
+script = ExtResource("2_ucayv")
+
+[node name="Background2" type="Polygon2D" parent="."]
+show_behind_parent = true
+position = Vector2(-353.886, -283.077)
+scale = Vector2(4.57394, 13.6923)
+color = Color(0.117647, 0.0862745, 0.337255, 1)
+polygon = PackedVector2Array(49.3855, 16.1763, 296, 16, 296, 68, 49.3855, 68)
+
+[node name="Background" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -16.0
+offset_top = 88.0
+offset_right = 880.0
+offset_bottom = 600.0
+theme = ExtResource("1_y412b")
+
+[node name="LeaderboardLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 120.0
+offset_right = 357.0
+offset_bottom = 419.0
+scale = Vector2(1.5, 1.5)
+
+[node name="ScoreLabelContent" type="Label" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 160.0
+offset_right = 744.0
+offset_bottom = 191.0
+scale = Vector2(1.5, 1.5)
+
+[node name="SubmitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 328.0
+offset_right = 696.0
+offset_bottom = 368.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_y412b")
+text = "SUBMIT SCORE"
+
+[node name="Polygon2D" type="Polygon2D" parent="SubmitButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.392157, 0.714286)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="UsernameLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 232.0
+offset_right = 744.0
+offset_bottom = 261.0
+scale = Vector2(1.5, 1.5)
+text = "Username:"
+
+[node name="ScoreLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 160.0
+offset_right = 582.0
+offset_bottom = 189.0
+scale = Vector2(1.5, 1.5)
+text = "Score:"
+
+[node name="InfoLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 512.0
+offset_top = 416.0
+offset_right = 742.0
+offset_bottom = 445.0
+scale = Vector2(1.2, 1.2)
+horizontal_alignment = 1
+
+[node name="LeaderboardTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = -72.0
+offset_top = -40.0
+offset_right = 144.0
+offset_bottom = -4.0
+scale = Vector2(3, 3)
+text = "Leaderboard"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = -24.0
+offset_right = 824.0
+offset_bottom = 16.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_y412b")
+text = "GO BACK"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_submit_button_pressed"]
