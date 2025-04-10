@@ -6,9 +6,12 @@ extends Node2D
 @onready var timer_label = $TimerLabel
 @onready var leave_button = $Leave
 @onready var exit = $maze_exit/exit_here
+@onready var player = $NewWally
+@onready var maze_walls_1 = $First_maze_walls
+@onready var maze_walls_2 = $Scnd_maze_walls
 
 # For testing
-#var my_current = "first"
+@onready var my_current = "first"
 
 # Get the collision boxes of each maze
 @onready var first_maze_walls = [$First_maze_walls/first_perimeter, $First_maze_walls/first_middle_shape_1,
@@ -28,7 +31,7 @@ func _ready() -> void:
 	#Make sure we start with only the first maze
 	$FirstLayer.enabled = true
 	$ScndLayer.enabled = false
-	$ThirdLayer.enabled = false	
+	$ThirdLayer.enabled = false
 	
 	# Only the collision boxes for the first maze should be enabled
 	# at the start of the minigame.
@@ -49,51 +52,70 @@ func change_layers(current: TileMapLayer, next: TileMapLayer) -> void:
 
 #NEEDS TESTS
 func change_collisions(current: Array, next: Array) -> void:
+	print("changing collisions from ", current, " to ", next)
 	for box in current : 
-		box.disabled = true
+		box.set_deferred("disabled", true)
 	
 	for box in next :
-		box.disabled = false
+		box.set_deferred("disabled", false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	timer_label.text = 	"Time: " + str(int(game_timer.time_left))
+	timer_label.text = "Time: " + str(int(game_timer.time_left))
 
 
 # Maybe: change to on_maze_exit_body_entered
-func _on_maze_exit_body_exited(_body: Node2D) -> void:
+func _on_maze_exit_body_exited(body: Node2D) -> void:
+	if !body.is_in_group("Player"):
+		return
+	print("body exited: ", body)
 	# Increase player score
 	Global.score += score_amount
-	game_timer.stop()
-	game_over_message.text = "YOU DID IT! You gained 10 points!"
-	leave_button.visible = true #let the player leave
+	#game_timer.stop()
+	#game_over_message.text = "YOU DID IT! You gained 10 points!"
+	#leave_button.visible = true #let the player leave
 	
 	#The following code has a bug that is still being worked out.
-	# Check if the game is over
-	#if $ThirdLayer.is_enabled() :
-		#game_over_message.text = "YOU DID IT! You completed all the mazes!"
-		#leave_button.visible = true #let the player leave
+	 # Check if the game is over
+	if $ThirdLayer.is_enabled() :
+		game_timer.disabled = true
+		game_over_message.text = "YOU DID IT! You completed all the mazes!"
+		leave_button.visible = true #let the player leave
 		
-	## Else display the next maze to complete 
-	#elif $FirstLayer.is_enabled() :
-		## Change the position of the maze exit
-		#exit.position = Vector2(880,448)
-		## Change the display to the next maze
-		#change_layers($FirstLayer, $ScndLayer)
-		#my_current = "scnd"
-		#change_collisions(first_maze_walls, scnd_maze_walls)
-		## Change the player message
-		#player_message.text = "Find the invisible Exit! Hint: check the alcoves..."
+	# Else display the next maze to complete 
+	elif $FirstLayer.is_enabled() :
+		# Reset timer
+		game_timer.stop()
+		game_timer.wait_time = 60.0
+		game_timer.start()
+		# Change player position
+		player.position = Vector2(0,0)
+		# Change the position of the maze exit
+		exit.position = Vector2(880,448)
+		print("First layer changed to second layer")
+		# Change the display to the next maze
+		change_layers($FirstLayer, $ScndLayer)
+		my_current = "scnd"
+		change_collisions(first_maze_walls, scnd_maze_walls)
+		# Change the player message
+		player_message.text = "Find the invisible Exit! Hint: check the alcoves..."
+	else:
+		# Reset timer
+		game_timer.stop()
+		game_timer.wait_time = 60.0
+		game_timer.start()
+		# Change player position
+		player.position = Vector2(0,0)
+		# change the position of the maze exit
+		exit.position = Vector2(152,424)
+		# Change the display to the next maze
+		change_layers($ScndLayer, $ThirdLayer)
+		change_collisions(scnd_maze_walls, third_maze_walls)
+		my_current = "third"
 		
-	#else :
-		## change the position of the maze exit
-		#exit.position = Vector2(152,424)
-		## Change the display to the next maze
-		#change_layers($ScndLayer, $ThirdLayer)
-		#my_current = "third"
-		#change_collisions(scnd_maze_walls, third_maze_walls)
-		## change the player message
-		#player_message.text = "Find the invisible Exit! No hints this time ;)"
+		print("second layer changed to third layer")
+		# change the player message
+		player_message.text = "Find the invisible Exit! No hints this time ;)"
 
 
 func _on_game_timer_timeout() -> void:
@@ -102,5 +124,5 @@ func _on_game_timer_timeout() -> void:
 
 func _on_leave_pressed() -> void:
 	Global.markercount += 1
-	get_tree().change_scene_to_file("res://scenes/campus.tscn")
+	get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 	Global.spawn_position = Vector2(1600, 192)
