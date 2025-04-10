@@ -7,21 +7,24 @@ extends Node
 @onready var info_label = $InfoLabel
 @onready var http_request = $HTTPRequest
 
+# public URL hosted with NGROK - changes often
+#const SERVER_URL = "https://6737-64-251-251-34.ngrok-free.app/leaderboard.php"
+
+# School URL - works when on UP school wifi
 const SERVER_URL = "http://10.12.116.30/leaderboard.php"
+
 const MAX_ENTRIES = 10
 const MAX_USERNAME_LENGTH = 20
 
 
 func _ready():
-	# for debugging
-	Global.username = "user"
 
 	username_label.text = "Username: " + Global.username
 	score_input.text = str(Global.score)
-	await fetch_and_display_leaderboard()
 	
 	# Connect HTTP request signal
 	http_request.request_completed.connect(_on_request_completed)
+	await fetch_and_display_leaderboard()
 
 # Fetch and display leaderboard
 func fetch_and_display_leaderboard():
@@ -54,8 +57,8 @@ func _on_request_completed(result, response_code, headers, body):
 			else:
 				for i in range(min(json.size(), MAX_ENTRIES)):
 					var entry = json[i]
-					if entry["score"] > 0:
-						leaderboard_text += "%d. %s - %d\n" % [i + 1, entry["username"], entry["score"]]
+					if int(entry["score"]) > 0:
+						leaderboard_text += "%d. %s - %s\n" % [i + 1, entry["username"], entry["score"]]
 				if leaderboard_text == "":
 					leaderboard_text += "No scores yet"
 			leaderboard_label.text = leaderboard_text
@@ -68,7 +71,8 @@ func _on_request_completed(result, response_code, headers, body):
 		info_label.text = "Rate limit reached. Please wait and try again."
 	else:
 		print("Request failed with code: ", response_code)
-		info_label.text = "Error connecting to server (Code: %d)" % response_code
+		info_label.text = "Error connecting to server"
 
 func _on_back_button_pressed() -> void:
 	get_tree().change_scene_to_packed(load("res://start.tscn"))
+	
