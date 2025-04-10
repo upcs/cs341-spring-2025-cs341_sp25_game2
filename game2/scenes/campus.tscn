@@ -6639,6 +6639,55 @@ text = "Hi! I am the Pilot Oak of University of Portland! I am estimated to be 3
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 
+[node name="DBLabel" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 99.0
+offset_top = -8.0
+offset_right = 754.0
+offset_bottom = 82.0
+text = "Dundon-Berchtold Hall"
+
+[node name="LibraryLabel" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 1899.0
+offset_top = 912.0
+offset_right = 2375.0
+offset_bottom = 1006.0
+text = "Clark Library"
+
+[node name="BCLabel" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 1359.0
+offset_top = -168.0
+offset_right = 2014.0
+offset_bottom = -78.0
+text = "Buckley Center"
+
+[node name="FranzLabel" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 3562.0
+offset_top = 1137.0
+offset_right = 4217.0
+offset_bottom = 1227.0
+text = "Franz Hall"
+
+[node name="ShileyLabel" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 4685.0
+offset_top = 436.0
+offset_right = 5057.0
+offset_bottom = 526.0
+text = "Shiley Hall
+"
+
+[node name="ShileyLabel2" parent="." instance=ExtResource("16_ls3dj")]
+modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+offset_left = 3325.0
+offset_top = -2631.0
+offset_right = 4314.0
+offset_bottom = -2541.0
+text = "Chapel of Christ the Teacher"
+
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]
 [connection signal="body_exited" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_exited"]
