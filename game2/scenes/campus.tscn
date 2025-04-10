@@ -6680,7 +6680,7 @@ offset_bottom = 526.0
 text = "Shiley Hall
 "
 
-[node name="ShileyLabel2" parent="." instance=ExtResource("16_ls3dj")]
+[node name="ChurchLabel" parent="." instance=ExtResource("16_ls3dj")]
 modulate = Color(0.117647, 0.0862745, 0.337255, 1)
 offset_left = 3325.0
 offset_top = -2631.0
