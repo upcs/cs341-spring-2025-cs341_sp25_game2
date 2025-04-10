@@ -29,15 +29,11 @@ theme_override_fonts/font = ExtResource("2_7i751")
 text = "BOOKS: 0/10
 "
 
-[node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.1
-autostart = true
-
 [node name="GameMessage" type="RichTextLabel" parent="."]
 top_level = true
-offset_left = 200.0
+offset_left = 180.0
 offset_top = 152.0
-offset_right = 592.0
+offset_right = 572.0
 offset_bottom = 185.0
 scale = Vector2(2, 2)
 theme_override_fonts/normal_font = ExtResource("2_7i751")
@@ -68,5 +64,3 @@ offset_bottom = 452.895
 
 [node name="candle" type="CollisionPolygon2D" parent="StaticBody2DCandle"]
 polygon = PackedVector2Array(336, 528, 360, 504, 352, 456, 368, 440, 384, 440, 400, 456, 400, 504, 408, 528)
-
-[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
