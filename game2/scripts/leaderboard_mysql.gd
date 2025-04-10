@@ -7,7 +7,7 @@ extends Node
 @onready var info_label = $InfoLabel
 @onready var http_request = $HTTPRequest
 
-const SERVER_URL = "http://64.251.253.199:80/leaderboard.php"
+const SERVER_URL = "http://10.12.116.30/leaderboard.php"
 const MAX_ENTRIES = 10
 const MAX_USERNAME_LENGTH = 20
 
