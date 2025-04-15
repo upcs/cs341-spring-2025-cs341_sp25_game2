@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var stack_counter = $StackCounter
 @onready var game_message = $GameMessage
-@onready var spawn_timer = $SpawnTimer
 @onready var game_score = $GameScore
 @onready var game_menu = $LibraryGameMenu
 

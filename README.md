@@ -1,3 +1,6 @@
+# Welcome to WHERE IS WALLY!
+This game was designed and implemented by the following students of University of Portland (UP) in their Software Engineering course (CS341): Kaitlyn Atalig, Jacqui Bouchard, Tyler Crosbie, Lucian Kennelly, and Joshua Krasnogorov. The intended use of the game is for UP students to access via the university's website and play to increase engagement on the website and increase school pride.
+
 ## ARTISTIC CREDITS
 
 The tile maps found in the artwork of the game have been put together from the original tile sets created by various artists as indicated below. All artists' work was found through the database OpenGameArt.org.
