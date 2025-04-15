@@ -11,7 +11,7 @@ extends Node
 #const SERVER_URL = "https://6737-64-251-251-34.ngrok-free.app/leaderboard.php"
 
 # School URL - works when on UP school wifi
-const SERVER_URL = "http://10.12.116.30/leaderboard.php"
+const SERVER_URL = "https://10.12.116.30/leaderboard.php"
 
 const MAX_ENTRIES = 10
 const MAX_USERNAME_LENGTH = 20
