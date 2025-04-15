@@ -61,4 +61,4 @@ func _on_submit_button_pressed() -> void:
 			username_label.text = "[center]Username must be 1-20 characters"
 		
 func _on_leaderboard_button_pressed() -> void:
-	get_tree().change_scene_to_packed(load("res://scenes/Leaderboard.tscn"))
+	get_tree().change_scene_to_packed(load("res://scenes/LeaderboardMYSQL.tscn"))
