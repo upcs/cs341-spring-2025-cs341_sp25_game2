@@ -5,6 +5,8 @@ extends Node2D
 @onready var game_score = $GameScore
 @onready var game_menu = $LibraryGameMenu
 
+@onready var score_multiplier = Global.library_score_multiplier
+
 
 var book_scene = preload("res://scenes/Book.tscn")
 var stacked_books = 0
@@ -19,12 +21,13 @@ func _ready():
 	game_active = false
 	
 func start_game():
+	score_multiplier = Global.library_score_multiplier
 	await remove_books()
 	game_message.text = ""
 	random_offset()
 	stacked_books = 0
 	stack_counter.text = "BOOKS: %d/%d" % [stacked_books, WIN_COUNT]
-	game_score.text = "SCORE: %d" % [multiplier * stacked_books]
+	game_score.text = "SCORE: %d" % floor(multiplier * stacked_books * score_multiplier)
 	
 	_spawn_book()
 	stack_counter.show()
@@ -131,7 +134,7 @@ func game_over():
 		return
 	
 	stack_counter.text = "BOOKS: %d/%d" % [stacked_books, WIN_COUNT]
-	game_score.text = "SCORE: %d" % [multiplier * stacked_books]
+	game_score.text = "SCORE: %d" % floor(multiplier * stacked_books * score_multiplier)
 	
 	if game_lost:
 		game_active = false
@@ -139,8 +142,8 @@ func game_over():
 		game_menu.refresh_options()
 		
 		game_message.text = "[center]You Lost - Points Halved"
-		game_score.text = "SCORE: %d" % [(multiplier / 2) * stacked_books]
-		Global.score += ((multiplier / 2) * stacked_books)
+		game_score.text = "SCORE: %d" % floor(multiplier / 2 * stacked_books * score_multiplier)
+		Global.score += floor(multiplier / 2 * stacked_books * score_multiplier)
 		print("Global score: ", Global.score)
 
 	elif stacked_books >= WIN_COUNT:
@@ -149,8 +152,8 @@ func game_over():
 		game_menu.refresh_options()
 		
 		game_message.text = "[center]You Win!"
-		game_score.text = "SCORE: %d" % [multiplier * stacked_books]
-		Global.score += (multiplier * stacked_books)
+		game_score.text = "SCORE: %d" % floor((multiplier * stacked_books * score_multiplier))
+		Global.score += floor(multiplier * stacked_books * score_multiplier)
 		print("Global score: ", Global.score)
 		
 		if difficulty == 2:
@@ -158,7 +161,6 @@ func game_over():
 				await get_tree().create_timer(0.1).timeout
 				_spawn_book()
 		
-
 	else:
 		print("Global score: ", Global.score)
 		_spawn_book()

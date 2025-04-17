@@ -6,6 +6,7 @@ extends Control
 @onready var medium_button = $Medium
 @onready var hard_button = $Hard
 
+
 var difficulties = Global.difficulties
 var selection = -1 # 0 for easy, 1, for medium, 2 for hard
 
@@ -25,6 +26,20 @@ func refresh_options():
 	if difficulties[2] == 0:
 		hard_button.disabled = true
 		hard_button.self_modulate = Color(1,0,0)
+		
+	if difficulties[0] == 0 and difficulties[1] == 0 and difficulties[2] == 0:
+		difficulties[0] = 1
+		difficulties[1] = 1
+		difficulties[2] = 1
+		print("Current multiplier:", Global.library_score_multiplier)
+		Global.library_score_multiplier = (Global.library_score_multiplier * 0.75)
+		print("New multiplier:", Global.library_score_multiplier)
+		easy_button.disabled = false
+		medium_button.disabled = false
+		hard_button.disabled = false
+		easy_button.self_modulate = Color(1,1,1)
+		medium_button.self_modulate = Color(1,1,1)
+		hard_button.self_modulate = Color(1,1,1)
 		
 
 func _process(delta: float) -> void:
