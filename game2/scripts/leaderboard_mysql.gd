@@ -7,9 +7,6 @@ extends Node
 @onready var info_label = $InfoLabel
 @onready var http_request = $HTTPRequest
 
-# public URL hosted with NGROK - changes often
-#const SERVER_URL = "https://6737-64-251-251-34.ngrok-free.app/leaderboard.php"
-
 # School URL - works when on UP school wifi
 const SERVER_URL = "https://10.12.116.30/leaderboard.php"
 
@@ -18,7 +15,6 @@ const MAX_USERNAME_LENGTH = 20
 
 
 func _ready():
-
 	username_label.text = "Username: " + Global.username
 	score_input.text = str(Global.score)
 	

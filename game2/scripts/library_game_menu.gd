@@ -26,7 +26,7 @@ func refresh_options():
 		hard_button.disabled = true
 		hard_button.self_modulate = Color(1,0,0)
 		
-		
+
 func _process(delta: float) -> void:
 	if selection >= 0:
 		play_button.show()

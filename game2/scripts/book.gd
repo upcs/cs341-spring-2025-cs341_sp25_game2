@@ -5,23 +5,27 @@ extends RigidBody2D
 var is_stacked = false
 var is_being_dragged = false
 var book_options = 5
+var sprite_instantiated = false
 
 var random_x = randf_range(0.2,2.1)
 var random_y = randf_range(0.4,2.1)
 
 func _ready():
-	var random_pick = randi_range(1,book_options)
+	if sprite_instantiated == false:
+		sprite_instantiated = true
+		var random_pick = randi_range(1,book_options)
 	
-	if random_pick == 1:
-		$BlueBook.show()
-	elif random_pick == 2:
-		$BrownBook.show()
-	elif random_pick == 3:
-		$GreenBook.show()
-	elif random_pick == 4:
-		$PinkBook.show()
-	else:
-		$YellowBook.show()
+		if random_pick == 1:
+			$BlueBook.show()
+		elif random_pick == 2:
+			$BrownBook.show()
+		elif random_pick == 3:
+			$GreenBook.show()
+		elif random_pick == 4:
+			$PinkBook.show()
+		else:
+			$YellowBook.show()
+	
 
 # convenience function to set random range
 func set_random_range(x_low: float, x_high: float, y_low: float, y_high: float):
