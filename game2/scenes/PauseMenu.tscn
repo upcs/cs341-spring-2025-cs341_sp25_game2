@@ -15,9 +15,9 @@ polygon = PackedVector2Array(-1, -6, 0, 712, 1128, 712, 1128, -8)
 [node name="ResumeButton" type="Button" parent="."]
 visible = false
 offset_left = 360.0
-offset_top = 272.0
+offset_top = 224.0
 offset_right = 768.0
-offset_bottom = 328.0
+offset_bottom = 280.0
 theme = ExtResource("1_58vhg")
 text = "BACK TO GAME"
 
@@ -29,9 +29,9 @@ polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 [node name="QuitButton" type="Button" parent="."]
 visible = false
 offset_left = 360.0
-offset_top = 360.0
+offset_top = 400.0
 offset_right = 768.0
-offset_bottom = 416.0
+offset_bottom = 456.0
 theme = ExtResource("1_58vhg")
 text = "QUIT TO TITLE"
 
@@ -56,6 +56,21 @@ position = Vector2(7.45058e-06, 4.76837e-07)
 scale = Vector2(0.213235, 0.946429)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
+[node name="CampusButton" type="Button" parent="."]
+visible = false
+offset_left = 360.0
+offset_top = 312.0
+offset_right = 768.0
+offset_bottom = 368.0
+theme = ExtResource("1_58vhg")
+text = "BACK TO CAMPUS"
+
+[node name="Polygon2D" type="Polygon2D" parent="CampusButton"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
 [connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="CampusButton" to="." method="_on_campus_button_pressed"]

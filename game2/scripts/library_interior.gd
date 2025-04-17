@@ -20,6 +20,7 @@ func _ready() -> void:
 		Global.spawn_scene = ""
 	else:
 		player.position = Global.library_interior_spawn_position
+	Global.spawn_position = Vector2(2400, 940)
 	
 	library_text_panel.modulate.a = 0.0
 	tween.tween_property(library_text_panel, "modulate:a", 0.9, 1.0)

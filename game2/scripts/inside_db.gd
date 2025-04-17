@@ -7,6 +7,7 @@ var max_value = 1000
 var timer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.spawn_position = Vector2(650, 356)
 	can_paper = false
 	timer = $GameTimer
 	$RichTextLabel2.text = "Score: " + str(Global.score)

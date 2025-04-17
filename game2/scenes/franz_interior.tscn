@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://bf4veea5aqqyo"]
+[gd_scene load_steps=11 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
+[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="2_7n1yq"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
 [ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="3_r3ych"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_yjd2d"]
@@ -3081,6 +3082,8 @@ show_behind_parent = true
 position = Vector2(-8, -8)
 scale = Vector2(1, 1.5)
 polygon = PackedVector2Array(-16, 0, -16, 160, 504, 160, 504, 0)
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_7n1yq")]
 
 [connection signal="body_entered" from="Franz_exit" to="." method="_on_franz_exit_body_entered"]
 [connection signal="body_entered" from="Minigame_entrance" to="." method="_on_minigame_entrance_body_entered"]

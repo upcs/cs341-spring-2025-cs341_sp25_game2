@@ -4,6 +4,7 @@ extends CanvasLayer
 @onready var resume_button = $ResumeButton
 @onready var quit_button = $QuitButton
 @onready var pause_button = $PauseButton
+@onready var campus_button = $CampusButton
 
 @onready var parent = null
 
@@ -13,6 +14,7 @@ func _ready() -> void:
 	resume_button.hide()
 	quit_button.hide()
 	pause_button.show()
+	campus_button.hide()
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("escape"):
@@ -23,8 +25,10 @@ func _on_resume_button_pressed() -> void:
 		parent._pause()
 	background.hide()
 	resume_button.hide()
+	campus_button.hide()
 	quit_button.hide()
 	pause_button.show()
+	
 	get_tree().paused = false
 
 
@@ -49,4 +53,14 @@ func _on_pause_button_pressed() -> void:
 	background.show()
 	resume_button.show()
 	quit_button.show()
+	campus_button.show()
 	pause_button.hide()
+
+
+func _on_campus_button_pressed() -> void:
+	get_tree().paused = false
+	if get_tree().current_scene.scene_file_path == "res://scenes/campus.tscn":
+		_on_resume_button_pressed()
+	else:
+		Global.spawn_scene == "res://scenes/campus.tscn"
+		get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
