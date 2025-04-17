@@ -7,6 +7,7 @@
 [node name="LibraryMap" type="Sprite2D" parent="."]
 position = Vector2(0, 1192)
 texture = ExtResource("2_tm6po")
+metadata/_edit_lock_ = true
 
 [node name="bounds" type="StaticBody2D" parent="."]
 
@@ -29,8 +30,8 @@ position = Vector2(0, 1888)
 polygon = PackedVector2Array(408, 288, 421, 198, 473, 198, 484, 292)
 
 [node name="tree little2" type="CollisionPolygon2D" parent="bounds"]
-position = Vector2(32, 632)
-polygon = PackedVector2Array(417, 299, 430, 238, 463, 236, 479, 296)
+position = Vector2(24, 632)
+polygon = PackedVector2Array(432, 304, 440, 240, 472, 240, 480, 304)
 
 [node name="tree little3" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(-152, 640)
@@ -38,8 +39,8 @@ polygon = PackedVector2Array(400, 288, 430, 238, 463, 236, 480, 288)
 
 [node name="tree little4" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(72, 968)
-polygon = PackedVector2Array(416, 280, 424, 208, 456, 208, 472, 280)
+polygon = PackedVector2Array(416, 280, 416, 184, 376, 192, 360, 104, 440, 8, 520, 80, 512, 192, 456, 184, 464, 280)
 
 [node name="tree little5" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(-16, 1504)
-polygon = PackedVector2Array(416, 280, 416, 216, 440, 216, 448, 280)
+polygon = PackedVector2Array(416, 280, 416, 216, 424, -184, 488, -200, 496, -96, 560, -56, 504, 88, 448, 72, 448, 224, 448, 280)
