@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://bnqpx1h3hlji4"]
+[gd_scene load_steps=14 format=3 uid="uid://bnqpx1h3hlji4"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p7jru"]
 [ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="2_sq3cl"]
 [ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="3_2ggrc"]
-[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="3_2s2ik"]
 [ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="3_cvg81"]
 [ext_resource type="Texture2D" uid="uid://belquhqdmrc6y" path="res://animations/WallyRight.png" id="4_ndwlk"]
 
@@ -81,7 +80,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkmin"]
 size = Vector2(126, 207)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_p7jru")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -95,31 +94,6 @@ autoplay = "Idle"
 position = Vector2(0, -3.5)
 shape = SubResource("RectangleShape2D_hkmin")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseButton" type="Button" parent="CanvasLayer"]
-top_level = true
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -103.0
-offset_top = 16.0
-offset_right = -17.0
-offset_bottom = 69.0
-grow_horizontal = 0
-theme = ExtResource("3_2s2ik")
-text = "PAUSE"
-
-[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/PauseButton"]
-self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
-show_behind_parent = true
-position = Vector2(7.45058e-06, 4.76837e-07)
-scale = Vector2(0.213235, 0.946429)
-polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
-
-[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("3_2ggrc")]
-visible = false
+[node name="PauseMenu" parent="." instance=ExtResource("3_2ggrc")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[connection signal="pressed" from="CanvasLayer/PauseButton" to="." method="_on_pause_button_pressed"]

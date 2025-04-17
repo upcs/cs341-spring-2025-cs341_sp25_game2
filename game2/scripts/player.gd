@@ -3,20 +3,12 @@ extends CharacterBody2D
 class_name Player
 
 @onready var pause_menu = $CanvasLayer/PauseMenu
-@onready var pause_button = $CanvasLayer/PauseButton
 
 var sprite
 var target_position = Vector2.ZERO
 var is_moving_to_target = false
 var is_paused = false
 
-func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("escape"):
-		is_paused = !is_paused
-		is_moving_to_target = false
-		pause_menu.visible = !pause_menu.visible
-		pause_button.visible = !pause_button.visible
-		
 
 func _ready() -> void:
 	sprite = $AnimatedSprite2D
@@ -95,16 +87,8 @@ func takehit():
 	return "hit taken"
 
 
-func _on_pause_button_pressed() -> void:
+func _pause() -> void:
+	is_paused = !is_paused
 	is_moving_to_target = false
 	target_position = global_position
-	is_paused = true
-	pause_menu.show()
-	pause_button.hide()
-
-
-func remove_pause_menu() -> void:
-	is_paused = false
-	pause_menu.hide()
-	pause_button.show()
-	
+	sprite.play("Idle")

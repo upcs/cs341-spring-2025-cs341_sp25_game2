@@ -3,22 +3,22 @@
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_58vhg"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="2_0j8cm"]
 
-[node name="PauseMenu" type="Control"]
-layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("1_58vhg")
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("2_0j8cm")
 
 [node name="Background" type="Polygon2D" parent="."]
+visible = false
 color = Color(0.0941176, 0.0941176, 0.0941176, 0.882353)
 polygon = PackedVector2Array(-1, -6, 0, 712, 1128, 712, 1128, -8)
 
 [node name="ResumeButton" type="Button" parent="."]
-layout_mode = 0
+visible = false
 offset_left = 360.0
 offset_top = 272.0
 offset_right = 768.0
 offset_bottom = 328.0
+theme = ExtResource("1_58vhg")
 text = "BACK TO GAME"
 
 [node name="Polygon2D" type="Polygon2D" parent="ResumeButton"]
@@ -27,11 +27,12 @@ show_behind_parent = true
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="QuitButton" type="Button" parent="."]
-layout_mode = 0
+visible = false
 offset_left = 360.0
 offset_top = 360.0
 offset_right = 768.0
 offset_bottom = 416.0
+theme = ExtResource("1_58vhg")
 text = "QUIT TO TITLE"
 
 [node name="Polygon2D" type="Polygon2D" parent="QuitButton"]
@@ -41,15 +42,10 @@ polygon = PackedVector2Array(0, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="PauseButton" type="Button" parent="."]
 top_level = true
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -103.0
-offset_top = 16.0
-offset_right = -17.0
-offset_bottom = 69.0
-grow_horizontal = 0
+offset_left = 1016.0
+offset_top = 24.0
+offset_right = 1102.0
+offset_bottom = 77.0
 theme = ExtResource("1_58vhg")
 text = "PAUSE"
 
