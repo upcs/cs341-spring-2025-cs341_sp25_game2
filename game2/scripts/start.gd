@@ -31,8 +31,8 @@ func _on_button_pressed() -> void:
 		get_tree().change_scene_to_packed(load(Global.spawn_scene))
 	else:
 		var packed_scene = load("res://scenes/campus.tscn")
-		loading_screen.progress_bar = 100
-		await get_tree().create_timer(0.1).timeout
+		loading_screen.progress_bar.value = 100
+		await get_tree().create_timer(0.3).timeout
 		
 		get_tree().change_scene_to_packed(packed_scene)
 	
