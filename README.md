@@ -19,6 +19,10 @@ The tile maps found in the artwork of the game have been put together from the o
 | Menu scene background | Found at *[stockcake.com](https://www.google.com/url?) |
 | Books for library minigame | (see APPENDIX: CREDITS - Knowledge Vectors by Vecteezy ) |
 -----------------------------------------------------------------------------------------
+|         Music        |         Artist - License           |
+|-----------------------|------------------------------------|
+| Porto mp3 (Main scene soundtrack) by Evan Frueh (UP student)|
+
 *stockcake.com is currently not a working site.
 
 ## BADGES
