@@ -31,6 +31,8 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	loading_screen.visible = true
+	acknowledgements.disabled = true
+	acknowledgements.visible = false
 	await get_tree().create_timer(0.1).timeout
 	if Global.spawn_scene != "":
 		get_tree().change_scene_to_packed(load(Global.spawn_scene))
