@@ -6,7 +6,7 @@ var spawn_position = Vector2(134, 356)
 var building
 var buildings = ["res://scenes/insideDB.tscn","res://scenes/franz_interior.tscn","res://scenes/BC_interior.tscn","res://scenes/Library_interior.tscn"]
 
-var markercount = 0
+var markercount = 0 % 4
 var markers = ["DB/Marker2D","franz_entrance/Marker2D","BC_entrance/BC_marker","Library_entrance/Library_marker"]
 
 

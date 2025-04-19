@@ -40,19 +40,19 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
-	which_class = get_node(Global.markers[Global.markercount])
+	which_class = get_node(Global.markers[Global.markercount%4])
 	arrow.rotation = player.position.angle_to_point(which_class.position)
 	if (class_on_time):
 		timer.wait_time = 30
 		scoreLabel.text = "Score: " + str(Global.score)
 		class_on_time = false
 		player.position = Global.spawn_position
-		get_tree().change_scene_to_file(Global.buildings[Global.markercount])
-		Global.markercount += 1
+		get_tree().change_scene_to_file(Global.buildings[Global.markercount%4])
+		Global.markercount = (Global.markercount + 1) % 4
 	elif (out_of_time):
 		out_of_time = false
 		#label.text = "You did not make it to class on time :("
-		Global.markercount += 1
+		Global.markercount = (Global.markercount + 1) % 4
 	#else:
 		#label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
 	

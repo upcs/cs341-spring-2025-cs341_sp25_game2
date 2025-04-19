@@ -88,6 +88,26 @@ polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 [node name="LoadingScreen" parent="." instance=ExtResource("5_sae6w")]
 visible = false
 
+[node name="Acknowledgements_button" type="Button" parent="."]
+visible = false
+offset_left = 494.0
+offset_top = 569.0
+offset_right = 656.0
+offset_bottom = 629.0
+text = "Acknowledgements"
+
+[node name="Acknowldegements" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 275.0
+offset_top = 3.0
+offset_right = 875.0
+offset_bottom = 189.0
+theme_override_fonts/normal_font = ExtResource("3_ed01v")
+text = "Game is developed by: Lucian Kennelly, Joshua Krasnogorov, Jacqui Bouchard, Kaitlyn Atalig, Tyler Crosbie
+
+Soundtrack: Evan Frueh"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="Acknowledgements_button" to="." method="_on_acknowledgements_pressed"]

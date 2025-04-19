@@ -6,6 +6,8 @@ extends Node2D
 @onready var username_label = $RichTextLabel2
 @onready var leaderboard_button = $LeaderboardButton
 @onready var loading_screen = $LoadingScreen
+@onready var acknowledgements = $Acknowledgements_button
+@onready var acknowledgement = $Acknowldegements
 
 
 # Called when the node enters the scene tree for the first time.
@@ -22,6 +24,9 @@ func _ready() -> void:
 		username_label.visible = false
 		start_button.visible = true
 		leaderboard_button.visible = true
+		acknowledgements.visibile = false
+		acknowledgements.disabled = true
+		acknowledgement.visibile = false
 		
 
 func _on_button_pressed() -> void:
@@ -52,6 +57,8 @@ func _on_submit_button_pressed() -> void:
 		submit_button.disabled = true
 		submit_button.visible = false
 		username_label.visible = false
+		acknowledgements.disabled = false
+		acknowledgements.visible = true
 		
 		print(Global.username)
 	else:
@@ -62,3 +69,10 @@ func _on_submit_button_pressed() -> void:
 		
 func _on_leaderboard_button_pressed() -> void:
 	get_tree().change_scene_to_packed(load("res://scenes/LeaderboardMYSQL.tscn"))
+
+
+func _on_acknowledgements_pressed() -> void:
+	if (acknowledgement.visible == false):
+		acknowledgement.visible = true
+	else:
+		acknowledgement.visible = false

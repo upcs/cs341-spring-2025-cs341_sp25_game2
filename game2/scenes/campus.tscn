@@ -6591,7 +6591,7 @@ texture = ExtResource("20_lhcju")
 [node name="All-Around Bounds" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="All-Around Bounds"]
-polygon = PackedVector2Array(2458, -645, 3136, -568, 3153, -2026, 3144, -2255, 3814, -2255, 4390, -2221, 4568, 264, 4954, 292, 5152, 912, 4672, 912, 4680, 2048, 3928, 2464, 3192, 2416, 960, 2136, 1000, 704, -96, 680, -72, -64, 1096, -40, 1096, -168, -248, -152, -288, 920, 832, 912, 696, 2400, 4776, 2672, 5304, 2072, 5045, -111, 5025, -2621, 2828, -2530)
+polygon = PackedVector2Array(1875, -644, 2633, -412, 3136, -568, 3199, -1897, 3335, -2101, 3814, -2255, 4240, -1999, 4568, 264, 4954, 292, 5152, 912, 4672, 912, 4680, 2048, 3928, 2464, 3192, 2416, 960, 2136, 1000, 704, -96, 680, -72, -64, 1096, -40, 1096, -168, -248, -152, -288, 920, 832, 912, 696, 2400, 4776, 2672, 5304, 2072, 5045, -111, 5025, -2621, 2828, -2530)
 
 [node name="franz_entrance" type="Area2D" parent="."]
 
@@ -6641,6 +6641,7 @@ text = "Hi! I am the Pilot Oak of University of Portland! I am estimated to be 3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_8o5k5")
 autoplay = true
+max_distance = 2e+06
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]
