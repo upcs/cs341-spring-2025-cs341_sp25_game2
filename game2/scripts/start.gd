@@ -1,9 +1,9 @@
 extends Node2D
 
-@onready var start_button = $Button
+@onready var start_button = $StartButton
 @onready var username_input = $LineEdit
 @onready var submit_button = $SubmitButton
-@onready var username_label = $RichTextLabel2
+@onready var username_label = $UsernameLabel
 @onready var leaderboard_button = $LeaderboardButton
 @onready var loading_screen = $LoadingScreen
 @onready var acknowledgements = $Acknowledgements_button
@@ -24,9 +24,9 @@ func _ready() -> void:
 		username_label.visible = false
 		start_button.visible = true
 		leaderboard_button.visible = true
-		acknowledgements.visibile = false
-		acknowledgements.disabled = true
-		acknowledgement.visibile = false
+		acknowledgements.visible = true
+		acknowledgements.disabled = false
+		acknowledgement.visible = false
 		
 
 func _on_button_pressed() -> void:
@@ -39,7 +39,7 @@ func _on_button_pressed() -> void:
 	else:
 		var packed_scene = load("res://scenes/campus.tscn")
 		loading_screen.progress_bar.value = 100
-		await get_tree().create_timer(0.3).timeout
+		await get_tree().create_timer(0.2).timeout
 		
 		get_tree().change_scene_to_packed(packed_scene)
 	

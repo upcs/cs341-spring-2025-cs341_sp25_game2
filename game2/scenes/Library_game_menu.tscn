@@ -15,11 +15,10 @@ script = ExtResource("1_dix2i")
 [node name="BackButton" type="Button" parent="."]
 top_level = true
 layout_mode = 0
-offset_left = 832.0
-offset_top = 96.0
-offset_right = 1015.0
-offset_bottom = 133.0
-scale = Vector2(1.5, 1.5)
+offset_left = 1016.0
+offset_top = 93.0
+offset_right = 1102.0
+offset_bottom = 146.0
 theme_override_fonts/font = ExtResource("2_3k8yb")
 text = "BACK
 "
@@ -27,7 +26,7 @@ text = "BACK
 [node name="Polygon2D" type="Polygon2D" parent="BackButton"]
 self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
 show_behind_parent = true
-scale = Vector2(0.447439, 0.666162)
+scale = Vector2(0.210784, 0.946429)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="PlayButton" type="Button" parent="."]

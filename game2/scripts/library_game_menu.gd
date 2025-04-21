@@ -31,9 +31,6 @@ func refresh_options():
 		difficulties[0] = 1
 		difficulties[1] = 1
 		difficulties[2] = 1
-		print("Current multiplier:", Global.library_score_multiplier)
-		Global.library_score_multiplier = (Global.library_score_multiplier * 0.75)
-		print("New multiplier:", Global.library_score_multiplier)
 		easy_button.disabled = false
 		medium_button.disabled = false
 		hard_button.disabled = false
@@ -41,6 +38,7 @@ func refresh_options():
 		medium_button.self_modulate = Color(1,1,1)
 		hard_button.self_modulate = Color(1,1,1)
 		
+	Global.update_score()
 
 func _process(delta: float) -> void:
 	if selection >= 0:

@@ -20,4 +20,9 @@ var pause_position = Vector2.ZERO
 # variables for Library
 var difficulties = [1, 1, 1] # [easy, medium, hard] -> 1 == can play, 0 == can't play
 var library_interior_spawn_position = Vector2(1080, 150)
-var library_score_multiplier = 1.0
+var lib_easy_score = 0 # high score for easy difficulty
+var lib_med_score = 0 # high score for medium difficulty
+var lib_hard_score = 0 # high score for hard difficulty
+
+func update_score() -> void:
+	score = lib_easy_score + lib_med_score + lib_hard_score # add in the scores for your minigame here

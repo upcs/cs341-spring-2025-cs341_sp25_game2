@@ -34,7 +34,7 @@ func _ready() -> void:
 	class_on_time = false
 	out_of_time = false
 	scoreLabel.text = "Score: " + str(Global.score)
-	#timer.wait_time = 30
+	timer.wait_time = 30
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,10 +51,10 @@ func _process(delta: float) -> void:
 		Global.markercount = (Global.markercount + 1) % 4
 	elif (out_of_time):
 		out_of_time = false
-		#label.text = "You did not make it to class on time :("
+		label.text = "You did not make it to class on time :("
 		Global.markercount = (Global.markercount + 1) % 4
-	#else:
-		#label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
+	else:
+		label.text = "Get to class in time, follow the arrow! Time Left: " + str(int(timer.get_time_left()))
 	
 
 func _on_db_body_entered(body: Node2D) -> void:
@@ -75,7 +75,7 @@ func _on_shiley_2_body_entered(body: Node2D) -> void:
 
 
 func _on_library_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("Player"):# and Global.buildings[Global.markercount] == "res://scenes/Library_interior.tscn":
+	if body.is_in_group("Player") and Global.buildings[Global.markercount] == "res://scenes/Library_interior.tscn":
 		if not out_of_time:
 			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/Library_interior.tscn")
