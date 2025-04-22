@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	$RichTextLabel.text = "Pick up all the papers by clicking on them! Time Left: " + str(int(timer.get_time_left()))
 	if can_paper:
 		instance = paper.instantiate()
+		instance.SPEED = instance.SPEED + 100*abs((int(timer.get_time_left())-60))
 		instance.position.x = random_range
 		instance.scoreChange.connect(score_change)
 		add_child(instance)

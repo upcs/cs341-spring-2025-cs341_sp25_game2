@@ -14,11 +14,17 @@ process_mode = 3
 physics_interpolation_mode = 1
 script = ExtResource("1_n6113")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="LibraryBackground" type="TextureRect" parent="."]
 offset_top = -8.0
 offset_right = 1144.0
 offset_bottom = 728.0
 texture = ExtResource("2_1dmuo")
+
+[node name="CounterBackground" type="Polygon2D" parent="."]
+position = Vector2(-5.34783, 7.62939e-06)
+scale = Vector2(1.16848, 1)
+color = Color(0.0627451, 0.0392157, 0.211765, 0.854902)
+polygon = PackedVector2Array(8, 24, 192, 24, 192, 320, 8, 320)
 
 [node name="StackCounter" type="Label" parent="."]
 offset_left = 8.0
@@ -29,6 +35,27 @@ scale = Vector2(1.5, 1.5)
 theme_override_fonts/font = ExtResource("2_7i751")
 text = "BOOKS: 0/10
 "
+
+[node name="GameScore" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 78.0
+offset_right = 128.0
+offset_bottom = 110.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_7i751")
+text = "SCORE: 0"
+
+[node name="HighScores" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 126.0
+offset_right = 140.0
+offset_bottom = 250.0
+scale = Vector2(1.5, 1.5)
+theme_override_fonts/font = ExtResource("2_7i751")
+text = "HIGH SCORES:
+EASY: 0
+MEDIUM: 0
+HARD: 0"
 
 [node name="GameMessage" type="RichTextLabel" parent="."]
 top_level = true
@@ -45,15 +72,6 @@ bbcode_enabled = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(568, 544)
 shape = SubResource("RectangleShape2D_yec0o")
-
-[node name="GameScore" type="Label" parent="."]
-offset_left = 16.0
-offset_top = 80.0
-offset_right = 136.0
-offset_bottom = 112.0
-scale = Vector2(1.5, 1.5)
-theme_override_fonts/font = ExtResource("2_7i751")
-text = "SCORE: 0"
 
 [node name="LibraryGameMenu" parent="." instance=ExtResource("4_5a1ne")]
 offset_left = 343.776

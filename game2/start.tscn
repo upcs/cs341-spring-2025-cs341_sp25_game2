@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bijjacehyf2fm"]
+[gd_scene load_steps=7 format=3 uid="uid://bijjacehyf2fm"]
 
 [ext_resource type="Script" path="res://scripts/start.gd" id="1_gaapw"]
 [ext_resource type="Texture2D" uid="uid://d25w0mjqtlb0r" path="res://Tilepngs/bellTower.jpg" id="2_s1ivv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_ed01v"]
 [ext_resource type="Script" path="res://scripts/usernameInput.gd" id="4_n35t5"]
 [ext_resource type="PackedScene" uid="uid://ddkcuchf7m4kq" path="res://scenes/LoadingScreen.tscn" id="5_sae6w"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="6_8fugy"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gaapw")
@@ -15,37 +16,39 @@ offset_bottom = 711.0
 texture = ExtResource("2_s1ivv")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = 288.0
-offset_top = 224.0
-offset_right = 851.0
-offset_bottom = 392.0
+offset_left = 275.0
+offset_top = 241.0
+offset_right = 838.0
+offset_bottom = 409.0
+rotation = 0.00196608
 theme_override_fonts/normal_font = ExtResource("3_ed01v")
 theme_override_font_sizes/normal_font_size = 50
-text = "WHERES WALLY?"
+bbcode_enabled = true
+text = "[center]WHERES WALLY?"
 
-[node name="Button" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="."]
 visible = false
-offset_left = 520.0
-offset_top = 411.0
-offset_right = 635.0
-offset_bottom = 472.0
+offset_left = 444.5
+offset_top = 350.0
+offset_right = 678.5
+offset_bottom = 411.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "START"
 
-[node name="Polygon2D" type="Polygon2D" parent="Button"]
+[node name="Polygon2D" type="Polygon2D" parent="StartButton"]
 self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
 show_behind_parent = true
-scale = Vector2(0.281863, 1.14286)
+scale = Vector2(0.574755, 1.14286)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 53.375, 0, 53.375)
 
 [node name="LineEdit" type="LineEdit" parent="."]
-offset_left = 434.0
-offset_top = 407.0
-offset_right = 695.0
-offset_bottom = 475.0
+offset_left = 431.0
+offset_top = 405.0
+offset_right = 692.0
+offset_bottom = 473.0
 script = ExtResource("4_n35t5")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="UsernameLabel" type="RichTextLabel" parent="."]
 offset_left = 152.0
 offset_top = 358.0
 offset_right = 1784.0
@@ -57,12 +60,12 @@ bbcode_enabled = true
 text = "[center]Enter a Username:"
 
 [node name="SubmitButton" type="Button" parent="."]
-offset_left = 489.0
+offset_left = 478.0
 offset_top = 482.0
-offset_right = 656.0
+offset_right = 645.0
 offset_bottom = 543.0
 theme_override_fonts/font = ExtResource("3_ed01v")
-text = "Submit"
+text = "SUBMIT"
 
 [node name="Polygon2D" type="Polygon2D" parent="SubmitButton"]
 self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
@@ -72,22 +75,49 @@ polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="LeaderboardButton" type="Button" parent="."]
 visible = false
-offset_left = 488.0
-offset_top = 480.0
-offset_right = 664.0
-offset_bottom = 544.0
+offset_left = 444.5
+offset_top = 425.0
+offset_right = 678.5
+offset_bottom = 486.0
 theme_override_fonts/font = ExtResource("3_ed01v")
 text = "LEADERBOARD"
 
 [node name="Polygon2D" type="Polygon2D" parent="LeaderboardButton"]
 self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
 show_behind_parent = true
-scale = Vector2(0.431373, 1.14286)
+scale = Vector2(0.574755, 1.08929)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="LoadingScreen" parent="." instance=ExtResource("5_sae6w")]
 visible = false
 
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[node name="Acknowledgements_button" type="Button" parent="."]
+visible = false
+offset_left = 444.5
+offset_top = 500.0
+offset_right = 678.5
+offset_bottom = 561.0
+theme = ExtResource("6_8fugy")
+text = "ACKNOWLEDGEMENTS"
+
+[node name="Polygon2D" type="Polygon2D" parent="Acknowledgements_button"]
+self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
+show_behind_parent = true
+scale = Vector2(0.573529, 1.08929)
+polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
+
+[node name="Acknowldegements" type="RichTextLabel" parent="."]
+visible = false
+offset_left = 275.0
+offset_top = 3.0
+offset_right = 875.0
+offset_bottom = 189.0
+theme_override_fonts/normal_font = ExtResource("3_ed01v")
+text = "Game is developed by: Lucian Kennelly, Joshua Krasnogorov, Jacqui Bouchard, Kaitlyn Atalig, Tyler Crosbie
+
+Soundtrack: Evan Frueh"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="LeaderboardButton" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="Acknowledgements_button" to="." method="_on_acknowledgements_pressed"]

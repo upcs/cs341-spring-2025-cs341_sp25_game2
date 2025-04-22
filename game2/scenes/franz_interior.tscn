@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bf4veea5aqqyo"]
+[gd_scene load_steps=12 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
@@ -2994,6 +2994,9 @@ size = Vector2(22.25, 213.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amm34"]
 size = Vector2(33, 217)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ukrsh"]
+size = Vector2(1121, 30.5)
+
 [node name="FranzInterior" type="Node2D"]
 script = ExtResource("1_lgwf3")
 
@@ -3027,6 +3030,12 @@ shape = SubResource("RectangleShape2D_amm34")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="floor" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(568, 688)
+shape = SubResource("RectangleShape2D_ukrsh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

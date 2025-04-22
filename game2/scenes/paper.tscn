@@ -27,7 +27,7 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sc3w6"]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D2" type="CharacterBody2D"]
 top_level = true
 scale = Vector2(3, 3)
 script = ExtResource("1_nafwu")

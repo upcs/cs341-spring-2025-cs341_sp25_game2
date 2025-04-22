@@ -53,7 +53,7 @@ text = "PAUSE"
 self_modulate = Color(0.117647, 0.0862745, 0.337255, 1)
 show_behind_parent = true
 position = Vector2(7.45058e-06, 4.76837e-07)
-scale = Vector2(0.213235, 0.946429)
+scale = Vector2(0.210784, 0.946429)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="CampusButton" type="Button" parent="."]

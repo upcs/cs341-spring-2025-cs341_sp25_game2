@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b05s1gqf8518g"]
+[gd_scene load_steps=2 format=3 uid="uid://b8se0xe8a2bua"]
 
 [ext_resource type="Texture2D" uid="uid://cdg13n1jwrtvo" path="res://images/library_map.png" id="2_tm6po"]
 
@@ -39,7 +39,7 @@ polygon = PackedVector2Array(400, 288, 430, 238, 463, 236, 480, 288)
 
 [node name="tree little4" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(72, 968)
-polygon = PackedVector2Array(416, 280, 416, 184, 376, 192, 360, 104, 440, 8, 520, 80, 512, 192, 456, 184, 464, 280)
+polygon = PackedVector2Array(416, 280, 424, 208, 456, 208, 464, 280)
 
 [node name="tree little5" type="CollisionPolygon2D" parent="bounds"]
 position = Vector2(-16, 1504)

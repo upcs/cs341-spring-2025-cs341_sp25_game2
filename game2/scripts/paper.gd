@@ -1,5 +1,5 @@
 extends CharacterBody2D
-const SPEED = 5000
+var SPEED = 5000
 var can_click = false
 signal scoreChange
 func _ready() -> void:
@@ -12,6 +12,7 @@ func _physics_process(delta: float) -> void:
 		queue_free()
 	velocity.y = SPEED*delta
 	move_and_slide()
+	
 	
 
 
