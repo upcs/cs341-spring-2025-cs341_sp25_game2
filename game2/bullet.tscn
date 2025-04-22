@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_6u6u3")
 [node name="Shoot" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ku12m")
 animation = &"Shoot"
-frame_progress = 0.564188
+frame_progress = 0.415929
 
 [node name="Area2D" type="Area2D" parent="."]
 
