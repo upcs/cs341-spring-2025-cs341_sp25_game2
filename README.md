@@ -21,7 +21,7 @@ The tile maps found in the artwork of the game have been put together from the o
 -----------------------------------------------------------------------------------------
 |         Music        |         Artist - License           |
 |-----------------------|------------------------------------|
-| Porto mp3 (Main scene soundtrack) by Evan Frueh (UP student)|
+| Porto mp3 (Main scene soundtrack) | Evan Frueh (UP student)|
 
 *stockcake.com is currently not a working site.
 
