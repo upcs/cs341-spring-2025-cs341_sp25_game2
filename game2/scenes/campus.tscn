@@ -6538,6 +6538,7 @@ position = Vector2(2681, -643)
 position = Vector2(134, 356)
 scale = Vector2(0.5, 0.5)
 collision_layer = 3
+script = null
 
 [node name="Arrow" type="Sprite2D" parent="Wally"]
 position = Vector2(210, 19.9999)

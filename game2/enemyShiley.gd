@@ -1,5 +1,5 @@
 extends CharacterBody2D
-@export var speed: float = 500.0
+@export var speed: float = 300.0
 
 func _ready():
 	add_to_group("Enemy")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://5ofpob85ytag"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_5ap0i"]
+[ext_resource type="Script" path="res://shileyPlayer.gd" id="1_5ap0i"]
 [ext_resource type="Texture2D" uid="uid://bqupmrfa2i8cr" path="res://S_miniGame_assets/CS.jpeg" id="2_51v2n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_otb3q"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://buw4m123cypdi"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_bi0n8"]
+[ext_resource type="Script" path="res://enemyShiley.gd" id="1_bi0n8"]
 [ext_resource type="Texture2D" uid="uid://cm6im2v0cj2d" path="res://S_miniGame_assets/trojan-Photoroom.png" id="1_surft"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vl16t"]

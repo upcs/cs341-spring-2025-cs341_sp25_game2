@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://blwh6223nsed"]
 
 [ext_resource type="Texture2D" uid="uid://cdrmik3yjvyc2" path="res://S_miniGame_assets/LaserShot.png" id="1_p5l8b"]
-[ext_resource type="Script" path="res://Bullet.gd" id="1_ynjik"]
+[ext_resource type="Script" path="res://bullet.gd" id="1_ynjik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6u6u3"]
 size = Vector2(61, 20)
@@ -76,7 +76,7 @@ shape = SubResource("RectangleShape2D_6u6u3")
 [node name="Shoot" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ku12m")
 animation = &"Shoot"
-frame_progress = 0.936625
+frame_progress = 0.564188
 
 [node name="Area2D" type="Area2D" parent="."]
 

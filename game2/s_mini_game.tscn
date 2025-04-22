@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://cy26kjjs50pq2"]
+[gd_scene load_steps=12 format=4 uid="uid://cy26kjjs50pq2"]
 
 [ext_resource type="PackedScene" uid="uid://buw4m123cypdi" path="res://enemy.tscn" id="3_uv7e6"]
+[ext_resource type="PackedScene" uid="uid://bbb1ffkcwfreu" path="res://playerShiley.tscn" id="4_8cvne"]
 [ext_resource type="Texture2D" uid="uid://cavvgsjwekygy" path="res://S_miniGame_assets/square.png" id="4_cpj5e"]
 [ext_resource type="Texture2D" uid="uid://cfydw07hd07ie" path="res://S_miniGame_assets/CosmicLilac_Tiles.png" id="5_ke5qa"]
 
@@ -404,3 +405,7 @@ polygon = PackedVector2Array(-496, -240, -95, -239, -95, -209, 1328, -208, 1258,
 
 [node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(128, 961, 128, 976, 160, 976, 160, 992, 176, 992, 176, 960)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_8cvne")]
+z_index = 1
+position = Vector2(-384, -29)

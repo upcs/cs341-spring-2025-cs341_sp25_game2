@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbb1ffkcwfreu"]
+
+[ext_resource type="Script" path="res://shileyPlayer.gd" id="1_b4hhc"]
+[ext_resource type="Texture2D" uid="uid://bqupmrfa2i8cr" path="res://S_miniGame_assets/CS.jpeg" id="1_me3vl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3b1ir"]
+size = Vector2(520, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fdr82"]
+size = Vector2(30, 30)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_b4hhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_me3vl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4.76837e-07, -2.38419e-07)
+scale = Vector2(0.05, 0.05)
+shape = SubResource("RectangleShape2D_3b1ir")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_fdr82")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.495, 1.495)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
