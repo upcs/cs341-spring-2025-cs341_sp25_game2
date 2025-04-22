@@ -34,6 +34,7 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 
 book=""
 player=""
+Bullet=""
 
 [input]
 
