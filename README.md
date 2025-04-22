@@ -37,6 +37,10 @@ Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code 
 - Scripts excluded from total lines of code sum: shiley.gd, scene.gd, josh_map_5+7.gd, bc_interior.gd, enemy.gd, and global.gd; this is because they are based on functions automatically written into Godot.
 - Need testing: inside_db.gd and start.gd
 
+### BUG FIXES
+- Fixed bug where player could see outside of the map or run outside of the map
+- Fixed bug where browser (specifically Edge) displayed black background
+
 ## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
 [CREDITS-colonial.txt](https://github.com/user-attachments/files/18759367/CREDITS-colonial.txt) \
