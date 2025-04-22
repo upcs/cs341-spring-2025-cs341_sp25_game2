@@ -117,7 +117,7 @@ func hit_obs(body):
 		game_over()
 
 func show_score():
-	$HUD.get_node("ScoreLabel").text = "SCORE" + str(score/SCORE_MODIFIER)
+	$HUD.get_node("ScoreLabel").text = "SCORE: " + str(score/SCORE_MODIFIER)
 	
 func check_high_score():
 	if score > high_score:
