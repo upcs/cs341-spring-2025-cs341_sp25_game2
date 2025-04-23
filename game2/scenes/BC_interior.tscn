@@ -1,14 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://ck61tqa30mlcr"]
+[gd_scene load_steps=13 format=3 uid="uid://ck61tqa30mlcr"]
 
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="1_33pql"]
 [ext_resource type="Texture2D" uid="uid://cf57g13m8t3ra" path="res://Tilepngs/buckleyaud.jpg" id="1_bciuw"]
 [ext_resource type="Script" path="res://scripts/bc_interior.gd" id="1_t3ugx"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_koyeq"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="4_vjder"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="6_d32n8"]
-[ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="6_vlbfi"]
-[ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="7_bcw0o"]
-[ext_resource type="Texture2D" uid="uid://belquhqdmrc6y" path="res://animations/WallyRight.png" id="8_meikr"]
+[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="6_djffe"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
 texture = ExtResource("1_33pql")
@@ -3003,82 +3000,11 @@ size = Vector2(1121, 30.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4sxf"]
 size = Vector2(33, 217)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mra10"]
-atlas = ExtResource("6_vlbfi")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rn7ot"]
-atlas = ExtResource("6_vlbfi")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lvh1i"]
-atlas = ExtResource("7_bcw0o")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1as71"]
-atlas = ExtResource("7_bcw0o")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5x0c1"]
-atlas = ExtResource("8_meikr")
-region = Rect2(0, 0, 200, 200)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cm887"]
-atlas = ExtResource("8_meikr")
-region = Rect2(200, 0, 200, 200)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8qnwa"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mra10")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rn7ot")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lvh1i")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1as71")
-}],
-"loop": true,
-"name": &"Left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5x0c1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cm887")
-}],
-"loop": true,
-"name": &"Right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mra10")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rn7ot")
-}],
-"loop": true,
-"name": &"Walking",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7yuf"]
-size = Vector2(126, 215.5)
-
 [node name="BcInterior" type="Node2D"]
 script = ExtResource("1_t3ugx")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1120.0
@@ -3150,26 +3076,15 @@ theme_override_fonts/normal_font = ExtResource("4_koyeq")
 theme_override_font_sizes/normal_font_size = 24
 text = "Move over here to play a minigame!"
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("6_djffe")]
+position = Vector2(560, 608)
+
 [node name="Minigame_entrance" type="Area2D" parent="."]
 position = Vector2(1, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Minigame_entrance"]
 position = Vector2(15.5, 604.5)
 shape = SubResource("RectangleShape2D_u4sxf")
-
-[node name="NewWally" type="CharacterBody2D" parent="."]
-script = ExtResource("6_d32n8")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NewWally"]
-position = Vector2(576, 584)
-scale = Vector2(1, 1.105)
-sprite_frames = SubResource("SpriteFrames_8qnwa")
-animation = &"Right"
-autoplay = "Idle"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="NewWally"]
-position = Vector2(576, 604.25)
-shape = SubResource("RectangleShape2D_r7yuf")
 
 [connection signal="body_entered" from="BC_exit" to="." method="_on_bc_exit_body_entered"]
 [connection signal="body_entered" from="Minigame_entrance" to="." method="_on_minigame_entrance_body_entered"]
