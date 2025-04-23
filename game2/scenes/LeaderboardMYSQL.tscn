@@ -90,9 +90,9 @@ horizontal_alignment = 1
 
 [node name="LeaderboardTitle" type="Label" parent="."]
 layout_mode = 0
-offset_left = -72.0
+offset_left = -120.0
 offset_top = -40.0
-offset_right = 144.0
+offset_right = 96.0
 offset_bottom = -4.0
 scale = Vector2(3, 3)
 text = "Leaderboard"
