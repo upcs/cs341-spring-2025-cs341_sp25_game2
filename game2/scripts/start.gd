@@ -7,7 +7,7 @@ extends Node2D
 @onready var leaderboard_button = $LeaderboardButton
 @onready var loading_screen = $LoadingScreen
 @onready var acknowledgements = $Acknowledgements_button
-@onready var acknowledgement = $Acknowldegements
+#@onready var acknowledgement = $Acknowldegements
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,8 +25,8 @@ func _ready() -> void:
 		start_button.visible = true
 		leaderboard_button.visible = true
 		acknowledgements.visible = true
-		acknowledgements.disabled = false
-		acknowledgement.visible = false
+		#acknowledgements.disabled = false
+		#acknowledgement.visible = false
 		
 
 func _on_button_pressed() -> void:
@@ -74,7 +74,9 @@ func _on_leaderboard_button_pressed() -> void:
 
 
 func _on_acknowledgements_pressed() -> void:
-	if (acknowledgement.visible == false):
-		acknowledgement.visible = true
-	else:
-		acknowledgement.visible = false
+	get_tree().change_scene_to_packed(load("res://scenes/Acknowledgements.tscn"))
+	
+	#if (acknowledgement.visible == false):
+		#acknowledgement.visible = true
+	#else:
+		#acknowledgement.visible = false

@@ -1,9 +1,9 @@
-[gd_scene load_steps=26 format=4 uid="uid://c8off0hb5i0in"]
+[gd_scene load_steps=26 format=4 uid="uid://cbfw1bjqn4www"]
 
 [ext_resource type="Script" path="res://scripts/bc_maze_minigame.gd" id="1_updje"]
 [ext_resource type="Texture2D" uid="uid://cb8cwvaenl0ta" path="res://Tilepngs/floortileset.png" id="3_rw0pa"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="3_ursbe"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="5_yihs8"]
+[ext_resource type="Script" path="res://scripts/new_player.gd" id="4_rx54o"]
 [ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="6_ld5jv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="6_pv4dk"]
 [ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="7_o5cys"]
@@ -3687,7 +3687,7 @@ polygon = PackedVector2Array(976, 632, 664, 632, 664, 512, 688, 512, 696, 608, 9
 
 [node name="NewWally" type="CharacterBody2D" parent="." groups=["Player"]]
 scale = Vector2(0.35, 0.35)
-script = ExtResource("5_yihs8")
+script = ExtResource("4_rx54o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NewWally"]
 position = Vector2(144, 176)

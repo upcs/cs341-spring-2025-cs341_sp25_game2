@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bnqpx1h3hlji4"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_p7jru"]
+[ext_resource type="Script" path="res://scripts/new_player.gd" id="1_ukb8r"]
 [ext_resource type="Texture2D" uid="uid://6hpuqwyuacp5" path="res://animations/Wally.png" id="2_sq3cl"]
 [ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="3_2ggrc"]
 [ext_resource type="Texture2D" uid="uid://3mwxhuxn38wn" path="res://animations/WallyLeft.png" id="3_cvg81"]
@@ -81,7 +81,7 @@ animations = [{
 size = Vector2(126, 207)
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_p7jru")
+script = ExtResource("1_ukb8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -10.5)

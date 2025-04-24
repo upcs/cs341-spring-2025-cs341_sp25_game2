@@ -9,6 +9,9 @@ extends Node2D
 @onready var player = $NewWally
 @onready var maze_walls_1 = $First_maze_walls
 @onready var maze_walls_2 = $Scnd_maze_walls
+@onready var first_layer = $FirstLayer
+@onready var scnd_layer = $ScndLayer
+@onready var third_layer = $ThirdLayer
 
 # For testing
 @onready var my_current = "first"
@@ -29,9 +32,9 @@ func _ready() -> void:
 	leave_button.visible = false
 	
 	#Make sure we start with only the first maze
-	$FirstLayer.enabled = true
-	$ScndLayer.enabled = false
-	$ThirdLayer.enabled = false
+	first_layer.enabled = true
+	scnd_layer.enabled = false
+	third_layer.enabled = false
 	
 	# Only the collision boxes for the first maze should be enabled
 	# at the start of the minigame.
@@ -79,7 +82,7 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 	 # Check if the game is over
 	if $ThirdLayer.is_enabled() :
 		game_timer.stop()
-		game_over_message.text = "YOU DID IT! You completed all the mazes!"
+		game_over_message.text = "YOU DID IT! You gained 30 points total!"
 		leave_button.visible = true #let the player leave
 		
 	# Else display the next maze to complete 

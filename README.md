@@ -21,7 +21,7 @@ The tile maps found in the artwork of the game have been put together from the o
 -----------------------------------------------------------------------------------------
 |         Music        |         Artist - License           |
 |-----------------------|------------------------------------|
-| Porto mp3 (Main scene soundtrack) by Evan Frueh (UP student)|
+| Porto mp3 (Main scene soundtrack) | Evan Frueh (UP student)|
 
 *stockcake.com is currently not a working site.
 
@@ -36,6 +36,10 @@ Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code 
 ### CAVEATS
 - Scripts excluded from total lines of code sum: shiley.gd, scene.gd, josh_map_5+7.gd, bc_interior.gd, enemy.gd, and global.gd; this is because they are based on functions automatically written into Godot.
 - Need testing: inside_db.gd and start.gd
+
+### BUG FIXES
+- Fixed bug where player could see outside of the map or run outside of the map
+- Fixed bug where browser (specifically Edge) displayed black background
 
 ## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
