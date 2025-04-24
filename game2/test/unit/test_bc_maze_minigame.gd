@@ -1,20 +1,55 @@
 extends GutTest
 
-var maze_scene = load("res://scenes/BC_maze_minigame.tscn")
+var MAZE_SCENE = load("res://scenes/BC_maze_minigame.tscn")
+var scene_instance : Node
+var script_holder : Node
+var current_layer : TileMapLayer
+var next_layer : TileMapLayer
+var original_current_enabled : bool
+var original_next_enabled : bool
+
+func _ready() -> void:
+	add_to_group("test_maze")
+
+func before_each() -> void:
+	#load scene
+	scene_instance = load(str(MAZE_SCENE)).instantiate()
+	get_tree().get_root().add_child(scene_instance) # add to tree
+	
+	# Get the script
+	script_holder = scene_instance.get_node("res://scripts/bc_maze_minigame.gd")
+	
+	# Get the tilemaplayers
+	current_layer = scene_instance.get_node("BcMazeMinigame/FirstLayer")
+	next_layer = scene_instance.get_node("BcMazeMinigame/ScndLayer")
+	
+	# Store original state
+	original_current_enabled = current_layer.enabled
+	original_next_enabled = next_layer.enabled
+	
+	# Make sure they aren't null
+	assert_not_null(current_layer, "Current layer should not be null.")
+	assert_not_null(next_layer, "Next layer should not be null.")
+
+func after_each() -> void:
+	# Restore original state
+	current_layer.enabled = original_current_enabled
+	next_layer.enabled = original_next_enabled
+	
+	# Clean up the scene
+	var test_scene = get_tree().get_first_node_in_group("test_maze")
+	if test_scene:
+		test_scene.gueue_free()
 
 func test_change_layers():
-	var bc_game = maze_scene.instantiate()
-	bc_game._ready()
+	# Set the inital state
+	current_layer.enabled = true
+	next_layer.enabled = false
 	
-	var this_current : TileMapLayer = get_node("BcMazeMinigame/FirstLayer")
-	var this_next : TileMapLayer = get_node("BcMazeMinigame/ScndLayer")
 	
-	this_current.enabled = true
-	this_next.enabled = false
-	
-	maze_scene.change_layers(this_current, this_next)
-	assert_eq(this_current.enabled, false)
-	assert_eq(this_next.enabled, true)
+	script_holder.change_layers(current_layer, next_layer)
+	assert_false(current_layer.enabled, "Current layer should be disabled.")
+	assert_true(next_layer.enabled, "Next layer should be enabled.")
 
 #func test_change_collisions():
 	#var bc_game = maze_scene.instantiate()
