@@ -1,11 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://bf4veea5aqqyo"]
+[gd_scene load_steps=11 format=3 uid="uid://bf4veea5aqqyo"]
 
 [ext_resource type="Texture2D" uid="uid://b7jsprw82hgqd" path="res://Tilepngs/franz_inside.JPG" id="1_4n1de"]
 [ext_resource type="Script" path="res://scripts/franz_interior.gd" id="1_lgwf3"]
-[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="2_7n1yq"]
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="2_rybls"]
-[ext_resource type="PackedScene" uid="uid://cm3wx2syp2mhx" path="res://scenes/player.tscn" id="3_r3ych"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="4_yjd2d"]
+[ext_resource type="PackedScene" uid="uid://bnqpx1h3hlji4" path="res://scenes/new_player.tscn" id="5_5mxps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w531a"]
 texture = ExtResource("2_rybls")
@@ -3000,9 +2999,8 @@ size = Vector2(1121, 30.5)
 [node name="FranzInterior" type="Node2D"]
 script = ExtResource("1_lgwf3")
 
-[node name="Node2D2" parent="." instance=ExtResource("3_r3ych")]
-top_level = true
-position = Vector2(968, 488)
+[node name="OverrideCamera" type="Camera2D" parent="."]
+anchor_mode = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 4667.0
@@ -3029,7 +3027,7 @@ shape = SubResource("RectangleShape2D_amm34")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(0, 0, 8, 464, 544, 464, 1120, 488, 1112, 0)
+polygon = PackedVector2Array(0, 0, 0, 432, 552, 432, 1120, 448, 1112, 0)
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 
@@ -3092,7 +3090,8 @@ position = Vector2(-8, -8)
 scale = Vector2(1, 1.5)
 polygon = PackedVector2Array(-16, 0, -16, 160, 504, 160, 504, 0)
 
-[node name="PauseMenu" parent="." instance=ExtResource("2_7n1yq")]
+[node name="CharacterBody2D" parent="." instance=ExtResource("5_5mxps")]
+position = Vector2(552, 552)
 
 [connection signal="body_entered" from="Franz_exit" to="." method="_on_franz_exit_body_entered"]
 [connection signal="body_entered" from="Minigame_entrance" to="." method="_on_minigame_entrance_body_entered"]
