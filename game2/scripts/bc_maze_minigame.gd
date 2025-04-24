@@ -82,7 +82,7 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 	 # Check if the game is over
 	if $ThirdLayer.is_enabled() :
 		game_timer.stop()
-		game_over_message.text = "YOU DID IT! You completed all the mazes!"
+		game_over_message.text = "YOU DID IT! You gained 30 points total!"
 		leave_button.visible = true #let the player leave
 		
 	# Else display the next maze to complete 
