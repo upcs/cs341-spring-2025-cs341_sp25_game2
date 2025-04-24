@@ -1,0 +1,40 @@
+extends Node2D
+class_name Stopwatch
+@onready var label = $TimeLabel
+@export var start_time: float = 60.0  
+var time_left = 0.0
+var stopped = false
+
+func _ready():
+	reset()
+	start()
+
+func _process(delta):
+	if stopped:
+		return
+	
+	time_left -= delta
+	if time_left <= 0:
+		time_left = 0
+		stopped = true
+	else:
+		label.text = "Timer: " + format_time(time_left)
+
+func reset():
+	time_left = start_time
+	label.text = "Timer: " + format_time(time_left)
+
+func stop():
+	stopped = true
+
+func start():
+	stopped = false
+
+func format_time(seconds: float) -> String:
+	var mins = int(seconds) / 60
+	var secs = int(seconds) % 60
+	var ms = int((seconds - int(seconds)) * 1000)  
+	return "%02d:%02d:%03d" % [mins, secs, ms]
+	
+func restart_game():
+	get_tree().reload_current_scene()		#this is not working

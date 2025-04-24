@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://jcc1fqynik5p"]
+
+[ext_resource type="Texture2D" uid="uid://enevihive1vm" path="res://S_miniGame_assets/you win.png" id="1_l1rm8"]
+
+[node name="Node2D" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(560.5, 354.25)
+scale = Vector2(0.917349, 1.02098)
+texture = ExtResource("1_l1rm8")
