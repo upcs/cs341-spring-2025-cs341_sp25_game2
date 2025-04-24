@@ -3031,19 +3031,20 @@ position = Vector2(568, 727.25)
 shape = SubResource("RectangleShape2D_p5f3a")
 
 [node name="TextPanel" type="Panel" parent="."]
-offset_left = 576.0
-offset_right = 1120.0
-offset_bottom = 176.0
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 540.0
+offset_bottom = 172.0
 theme = ExtResource("4_vjder")
 
 [node name="BCTextbox" type="RichTextLabel" parent="TextPanel"]
 top_level = true
 layout_mode = 1
 anchors_preset = -1
-offset_left = 600.0
-offset_top = 16.0
-offset_right = 1104.0
-offset_bottom = 208.0
+offset_left = 17.0
+offset_top = 9.0
+offset_right = 521.0
+offset_bottom = 201.0
 grow_vertical = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
