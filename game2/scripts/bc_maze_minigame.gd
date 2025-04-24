@@ -7,8 +7,6 @@ extends Node2D
 @onready var leave_button = $Leave
 @onready var exit = $maze_exit/exit_here
 @onready var player = $NewWally
-@onready var maze_walls_1 = $First_maze_walls
-@onready var maze_walls_2 = $Scnd_maze_walls
 @onready var first_layer = $FirstLayer
 @onready var scnd_layer = $ScndLayer
 @onready var third_layer = $ThirdLayer
