@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="18_ghv2a"]
 [ext_resource type="Texture2D" uid="uid://dx6fbi43m1ldm" path="res://map.png" id="19_0drlv"]
-[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
+[ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="19_1m8dr"]
 [ext_resource type="Texture2D" uid="uid://otpxkx0km57e" path="res://text_box.png" id="20_lhcju"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 [ext_resource type="AudioStream" uid="uid://cp0q3e3mulvtt" path="res://Porto.mp3" id="23_8o5k5"]
@@ -6641,6 +6641,8 @@ text = "Hi! I am the Pilot Oak of University of Portland! I am estimated to be 3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("23_8o5k5")
 autoplay = true
+max_distance = 99999.0
+attenuation = 0.0179484
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]

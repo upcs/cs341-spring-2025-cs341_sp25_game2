@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://c4vgawqfjyxjp"]
 
 [ext_resource type="Script" path="res://scripts/Leaderboard.gd" id="1_md5e4"]
-[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="2_ncevq"]
+[ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="2_ncevq"]
 
 [node name="Leaderboard" type="Control"]
 layout_mode = 3
