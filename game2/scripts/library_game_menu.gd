@@ -5,6 +5,7 @@ extends Control
 @onready var easy_button = $Easy
 @onready var medium_button = $Medium
 @onready var hard_button = $Hard
+@onready var game_info = $GameInfo
 
 
 var difficulties = Global.difficulties
@@ -12,6 +13,7 @@ var selection = -1 # 0 for easy, 1, for medium, 2 for hard
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	game_info.visible = false
 	play_button.hide()
 	refresh_options()
 
@@ -69,3 +71,8 @@ func _on_play_button_pressed() -> void:
 	# make sure difficulty not playable anymore
 	difficulties[selection] = 0
 	selection = -1
+
+
+
+func _on_info_button_pressed() -> void:
+	game_info.visible = !game_info.visible
