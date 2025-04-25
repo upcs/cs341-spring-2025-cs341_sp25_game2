@@ -8,7 +8,7 @@ extends Node
 @onready var http_request = $HTTPRequest
 
 # School URL - works when on UP school wifi
-const SERVER_URL = "https://10.12.116.30/leaderboard.php"
+const SERVER_URL = "https://146.235.204.13/leaderboard.php"
 
 const MAX_ENTRIES = 10
 const MAX_USERNAME_LENGTH = 20
