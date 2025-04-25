@@ -1,6 +1,6 @@
 extends Control
 #var next_scene = "res://scenes/campus.tscn"
-@onready var progress_load = randi_range(17, 60) # yes I'm faking the progress bar
+@onready var progress_load = randi_range(29, 64) # yes I'm faking the progress bar
 @onready var progress_bar = $ProgressBar
 
 #
