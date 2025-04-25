@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d25w0mjqtlb0r" path="res://Tilepngs/bellTower.jpg" id="2_s1ivv"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_ed01v"]
 [ext_resource type="Script" path="res://scripts/usernameInput.gd" id="4_n35t5"]
-[ext_resource type="PackedScene" path="res://scenes/LoadingScreen.tscn" id="5_sae6w"]
+[ext_resource type="PackedScene" uid="uid://ddkcuchf7m4kq" path="res://scenes/LoadingScreen.tscn" id="5_sae6w"]
 [ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="6_8fugy"]
 
 [node name="Node2D" type="Node2D"]
