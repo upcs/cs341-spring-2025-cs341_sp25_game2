@@ -13,11 +13,11 @@ func _ready() -> void:
 
 func before_each() -> void:
 	#load scene
-	scene_instance = load(str(MAZE_SCENE)).instantiate()
+	scene_instance = MAZE_SCENE.instantiate()
 	get_tree().get_root().add_child(scene_instance) # add to tree
 	
 	# Get the script
-	script_holder = scene_instance.get_node("res://scripts/bc_maze_minigame.gd")
+	script_holder = scene_instance.get_node("/bc_maze_minigame.gd")
 	
 	# Get the tilemaplayers
 	current_layer = scene_instance.get_node("BcMazeMinigame/FirstLayer")
