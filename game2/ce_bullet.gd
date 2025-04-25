@@ -1,15 +1,13 @@
 extends RigidBody2D
 
 @export var speed: float = 1000.0
-@onready var sprite: AnimatedSprite2D = $Shoot
+@onready var sprite: Sprite2D = $Bullet
 
 func _ready() -> void:
 	if sprite:
-		sprite.stop()
-		sprite.play("Shoot")
-		print("Playing animation: shoot")
+		print("Sprite found.")
 	else:
-		print("AnimatedSprite2D not found!")
+		print("Sprite2D not found!")
 
 	gravity_scale = 0
 	contact_monitor = true
@@ -22,7 +20,7 @@ func _ready() -> void:
 	queue_free()
 
 func _on_body_entered(body):
-	if body.is_in_group("Enemy"):
+	if body.is_in_group("CE_Enemy"):
 		$CollisionShape2D.disabled = true  # stop further collisions
 		visible = false                    # hide the sprite instantly
 		queue_free()

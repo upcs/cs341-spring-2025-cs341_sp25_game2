@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var move_speed := 1000.0
+@export var move_speed := 500.0
 @export var bullet_speed := 500.0
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://CE_Bullet.tscn")
 func _ready():
 	add_to_group("Player")
 
@@ -43,5 +43,5 @@ func kill():
 	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if "enemy" in body.name or "Enemy" in body.name:
+	if "ce_enemy" in body.name or "CE_Enemy" in body.name:
 		kill()

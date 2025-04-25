@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://k3qssqk4jn5v"]
+
+[ext_resource type="Script" path="res://ce_player.gd" id="1_n0dj4"]
+[ext_resource type="Texture2D" uid="uid://d1kifriirxdm1" path="res://S_miniGame_assets/hardHat (2).png" id="2_bf3c0"]
+[ext_resource type="Texture2D" uid="uid://d1o5ck6hqonnh" path="res://S_miniGame_assets/you_arrow.png" id="3_komr3"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="4_oaahc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ytmx0"]
+size = Vector2(35, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bgle"]
+size = Vector2(23, 13)
+
+[node name="CE_Player" type="CharacterBody2D"]
+script = ExtResource("1_n0dj4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.04, 0.04)
+texture = ExtResource("2_bf3c0")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -340.0
+offset_top = -300.0
+offset_right = 355.0
+offset_bottom = -177.0
+theme_override_colors/font_color = Color(0.726257, 0.425706, 0.117621, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("4_oaahc")
+theme_override_font_sizes/font_size = 100
+text = "Civil Engineering"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_ytmx0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 2.5)
+shape = SubResource("RectangleShape2D_5bgle")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.235, 3.235)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+scale = Vector2(0.25, 0.208333)
+texture = ExtResource("3_komr3")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

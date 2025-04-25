@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://brryee7ucw3f2" path="res://S_miniGame_assets/CS_Player.png" id="2_4rewd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3b1ir"]
-size = Vector2(640, 600)
+size = Vector2(440, 440)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fdr82"]
-size = Vector2(34, 32)
+size = Vector2(24, 24)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_b4hhc")
@@ -15,11 +15,11 @@ script = ExtResource("1_b4hhc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-1.19209e-07, -5.96046e-08)
 rotation = 6.28319
-scale = Vector2(0.031, 0.039)
+scale = Vector2(0.021, 0.027)
 texture = ExtResource("2_4rewd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-7.15256e-07, 0)
+position = Vector2(3.57628e-07, -3.57628e-07)
 scale = Vector2(0.05, 0.05)
 shape = SubResource("RectangleShape2D_3b1ir")
 
