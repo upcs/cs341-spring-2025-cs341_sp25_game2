@@ -112,6 +112,14 @@ text = "GO BACK"
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
+[node name="LinkButton" type="LinkButton" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 604.0
+offset_right = 864.0
+offset_bottom = 644.0
+text = "If the leaderboard isn't loading, click me, and allow connections from the page that opens up"
+uri = "https://146.235.204.13/leaderboard.php"
+
 [connection signal="pressed" from="SubmitButton" to="." method="_on_submit_button_pressed"]
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="BackButton" to="." method="_on_submit_button_pressed"]
