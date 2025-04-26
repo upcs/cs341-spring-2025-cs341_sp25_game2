@@ -6517,7 +6517,7 @@ autostart = true
 position = Vector2(992, -640)
 
 [node name="Library" parent="." instance=ExtResource("8_0kl0q")]
-position = Vector2(2144, 536)
+position = Vector2(2144, 544)
 
 [node name="Church" parent="." instance=ExtResource("9_bfw4y")]
 position = Vector2(2716, -3336)
@@ -6558,20 +6558,28 @@ offset_bottom = -574.0
 
 [node name="UI" type="CanvasLayer" parent="Wally"]
 
+[node name="MinimapBackground" type="Polygon2D" parent="Wally/UI"]
+position = Vector2(963.145, 557.684)
+scale = Vector2(1.01808, 0.926884)
+color = Color(0.117647, 0.0862745, 0.337255, 1)
+polygon = PackedVector2Array(-8, -18, 155, -18, 155.052, 161.095, -8, 161.095, -8, 110.208)
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Wally/UI"]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -100.0
-offset_top = -100.0
+offset_left = -159.855
+offset_top = -162.316
+offset_right = -7.85547
+offset_bottom = -10.3162
 grow_horizontal = 0
 grow_vertical = 0
 
 [node name="SubViewport" type="SubViewport" parent="Wally/UI/SubViewportContainer"]
 handle_input_locally = false
-size = Vector2i(100, 100)
+size = Vector2i(150, 150)
 render_target_update_mode = 4
 script = ExtResource("18_ghv2a")
 
@@ -6584,8 +6592,8 @@ offset = Vector2(250, -10)
 zoom = Vector2(0.1, 0.1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer"]
-position = Vector2(50, 60)
-scale = Vector2(0.1, 0.1)
+position = Vector2(77, 85)
+scale = Vector2(0.139063, 0.150625)
 texture = ExtResource("20_lhcju")
 
 [node name="All-Around Bounds" type="StaticBody2D" parent="."]
