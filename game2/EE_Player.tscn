@@ -1,0 +1,54 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqhakgdqdube6"]
+
+[ext_resource type="Script" path="res://ee_player.gd" id="1_5ynek"]
+[ext_resource type="Texture2D" uid="uid://m1u67bcfw7jv" path="res://S_miniGame_assets/EE.jpg" id="2_adorv"]
+[ext_resource type="FontFile" uid="uid://bjfb0kqpviqg4" path="res://S_miniGame_assets/04B_30__.TTF" id="3_mko17"]
+[ext_resource type="Texture2D" uid="uid://d1o5ck6hqonnh" path="res://S_miniGame_assets/you_arrow.png" id="3_uiwxw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_776ig"]
+size = Vector2(42, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ge5rw"]
+size = Vector2(45, 45)
+
+[node name="EE_Player" type="CharacterBody2D"]
+script = ExtResource("1_5ynek")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_adorv")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -533.333
+offset_top = -366.667
+offset_right = 634.667
+offset_bottom = -298.667
+theme_override_colors/font_color = Color(0.933333, 0.823529, 0.00784314, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_mko17")
+theme_override_font_sizes/font_size = 68
+text = "Electrical Engineering"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.36, 0.36)
+shape = SubResource("RectangleShape2D_776ig")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(0.36, 0.36)
+shape = SubResource("RectangleShape2D_ge5rw")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.185, 2.185)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -18)
+scale = Vector2(0.280833, 0.280833)
+texture = ExtResource("3_uiwxw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
