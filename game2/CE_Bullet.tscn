@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4ydamxl8kot0"]
+
+[ext_resource type="Script" path="res://ce_bullet.gd" id="1_d474j"]
+[ext_resource type="Texture2D" uid="uid://bu44l0616ysmd" path="res://S_miniGame_assets/CE_Cone.png" id="1_m2jkc"]
+
+[node name="CE_Bullet" type="RigidBody2D"]
+script = ExtResource("1_d474j")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1.19209e-07, -2.38419e-07)
+rotation = 1.5708
+scale = Vector2(0.05, 0.05)
+polygon = PackedVector2Array(-144, 146, -2, 202, 142, 149, 86, 119, 26, -170, -8, -178, -29, -170, -85, 121)
+
+[node name="Bullet" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_m2jkc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(5.96046e-08, 0)
+rotation = 1.5708
+scale = Vector2(0.052, 0.052)
+polygon = PackedVector2Array(-23, -185, -36, -176, -93, 111, -154, 135, -154, 153, -6, 217, 154, 157, 156, 137, 93, 109, 40, -169, 24, -185)
