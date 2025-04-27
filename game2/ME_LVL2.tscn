@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://d3khxfclei6bu"]
+[gd_scene load_steps=11 format=4 uid="uid://d3khxfclei6bu"]
 
 [ext_resource type="Texture2D" uid="uid://l505qv8sif7t" path="res://S_miniGame_assets/SCi-fi assets planet one.png" id="1_7qgt8"]
 [ext_resource type="PackedScene" uid="uid://bhdforjpisgil" path="res://ME_Enemy.tscn" id="2_qewfe"]
 [ext_resource type="PackedScene" uid="uid://bwf3y663k5lja" path="res://ME_Player.tscn" id="3_vqalm"]
+[ext_resource type="Script" path="res://tent.gd" id="4_p5r6x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbspp"]
 texture = ExtResource("1_7qgt8")
@@ -719,3 +720,14 @@ position = Vector2(409, 655)
 
 [node name="ME_Player" parent="." instance=ExtResource("3_vqalm")]
 position = Vector2(54, 431)
+
+[node name="tent" type="Area2D" parent="." groups=["tent"]]
+script = ExtResource("4_p5r6x")
+
+[node name="Marker2D" type="Marker2D" parent="tent"]
+position = Vector2(1083, 525)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="tent"]
+polygon = PackedVector2Array(1066, 518, 1101, 514, 1101, 526, 1082, 540)
+
+[connection signal="body_entered" from="tent" to="tent" method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bwgm5cvmbas2o"]
+[gd_scene load_steps=19 format=4 uid="uid://bwgm5cvmbas2o"]
 
 [ext_resource type="Texture2D" uid="uid://enq5vmg38tf3" path="res://S_miniGame_assets/neo_zero_buildings_02.png" id="1_4jady"]
 [ext_resource type="Texture2D" uid="uid://d16mtvcesp8en" path="res://S_miniGame_assets/neo_zero_tileset_02.png" id="2_ahlfm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ce5svunku3pol" path="res://EE_Enemy.tscn" id="4_yyw2g"]
 [ext_resource type="PackedScene" uid="uid://dqhakgdqdube6" path="res://EE_Player.tscn" id="5_p0yta"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="6_cvxdx"]
+[ext_resource type="Script" path="res://post.gd" id="7_v1itc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ndhed"]
 texture = ExtResource("1_4jady")
@@ -1128,3 +1129,14 @@ position = Vector2(55, 482)
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_cvxdx")
 autoplay = true
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("7_v1itc")
+
+[node name="solarPanelPost" type="Marker2D" parent="Area2D"]
+position = Vector2(1064, 148)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(1061, 141, 1070, 141, 1070, 155, 1060, 155)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

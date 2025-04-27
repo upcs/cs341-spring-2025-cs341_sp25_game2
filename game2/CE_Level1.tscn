@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=4 uid="uid://tss34co47yv2"]
+[gd_scene load_steps=15 format=4 uid="uid://tss34co47yv2"]
 
 [ext_resource type="Texture2D" uid="uid://dxba8sh261qi8" path="res://S_miniGame_assets/CE_tilemap.png" id="1_67rpj"]
-[ext_resource type="Script" path="res://next_level.gd" id="2_ed0k3"]
 [ext_resource type="PackedScene" uid="uid://b4d52iaekt230" path="res://CE_Player.tscn" id="3_5o48m"]
 [ext_resource type="PackedScene" uid="uid://co5qnu8amxpuw" path="res://ce_enemy.tscn" id="4_28qeb"]
+[ext_resource type="Script" path="res://car.gd" id="5_foq6a"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_q1h7u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7djin"]
@@ -1623,13 +1623,27 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_mvsyu"]
 sources/0 = SubResource("TileSetAtlasSource_ab3a7")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v75v2"]
-size = Vector2(11, 15)
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_tpu5y"]
 vertices = PackedVector2Array(664.969, 105, 663.023, 790.75, 632.117, 790, 26.9609, 105, 24.0391, 790)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 2, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(17, 95, 14, 800, 632, 800, 673, 801, 675, 95)])
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8fl0e"]
+size = Vector2(15, 20)
+
+[sub_resource type="GDScript" id="GDScript_h3kbe"]
+script/source = "extends Marker2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="Node2D" type="Node2D"]
 
@@ -1807,13 +1821,6 @@ polygon = PackedVector2Array(15, 80, 12, 801, -391, 803)
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(17, 94, 674, 94, 600, -115)
 
-[node name="nextLevel" type="Area2D" parent="."]
-script = ExtResource("2_ed0k3")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="nextLevel"]
-position = Vector2(214.5, 584.5)
-shape = SubResource("RectangleShape2D_v75v2")
-
 [node name="CE_Enemy" parent="." instance=ExtResource("4_28qeb")]
 position = Vector2(473, 471)
 
@@ -1907,3 +1914,16 @@ vertices = PackedVector2Array(368, 435, 367, 447, 643, 445, 645, 762, 370, 767, 
 
 [node name="NavigationObstacle2D15" type="NavigationObstacle2D" parent="."]
 vertices = PackedVector2Array(384, 97, 657, 97, 655, 270, 385, 270)
+
+[node name="car" type="Area2D" parent="."]
+script = ExtResource("5_foq6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="car"]
+position = Vector2(328.5, 789)
+shape = SubResource("RectangleShape2D_8fl0e")
+
+[node name="Marker2D" type="Marker2D" parent="car"]
+position = Vector2(329, 790)
+script = SubResource("GDScript_h3kbe")
+
+[connection signal="body_entered" from="car" to="car" method="_on_body_entered"]

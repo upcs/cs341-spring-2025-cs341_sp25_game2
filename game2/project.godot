@@ -37,6 +37,8 @@ book=""
 player=""
 Bullet=""
 stopwatch=""
+car=""
+tent=""
 
 [input]
 
