@@ -1,15 +1,12 @@
 extends RigidBody2D
 
 @export var speed: float = 1000.0
-@onready var sprite: AnimatedSprite2D = $Shoot
-
+@onready var sprite: Sprite2D = $Laser
 func _ready() -> void:
 	if sprite:
-		sprite.stop()
-		sprite.play("Shoot")
-		print("Playing animation: shoot")
+		print("Sprite found.")
 	else:
-		print("AnimatedSprite2D not found!")
+		print("Sprite2D not found!")
 
 	gravity_scale = 0
 	contact_monitor = true
