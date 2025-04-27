@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cavvgsjwekygy" path="res://S_miniGame_assets/square.png" id="4_cpj5e"]
 [ext_resource type="Texture2D" uid="uid://cfydw07hd07ie" path="res://S_miniGame_assets/CosmicLilac_Tiles.png" id="5_ke5qa"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="7_ws5cq"]
-[ext_resource type="PackedScene" path="res://stopwatch.tscn" id="9_wbvq2"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_x6i8q"]
+[ext_resource type="PackedScene" uid="uid://bv4o7kmue3oak" path="res://stopwatch.tscn" id="9_wbvq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw5xg"]
 texture = ExtResource("5_ke5qa")
