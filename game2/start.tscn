@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="3_ed01v"]
 [ext_resource type="Script" path="res://scripts/usernameInput.gd" id="4_n35t5"]
 [ext_resource type="PackedScene" uid="uid://ddkcuchf7m4kq" path="res://scenes/LoadingScreen.tscn" id="5_sae6w"]
-[ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="6_8fugy"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="6_8fugy"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gaapw")
@@ -24,7 +24,7 @@ rotation = 0.00196608
 theme_override_fonts/normal_font = ExtResource("3_ed01v")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[center]WHERES WALLY?"
+text = "[center]WHERE'S WALLY?"
 
 [node name="StartButton" type="Button" parent="."]
 visible = false
