@@ -72,7 +72,15 @@ func _on_play_button_pressed() -> void:
 	difficulties[selection] = 0
 	selection = -1
 
-
-
 func _on_info_button_pressed() -> void:
-	game_info.visible = !game_info.visible
+	if !game_info.visible:
+		easy_button.hide()
+		medium_button.hide()
+		hard_button.hide()
+		game_info.visible = true
+	else:
+		game_info.visible = false
+		easy_button.show()
+		medium_button.show()
+		hard_button.show()
+	

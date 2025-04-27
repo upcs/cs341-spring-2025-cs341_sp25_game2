@@ -85,6 +85,7 @@ scale = Vector2(0.447439, 0.666162)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="Easy" type="Button" parent="."]
+top_level = true
 layout_mode = 0
 offset_left = 432.0
 offset_top = 248.0
@@ -101,6 +102,7 @@ scale = Vector2(0.447439, 0.666162)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="Medium" type="Button" parent="."]
+top_level = true
 layout_mode = 0
 offset_left = 432.0
 offset_top = 336.0
@@ -117,6 +119,7 @@ scale = Vector2(0.447439, 0.666162)
 polygon = PackedVector2Array(0, 0, 272, 0, 408, 0, 408, 56, 0, 56)
 
 [node name="Hard" type="Button" parent="."]
+top_level = true
 layout_mode = 0
 offset_left = 432.0
 offset_top = 424.0

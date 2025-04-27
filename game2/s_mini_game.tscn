@@ -1,14 +1,14 @@
-[gd_scene load_steps=19 format=4 uid="uid://cy26kjjs50pq2"]
+[gd_scene load_steps=19 format=4 uid="uid://x5ql7qc3elgb"]
 
 [ext_resource type="Texture2D" uid="uid://btckri6y685a" path="res://S_miniGame_assets/CosmicLegacy_PetricakeGamesPNG.png" id="3_n64x0"]
-[ext_resource type="PackedScene" uid="uid://buw4m123cypdi" path="res://enemy.tscn" id="3_uv7e6"]
-[ext_resource type="PackedScene" uid="uid://bbb1ffkcwfreu" path="res://playerShiley.tscn" id="4_8cvne"]
+[ext_resource type="PackedScene" path="res://enemy.tscn" id="3_uv7e6"]
+[ext_resource type="PackedScene" path="res://playerShiley.tscn" id="4_8cvne"]
 [ext_resource type="Texture2D" uid="uid://cavvgsjwekygy" path="res://S_miniGame_assets/square.png" id="4_cpj5e"]
 [ext_resource type="FontFile" uid="uid://b1g101qu7foq8" path="res://MightySouly-lxggD.ttf" id="5_4bcko"]
 [ext_resource type="Texture2D" uid="uid://cfydw07hd07ie" path="res://S_miniGame_assets/CosmicLilac_Tiles.png" id="5_ke5qa"]
 [ext_resource type="Script" path="res://time_label.gd" id="7_ucwqy"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="7_ws5cq"]
-[ext_resource type="PackedScene" uid="uid://c8m6sdk3wl4ot" path="res://stopwatch.tscn" id="9_wbvq2"]
+[ext_resource type="PackedScene" path="res://stopwatch.tscn" id="9_wbvq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw5xg"]
 texture = ExtResource("5_ke5qa")
