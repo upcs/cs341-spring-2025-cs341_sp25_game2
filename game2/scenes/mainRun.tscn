@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://drj7r6xwtk1ok" path="res://scenes/bg.tscn" id="2_8pnrt"]
 [ext_resource type="PackedScene" uid="uid://bsbf1468eody7" path="res://scenes/ground.tscn" id="3_cymbo"]
 [ext_resource type="PackedScene" uid="uid://bliv5k4ylenxo" path="res://hud.tscn" id="5_1fdjy"]
-[ext_resource type="PackedScene" path="res://game_over.tscn" id="5_i3dq4"]
+[ext_resource type="PackedScene" uid="uid://cphxpvffpx2eo" path="res://game_over.tscn" id="5_i3dq4"]
 
 [node name="MainRun" type="Node"]
 script = ExtResource("1_ldc30")
@@ -18,7 +18,7 @@ position = Vector2(0, 88)
 
 [node name="Pilot" parent="." instance=ExtResource("1_d2m2d")]
 position = Vector2(72, 176)
-scale = Vector2(1, 1)
+scale = Vector2(0.95, 0.95)
 
 [node name="GameOver" parent="." instance=ExtResource("5_i3dq4")]
 
