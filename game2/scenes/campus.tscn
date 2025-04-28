@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://07slswv46pdi" path="res://Tilepngs/colonial.png" id="5_8by8u"]
 [ext_resource type="Texture2D" uid="uid://d0iahlmlpnryv" path="res://Tilepngs/plant_repack.png" id="6_fqeef"]
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://scenes/jacqui_buckleyMap.tscn" id="7_bsaxx"]
-[ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map_OLD.tscn" id="8_0kl0q"]
+[ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map.tscn" id="8_0kl0q"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
 [ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
@@ -6442,7 +6442,7 @@ radius = 140.089
 radius = 14.3178
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1dbh7"]
-size = Vector2(12, 123.25)
+size = Vector2(35, 141.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et522"]
 size = Vector2(224, 52)
@@ -6520,7 +6520,7 @@ autostart = true
 position = Vector2(992, -640)
 
 [node name="Library" parent="." instance=ExtResource("8_0kl0q")]
-position = Vector2(2144, 544)
+position = Vector2(2144, 537)
 
 [node name="Church" parent="." instance=ExtResource("9_bfw4y")]
 position = Vector2(2716, -3336)
@@ -6616,7 +6616,7 @@ position = Vector2(3722, 1690)
 [node name="Library_entrance" type="Area2D" parent="."]
 
 [node name="Library_square" type="CollisionShape2D" parent="Library_entrance"]
-position = Vector2(2338, 989.625)
+position = Vector2(2349.5, 980.625)
 shape = SubResource("RectangleShape2D_1dbh7")
 
 [node name="Library_marker" type="Marker2D" parent="Library_entrance"]
@@ -6658,11 +6658,11 @@ attenuation = 0.0179484
 [node name="Shiley_Entrance" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shiley_Entrance"]
-position = Vector2(752.5, 309.25)
+position = Vector2(4661, 565)
 shape = SubResource("RectangleShape2D_j2uya")
 
 [node name="Marker2D" type="Marker2D" parent="Shiley_Entrance"]
-position = Vector2(753, 309)
+position = Vector2(4660, 564)
 
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]

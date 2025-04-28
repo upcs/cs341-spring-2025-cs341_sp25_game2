@@ -1,6 +1,7 @@
 extends Node2D
 var paper = preload("res://scenes/paper.tscn")
 var can_paper
+var score
 var instance
 var min_value = 10
 var max_value = 1000
@@ -9,6 +10,7 @@ var timer
 func _ready() -> void:
 	Global.spawn_position = Vector2(650, 356)
 	can_paper = false
+	score =0
 	timer = $GameTimer
 	$RichTextLabel2.text = "Score: " + str(Global.score)
 
@@ -26,8 +28,8 @@ func _process(delta: float) -> void:
 		add_child(instance)
 		can_paper = false
 func score_change() -> void:
-	Global.score += 1
-	$RichTextLabel2.text = "Score: " + str(Global.score)
+	score += 1
+	$RichTextLabel2.text = "Score: " + str(score)
 
 
 func _on_timer_timeout() -> void:
@@ -35,5 +37,9 @@ func _on_timer_timeout() -> void:
 
 
 func _on_game_timer_timeout() -> void:
+	if score > Global.db_score:
+		Global.db_score = score
+		Global.update_score()
+	Global.markercount += 1
 	get_tree().change_scene_to_file("res://scenes/campus.tscn")
 	Global.spawn_position = Vector2(650, 356)

@@ -130,6 +130,7 @@ func _spawn_book():
 
 
 func _on_back_button_pressed() -> void:
+	Global.markercount +=1 
 	get_tree().change_scene_to_packed(load("res://scenes/Library_interior.tscn"))
 
 
