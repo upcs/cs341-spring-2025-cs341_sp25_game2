@@ -34,17 +34,6 @@ $Fourth_maze_walls/squareA8, $Fourth_maze_walls/squareA9, $Fourth_maze_walls/squ
 # Amount to be added to the score after each maze is completed
 var total_score = 0
 
-# variables for Buckley Center
-#var first_maze_done = false
-#var scnd_maze_done = false
-#var third_maze_done = false
-#var fourth_maze_done = false
-## these will be 0 if they've already beat that level
-#var first_maze_score = 0 #15
-#var scnd_maze_score = 0 #25
-#var third_maze_score = 0 #50
-#var fourth_maze_score = 0 #75
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# This is here as well so that the "exit to campus" works properly
@@ -104,11 +93,6 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 	if !body.is_in_group("Player"):
 		return
 	print("body exited: ", body)
-	# Increase player score
-	#Global.score += score_amount
-	#game_timer.stop()
-	#game_over_message.text = "YOU DID IT! You gained 10 points!"
-	#leave_button.visible = true #let the player leave
 	
 	#The following code has a bug that is still being worked out.
 	 # Check if the game is over
@@ -192,9 +176,7 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 		# Change the player message
 		player_message.text = "Find the invisible Exit! Oh my... try the ice cubes!"
 
-
 func _on_game_timer_timeout() -> void:
-	
 	game_over_message.text = "GAME OVER...better luck next time..."
 	leave_button.visible = true #let the player leave
 
