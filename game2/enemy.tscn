@@ -41,4 +41,9 @@ script = SubResource("GDScript_8s401")
 position = Vector2(-1, 4)
 shape = SubResource("CircleShape2D_jtiex")
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(1, 0, 0, 1)
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

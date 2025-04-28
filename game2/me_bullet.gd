@@ -1,7 +1,8 @@
 extends RigidBody2D
 
 @export var speed: float = 1000.0
-@onready var sprite: Sprite2D = $Laser
+@onready var sprite: Sprite2D = $meBullet
+
 func _ready() -> void:
 	if sprite:
 		print("Sprite found.")

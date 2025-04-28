@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://co5qnu8amxpuw"]
+
+[ext_resource type="Texture2D" uid="uid://nqbsk51cyx6a" path="res://S_miniGame_assets/St.John's bridge.jpeg" id="1_c3a0c"]
+[ext_resource type="Script" path="res://ce_enemy.gd" id="1_edi5k"]
+[ext_resource type="Texture2D" uid="uid://crqoaebkxf5ja" path="res://S_miniGame_assets/arrow_basic_s_small.png" id="3_qgn0p"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="3_wg6mr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyjkr"]
+size = Vector2(18, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r71p"]
+
+[node name="CE_Enemy" type="CharacterBody2D"]
+script = ExtResource("1_edi5k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_oyjkr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.009, 0.009)
+texture = ExtResource("1_c3a0c")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -1666.67
+offset_top = -1777.78
+offset_right = 1785.33
+offset_bottom = -1167.78
+theme_override_colors/font_color = Color(0, 0.501961, 0.34902, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 200
+theme_override_fonts/font = ExtResource("3_wg6mr")
+theme_override_font_sizes/font_size = 500
+text = "St. John's Bridge"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_3r71p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -19)
+scale = Vector2(0.20888, 0.164629)
+texture = ExtResource("3_qgn0p")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

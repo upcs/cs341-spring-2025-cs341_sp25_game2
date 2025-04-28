@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@export var move_speed := 1000.0
+@export var move_speed := 200.0
 @export var bullet_speed := 500.0
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://CE_Bullet.tscn")
+@export var next_scene_path: String = "res://ME_LVL2.tscn"
 func _ready():
 	add_to_group("Player")
 
@@ -37,11 +38,19 @@ func fire():
 	bullet_instance.linear_velocity = Vector2(bullet_speed, 0).rotated(rotation)
 	bullet_instance.apply_impulse(Vector2(), Vector2(bullet_speed, 0).rotated(rotation))
 	get_tree().get_root().call_deferred("add_child", bullet_instance)
-
+	
+func change_scene():
+	get_tree().change_scene(next_scene_path)  # Change to the next scene
 
 func kill():
 	get_tree().reload_current_scene()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if "enemy" in body.name or "Enemy" in body.name:
+	if "car" in body.name:
+		change_scene()
+	elif "ce_enemy" in body.name or "CE_Enemy" in body.name:
 		kill()
+
+
+func _on_car_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

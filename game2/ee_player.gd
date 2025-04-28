@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var move_speed := 1000.0
+@export var move_speed := 600.0
 @export var bullet_speed := 500.0
-var bullet = preload("res://bullet.tscn")
+var bullet = preload("res://EE_Bullet.tscn")
 func _ready():
 	add_to_group("Player")
 
