@@ -40,7 +40,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
-	print(Global.markercount)
+	#print(Global.markercount) # spams output, disabling it for release
 	if (Global.markercount <= 5):
 		which_class = get_node(Global.markers[Global.markercount])
 		arrow.rotation = player.position.angle_to_point(which_class.position)
