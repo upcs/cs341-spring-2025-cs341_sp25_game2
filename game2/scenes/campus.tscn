@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b3vhv5pnxxtwq" path="res://scenes/jacqui_buckleyMap.tscn" id="7_bsaxx"]
 [ext_resource type="PackedScene" uid="uid://bn2lw1dvqg6fh" path="res://scenes/Shiley.tscn" id="9_4hicw"]
 [ext_resource type="PackedScene" uid="uid://n0imxbgustxn" path="res://Church.tscn" id="9_bfw4y"]
-[ext_resource type="PackedScene" uid="uid://b8se0xe8a2bua" path="res://scenes/library_map.tscn" id="9_htsis"]
+[ext_resource type="PackedScene" uid="uid://b8se0xe8a2bub" path="res://scenes/library_map_new.tscn" id="9_ud6dq"]
 [ext_resource type="PackedScene" uid="uid://6l4ko5vhhjux" path="res://scenes/Franz_tile_2.tscn" id="10_qwjmg"]
 [ext_resource type="PackedScene" uid="uid://b44c4ec82bdm1" path="res://scenes/Franz.tscn" id="11_rm3jr"]
 [ext_resource type="PackedScene" uid="uid://begnv6u22wp14" path="res://scenes/quad_segment_1.tscn" id="12_ds2wj"]
@@ -6519,11 +6519,11 @@ autostart = true
 [node name="Buckley" parent="." instance=ExtResource("7_bsaxx")]
 position = Vector2(992, -640)
 
-[node name="Library(new)" parent="." instance=ExtResource("9_htsis")]
-position = Vector2(2144, 544)
-
 [node name="Church" parent="." instance=ExtResource("9_bfw4y")]
 position = Vector2(2716, -3336)
+
+[node name="Library2" parent="." instance=ExtResource("9_ud6dq")]
+position = Vector2(2144, 536)
 
 [node name="Shiley" parent="." instance=ExtResource("9_4hicw")]
 position = Vector2(3924, 256)
