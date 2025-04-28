@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://tss34co47yv2"]
+[gd_scene load_steps=16 format=4 uid="uid://tss34co47yv2"]
 
 [ext_resource type="Texture2D" uid="uid://dxba8sh261qi8" path="res://S_miniGame_assets/CE_tilemap.png" id="1_67rpj"]
 [ext_resource type="PackedScene" uid="uid://b4d52iaekt230" path="res://CE_Player.tscn" id="3_5o48m"]
 [ext_resource type="PackedScene" uid="uid://co5qnu8amxpuw" path="res://ce_enemy.tscn" id="4_28qeb"]
 [ext_resource type="Script" path="res://car.gd" id="5_foq6a"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_q1h7u"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_oy01w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7djin"]
 texture = ExtResource("1_67rpj")
@@ -1925,5 +1926,22 @@ shape = SubResource("RectangleShape2D_8fl0e")
 [node name="Marker2D" type="Marker2D" parent="car"]
 position = Vector2(329, 790)
 script = SubResource("GDScript_h3kbe")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 396.0
+offset_bottom = 86.0
+theme_override_colors/font_color = Color(0.407156, 0.700374, 0.464371, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("7_oy01w")
+theme_override_font_sizes/font_size = 20
+text = "Objectives:
+Defeat the Bridge Sentinels
+ Find the right car to move to next level 
+(Hint: Not every yellow car will get you out, but find the one"
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]
