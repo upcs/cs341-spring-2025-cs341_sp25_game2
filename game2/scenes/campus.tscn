@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://vcqgcy82veid"]
+[gd_scene load_steps=43 format=4 uid="uid://vcqgcy82veid"]
 
 [ext_resource type="Script" path="res://scripts/campus.gd" id="1_1siug"]
 [ext_resource type="Texture2D" uid="uid://b3volgtgmt1ic" path="res://Tilepngs/set_01.png" id="2_t5k2c"]
@@ -6447,6 +6447,9 @@ size = Vector2(12, 123.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_et522"]
 size = Vector2(224, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j2uya"]
+size = Vector2(33, 143.5)
+
 [node name="Campus" type="Node2D"]
 script = ExtResource("1_1siug")
 
@@ -6652,6 +6655,15 @@ autoplay = true
 max_distance = 99999.0
 attenuation = 0.0179484
 
+[node name="Shiley_Entrance" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shiley_Entrance"]
+position = Vector2(752.5, 309.25)
+shape = SubResource("RectangleShape2D_j2uya")
+
+[node name="Marker2D" type="Marker2D" parent="Shiley_Entrance"]
+position = Vector2(753, 309)
+
 [connection signal="body_entered" from="DB" to="." method="_on_db_body_entered"]
 [connection signal="body_entered" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_entered"]
 [connection signal="body_exited" from="Oak_PilotHouse" to="." method="_on_oak_pilot_house_body_exited"]
@@ -6660,3 +6672,4 @@ attenuation = 0.0179484
 [connection signal="body_shape_entered" from="Library_entrance" to="." method="_on_library_entrance_body_shape_entered"]
 [connection signal="body_shape_entered" from="BC_entrance" to="." method="_on_bc_entrance_body_shape_entered"]
 [connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="body_entered" from="Shiley_Entrance" to="." method="_on_shiley_entrance_body_entered"]
