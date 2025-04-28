@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://x5ql7qc3elgb"]
+[gd_scene load_steps=21 format=4 uid="uid://x5ql7qc3elgb"]
 
 [ext_resource type="Texture2D" uid="uid://btckri6y685a" path="res://S_miniGame_assets/CosmicLegacy_PetricakeGamesPNG.png" id="3_n64x0"]
 [ext_resource type="PackedScene" uid="uid://buw4m123cypdi" path="res://enemy.tscn" id="3_uv7e6"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cfydw07hd07ie" path="res://S_miniGame_assets/CosmicLilac_Tiles.png" id="5_ke5qa"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="7_ws5cq"]
 [ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_x6i8q"]
+[ext_resource type="Script" path="res://ending_scene.gd" id="9_unj20"]
 [ext_resource type="PackedScene" uid="uid://bv4o7kmue3oak" path="res://stopwatch.tscn" id="9_wbvq2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw5xg"]
@@ -659,6 +660,9 @@ vertices = PackedVector2Array(-99.8281, -160.977, 1317.01, -167.953, 1317.98, 51
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(4, 5, 6, 7, 0), PackedInt32Array(8, 4, 3, 9)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-495, -193, -110, -190, -95, -171, 1327, -178, 1328, 528, 547, 525, 544, 994, -129, 990, -130, 508, -498, 507)])
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpss1"]
+size = Vector2(32, 32)
+
 [node name="S_MiniGame" type="Node2D"]
 position = Vector2(375, 256)
 
@@ -941,3 +945,15 @@ vertices = PackedVector2Array(387, 593, 475, 594, 477, 638, 387, 636)
 
 [node name="NavigationObstacle2D16" type="NavigationObstacle2D" parent="."]
 vertices = PackedVector2Array(436, 883, 492, 883, 492, 939, 436, 939)
+
+[node name="ending" type="Area2D" parent="."]
+script = ExtResource("9_unj20")
+
+[node name="Marker2D" type="Marker2D" parent="ending"]
+position = Vector2(0, 688)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ending"]
+position = Vector2(0, 688)
+shape = SubResource("RectangleShape2D_gpss1")
+
+[connection signal="body_entered" from="ending" to="ending" method="_on_body_entered"]
