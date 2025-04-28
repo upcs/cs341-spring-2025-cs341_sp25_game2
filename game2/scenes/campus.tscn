@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://bl8h2r1dsm23f" path="res://scenes/objective.tscn" id="15_mlqc4"]
 [ext_resource type="PackedScene" uid="uid://brupvu80ny14n" path="res://scenes/score.tscn" id="16_ls3dj"]
 [ext_resource type="Script" path="res://scripts/map.gd" id="18_ghv2a"]
-[ext_resource type="Texture2D" uid="uid://dx6fbi43m1ldm" path="res://map.png" id="19_0drlv"]
 [ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="19_1m8dr"]
+[ext_resource type="Texture2D" uid="uid://4gxnnb76kcpa" path="res://images/campus_minimap.png" id="19_cqgki"]
 [ext_resource type="Texture2D" uid="uid://otpxkx0km57e" path="res://text_box.png" id="20_lhcju"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="20_qc34m"]
 [ext_resource type="AudioStream" uid="uid://cp0q3e3mulvtt" path="res://Porto.mp3" id="23_8o5k5"]
@@ -6587,9 +6587,9 @@ render_target_update_mode = 4
 script = ExtResource("18_ghv2a")
 
 [node name="Sprite2D" type="Sprite2D" parent="Wally/UI/SubViewportContainer/SubViewport"]
-scale = Vector2(9.5, 9.5)
-texture = ExtResource("19_0drlv")
-offset = Vector2(250, -10)
+scale = Vector2(13, 13)
+texture = ExtResource("19_cqgki")
+offset = Vector2(286, -13)
 
 [node name="Camera2D" type="Camera2D" parent="Wally/UI/SubViewportContainer/SubViewport"]
 zoom = Vector2(0.1, 0.1)

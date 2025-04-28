@@ -43,6 +43,9 @@ var shiley_lvl2_score = 0 # 75
 var shiley_lvl3_score = 0 # 125
 var shiley_lvl4_score = 0 # 225
 
+# Variables for Franz Minigame
+var pilot_run_score = 0
+
 
 # This updates the global score to what it should be based on all the local minigame high scores. 
 # Your score calculation should update a variable in this global file and then call the update_score function
@@ -51,9 +54,9 @@ func update_score() -> void:
 	score = lib_easy_score + lib_med_score + lib_hard_score
 	# from maze game
 	score += first_maze_score + scnd_maze_score + third_maze_score + fourth_maze_score
-	
+	# shiley
 	score += shiley_lvl1_score + shiley_lvl2_score + shiley_lvl3_score + shiley_lvl4_score
-	# Everyone else - add in your code here 
-	# ex: 
+	# db
 	score += db_score
-	# score += pilot_run_score
+	# franz
+	score += pilot_run_score

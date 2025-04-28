@@ -32,9 +32,13 @@ func _ready():
 
 func exit():
 	#print("here")
-	Global.score += high_score/100
+	# Update global score variable
+	if (score / 100) > Global.pilot_run_score:
+		Global.pilot_run_score = (score / 100)
+	Global.update_score() # update global score
 	get_tree().paused = false
 	Global.spawn_position = Vector2(3712, 1856)
+	
 	#get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 	Global.markercount += 1
 	get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
