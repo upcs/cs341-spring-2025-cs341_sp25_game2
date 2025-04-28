@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/library_game_menu.gd" id="1_dix2i"]
 [ext_resource type="FontFile" uid="uid://c07wbcgwc3ugb" path="res://Fonts/fonts/architect-s-daughter/ArchitectsDaughter.ttf" id="2_3k8yb"]
 [ext_resource type="Texture2D" uid="uid://c3pbrb2c55jyr" path="res://Q-Mark drawing.png" id="3_2t5h3"]
-[ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="4_tcayy"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="4_tcayy"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xdiye"]
 

@@ -24,6 +24,7 @@ func _ready():
 
 # starts the game
 func start_game():
+	Global.update_score() # why not again, but already in menu script
 	refresh_high_scores()
 	await remove_books()
 	game_message.text = ""

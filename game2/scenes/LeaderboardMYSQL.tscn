@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://pm52w3pwlxfg"]
 
-[ext_resource type="Theme" uid="uid://xmp7gvkp6mo7" path="res://text_box_theme.tres" id="1_y412b"]
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_y412b"]
 [ext_resource type="Script" path="res://scripts/leaderboard_mysql.gd" id="2_ucayv"]
 
 [node name="Leaderboard" type="Control"]
