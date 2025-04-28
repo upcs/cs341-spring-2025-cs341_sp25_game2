@@ -26,20 +26,24 @@ The tile maps found in the artwork of the game have been put together from the o
 *stockcake.com is currently not a working site.
 
 ## BADGES
-Code coverage: 46.7% (estimated directly by the CS341Game2 team as regular code coverage estimation is not implemented in Godot's testing framework yet and we are not using json).
+Code coverage: estimated directly by the CS341Game2 team as regular code coverage estimation is not implemented in Godot's testing framework yet and we are not using json
+- Including all lines we've written: 8.9%
 
 ### HOW WE ESTIMATED
-- Summed the total lines of code the team has written. This total excludes test code and code automatically written by the Godot system. (383 lines)
-- Summed the total lines of our own code that the test files called. (179 lines)
+#### Including All Lines:
+- Summed the total lines of code the team has written. This code excludes test code (2198 lines)
+- Summed the total lines of our own code that the test files called. (196 lines)
 - Divided the total code called by tests by the total lines of code we wrote.
 
 ### CAVEATS
-- Scripts excluded from total lines of code sum: shiley.gd, scene.gd, josh_map_5+7.gd, bc_interior.gd, enemy.gd, and global.gd; this is because they are based on functions automatically written into Godot.
-- Need testing: inside_db.gd and start.gd
+- Many of the functions in many of the gd script files are functions that Godot already has within its system. So, we did not choose to test many of those. 
+- Much of our overall testing was done manually by running the game and using beta release testers. 
 
 ### BUG FIXES
 - Fixed bug where player could see outside of the map or run outside of the map
 - Fixed bug where browser (specifically Edge) displayed black background
+- Fixed bug where player couldn't run around the big Oak tree
+- Fixed bug where player could run through the trees (instead of behind them)
 
 ## APPENDIX
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
