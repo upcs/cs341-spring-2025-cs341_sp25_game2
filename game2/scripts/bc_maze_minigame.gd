@@ -47,6 +47,8 @@ var total_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# This is here as well so that the "exit to campus" works properly
+	Global.spawn_position = Vector2(1600, 192)
 	# Get scores set up
 	Global.first_maze_score = 25
 	Global.scnd_maze_score = 50

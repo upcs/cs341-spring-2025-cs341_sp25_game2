@@ -35,13 +35,14 @@ var scnd_maze_score = 0 #50
 var third_maze_score = 0 #75
 var fourth_maze_score = 0 #100
 
+# This updates the global score to what it should be based on all the local minigame high scores. 
+# Your score calculation should update a variable in this global file and then call the update_score function
 func update_score() -> void:
-	score = lib_easy_score + lib_med_score + lib_hard_score # add in the scores for your minigame here
-	
+	# library game score
+	score = lib_easy_score + lib_med_score + lib_hard_score
 	# from maze game
-	score = first_maze_score + scnd_maze_score + third_maze_score + fourth_maze_score
-	# reset all scores back to 0
-	first_maze_score = 0
-	scnd_maze_score = 0
-	third_maze_score = 0
-	fourth_maze_score = 0
+	score += first_maze_score + scnd_maze_score + third_maze_score + fourth_maze_score
+	# Everyone else - add in your code here 
+	# ex: 
+	# score += shiley_game_score
+	# score += pilot_run_score
