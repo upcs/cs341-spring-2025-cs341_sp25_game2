@@ -36,6 +36,7 @@ var total_score = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Global.update_score()
 	# This is here as well so that the "exit to campus" works properly
 	Global.spawn_position = Vector2(1600, 192)
 	# Get scores set up
@@ -181,6 +182,7 @@ func _on_game_timer_timeout() -> void:
 	leave_button.visible = true #let the player leave
 
 func _on_leave_pressed() -> void:
+	Global.update_score()
 	Global.markercount += 1
 	get_tree().change_scene_to_packed(load("res://scenes/campus.tscn"))
 	Global.spawn_position = Vector2(1600, 192)
