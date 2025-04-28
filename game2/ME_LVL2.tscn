@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://d3khxfclei6bu"]
+[gd_scene load_steps=15 format=4 uid="uid://d3khxfclei6bu"]
 
 [ext_resource type="Texture2D" uid="uid://l505qv8sif7t" path="res://S_miniGame_assets/SCi-fi assets planet one.png" id="1_7qgt8"]
+[ext_resource type="Script" path="res://scripts/shiley_game_spawn_pos.gd" id="1_at0cj"]
 [ext_resource type="PackedScene" uid="uid://bhdforjpisgil" path="res://ME_Enemy.tscn" id="2_qewfe"]
 [ext_resource type="PackedScene" uid="uid://bwf3y663k5lja" path="res://ME_Player.tscn" id="3_vqalm"]
 [ext_resource type="Script" path="res://tent.gd" id="4_p5r6x"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_kjcsm"]
 [ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="6_bttsd"]
+[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="8_hcq8t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbspp"]
 texture = ExtResource("1_7qgt8")
@@ -609,6 +611,7 @@ texture = ExtResource("1_7qgt8")
 sources/0 = SubResource("TileSetAtlasSource_xeufm")
 
 [node name="ME_LVL2" type="Node2D"]
+script = ExtResource("1_at0cj")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_dwpxf")
@@ -752,5 +755,7 @@ text = "Objectives:
 Defeat the Iron Wraiths
 Find the right tent to move to next level 
 (Hint: Follow the red puddles)"
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_hcq8t")]
 
 [connection signal="body_entered" from="tent" to="tent" method="_on_body_entered"]

@@ -1,11 +1,13 @@
-[gd_scene load_steps=16 format=4 uid="uid://tss34co47yv2"]
+[gd_scene load_steps=18 format=4 uid="uid://tss34co47yv2"]
 
 [ext_resource type="Texture2D" uid="uid://dxba8sh261qi8" path="res://S_miniGame_assets/CE_tilemap.png" id="1_67rpj"]
+[ext_resource type="Script" path="res://scripts/shiley_game_spawn_pos.gd" id="1_hk6oy"]
 [ext_resource type="PackedScene" uid="uid://b4d52iaekt230" path="res://CE_Player.tscn" id="3_5o48m"]
 [ext_resource type="PackedScene" uid="uid://co5qnu8amxpuw" path="res://ce_enemy.tscn" id="4_28qeb"]
 [ext_resource type="Script" path="res://car.gd" id="5_foq6a"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_q1h7u"]
 [ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_oy01w"]
+[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="8_fjca5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7djin"]
 texture = ExtResource("1_67rpj")
@@ -1647,6 +1649,7 @@ func _process(delta: float) -> void:
 "
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_hk6oy")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_f1xnw")
@@ -1944,5 +1947,7 @@ Defeat the Bridge Sentinels (click the screen to shoot)
 Find the right car to move to next level 
 (Hint: Not every yellow car will get you out, but find the one
 Make sure they don't touch you or else you'll restart"
+
+[node name="PauseMenu" parent="." instance=ExtResource("8_fjca5")]
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]

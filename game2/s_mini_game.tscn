@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=4 uid="uid://x5ql7qc3elgb"]
+[gd_scene load_steps=24 format=4 uid="uid://x5ql7qc3elgb"]
 
+[ext_resource type="Script" path="res://scripts/shiley_game_spawn_pos.gd" id="1_0kc1u"]
 [ext_resource type="Texture2D" uid="uid://btckri6y685a" path="res://S_miniGame_assets/CosmicLegacy_PetricakeGamesPNG.png" id="3_n64x0"]
 [ext_resource type="PackedScene" uid="uid://buw4m123cypdi" path="res://enemy.tscn" id="3_uv7e6"]
 [ext_resource type="PackedScene" uid="uid://bbb1ffkcwfreu" path="res://playerShiley.tscn" id="4_8cvne"]
@@ -10,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://b1g101qu7foq8" path="res://MightySouly-lxggD.ttf" id="8_frsub"]
 [ext_resource type="Script" path="res://ending_scene.gd" id="9_unj20"]
 [ext_resource type="PackedScene" uid="uid://bv4o7kmue3oak" path="res://stopwatch.tscn" id="9_wbvq2"]
+[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="12_u60b7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bw5xg"]
 texture = ExtResource("5_ke5qa")
@@ -666,6 +668,7 @@ size = Vector2(32, 32)
 
 [node name="S_MiniGame" type="Node2D"]
 position = Vector2(375, 256)
+script = ExtResource("1_0kc1u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.262932, 0.262932, 0.262932, 1)
@@ -970,5 +973,7 @@ position = Vector2(0, 688)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ending"]
 position = Vector2(0, 688)
 shape = SubResource("RectangleShape2D_gpss1")
+
+[node name="PauseMenu" parent="." instance=ExtResource("12_u60b7")]
 
 [connection signal="body_entered" from="ending" to="ending" method="_on_body_entered"]
