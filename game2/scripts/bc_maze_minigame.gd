@@ -32,14 +32,32 @@ $Fourth_maze_walls/squareA4, $Fourth_maze_walls/squareA5, $Fourth_maze_walls/squ
 $Fourth_maze_walls/squareA8, $Fourth_maze_walls/squareA9, $Fourth_maze_walls/squareB]
 
 # Amount to be added to the score after each maze is completed
-var score_amount = 25
+var total_score = 0
+
+# variables for Buckley Center
+#var first_maze_done = false
+#var scnd_maze_done = false
+#var third_maze_done = false
+#var fourth_maze_done = false
+## these will be 0 if they've already beat that level
+#var first_maze_score = 0 #15
+#var scnd_maze_score = 0 #25
+#var third_maze_score = 0 #50
+#var fourth_maze_score = 0 #75
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Get scores set up
+	Global.first_maze_score = 25
+	Global.scnd_maze_score = 50
+	Global.third_maze_score = 75
+	Global.fourth_maze_score = 100
+	
+	# Make sure we can't see the game over message
 	leave_button.visible = false
 	panel.visible = false
 	
-	#Make sure we start with only the first maze
+	# Make sure we start with only the first maze
 	first_layer.enabled = true
 	scnd_layer.enabled = false
 	third_layer.enabled = false
@@ -85,7 +103,7 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 		return
 	print("body exited: ", body)
 	# Increase player score
-	Global.score += score_amount
+	#Global.score += score_amount
 	#game_timer.stop()
 	#game_over_message.text = "YOU DID IT! You gained 10 points!"
 	#leave_button.visible = true #let the player leave
@@ -93,13 +111,29 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 	#The following code has a bug that is still being worked out.
 	 # Check if the game is over
 	if $FourthLayer.is_enabled() :
+		# If this is the first time they've completed the maze,
+		# Increase their score
+		if !Global.fourth_maze_done :
+			Global.fourth_maze_score = 100
+		
+		total_score = Global.first_maze_score + Global.scnd_maze_score + Global.third_maze_score + Global.fourth_maze_score
+		Global.fourth_maze_done = true
 		game_timer.stop()
+				
+		# update the player's score
+		Global.update_score()
+		
+		# allow the player to leave
 		panel.visible = true
-		game_over_message.text = "YOU DID IT! You gained 4x25 points total!"
+		game_over_message.text = "YOU DID IT! You gained " + str(total_score) + " points total!"
 		leave_button.visible = true #let the player leave
 		
 	# Else display the next maze to complete 
 	elif $FirstLayer.is_enabled() :
+		if !Global.first_maze_done :
+			Global.first_maze_score = 25
+		
+		Global.first_maze_done = true
 		# Reset timer
 		game_timer.stop()
 		game_timer.wait_time = 60.0
@@ -116,6 +150,10 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 		# Change the player message
 		player_message.text = "Find the invisible Exit! Hint: check the alcoves..."
 	elif $ScndLayer.is_enabled() :
+		if !Global.scnd_maze_done :
+			Global.scnd_maze_score = 50
+		
+		Global.scnd_maze_done = true
 		# Reset timer
 		game_timer.stop()
 		game_timer.wait_time = 60.0
@@ -133,6 +171,10 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 		# change the player message
 		player_message.text = "Find the invisible Exit! No hints this time ;)"
 	else :
+		if !Global.third_maze_done :
+			Global.third_maze_score = 75
+		
+		Global.third_maze_done = true
 		game_timer.stop()
 		game_timer.wait_time = 60.0
 		game_timer.start()
@@ -150,6 +192,7 @@ func _on_maze_exit_body_exited(body: Node2D) -> void:
 
 
 func _on_game_timer_timeout() -> void:
+	
 	game_over_message.text = "GAME OVER...better luck next time..."
 	leave_button.visible = true #let the player leave
 

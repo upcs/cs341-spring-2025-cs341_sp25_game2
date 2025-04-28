@@ -24,5 +24,24 @@ var lib_easy_score = 0 # high score for easy difficulty
 var lib_med_score = 0 # high score for medium difficulty
 var lib_hard_score = 0 # high score for hard difficulty
 
+# variables for Buckley Center
+var first_maze_done = false
+var scnd_maze_done = false
+var third_maze_done = false
+var fourth_maze_done = false
+
+var first_maze_score = 0 #25
+var scnd_maze_score = 0 #50
+var third_maze_score = 0 #75
+var fourth_maze_score = 0 #100
+
 func update_score() -> void:
 	score = lib_easy_score + lib_med_score + lib_hard_score # add in the scores for your minigame here
+	
+	# from maze game
+	score = first_maze_score + scnd_maze_score + third_maze_score + fourth_maze_score
+	# reset all scores back to 0
+	first_maze_score = 0
+	scnd_maze_score = 0
+	third_maze_score = 0
+	fourth_maze_score = 0
