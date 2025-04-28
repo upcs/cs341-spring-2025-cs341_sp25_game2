@@ -124,4 +124,4 @@ func _on_shiley_entrance_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player") and Global.buildings[Global.markercount] == "res://s_mini_game.tscn":
 		if not out_of_time:
 			class_on_time = true
-		get_tree().change_scene_to_file("res://s_mini_game.tscn")
+		get_tree().change_scene_to_file("res://CE_Level1.tscn")
