@@ -92,7 +92,7 @@ func _process(delta):
 			$HUD.get_node("StartLabel").hide()
 			
 func generate_obs():
-	if obstacles.is_empty() or last_obs.position.x < score + randi_range(300, 500):
+	if obstacles.is_empty() or last_obs.global.position.x < score + randi_range(300, 500):
 		var obs_type = obstacle_types[randi() % obstacle_types.size()]
 		var obs
 		var max_obs = difficulty + 1 
