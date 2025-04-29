@@ -41,8 +41,12 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	#print(Global.markercount) # spams output, disabling it for release
 	if (Global.markercount <= 5):
+=======
+	if (Global.markercount < 5):
+>>>>>>> Stashed changes
 =======
 	if (Global.markercount < 5):
 >>>>>>> Stashed changes
