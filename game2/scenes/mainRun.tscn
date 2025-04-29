@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bad6e0dcrkj5x"]
+[gd_scene load_steps=8 format=3 uid="uid://bad6e0dcrkj5x"]
 
 [ext_resource type="PackedScene" uid="uid://bj0qcu8hocimo" path="res://scenes/pilot.tscn" id="1_d2m2d"]
 [ext_resource type="Script" path="res://scenes/main_run.gd" id="1_ldc30"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bsbf1468eody7" path="res://scenes/ground.tscn" id="3_cymbo"]
 [ext_resource type="PackedScene" uid="uid://bliv5k4ylenxo" path="res://hud.tscn" id="5_1fdjy"]
 [ext_resource type="PackedScene" uid="uid://cphxpvffpx2eo" path="res://game_over.tscn" id="5_i3dq4"]
+[ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="7_4qrnb"]
 
 [node name="MainRun" type="Node"]
 script = ExtResource("1_ldc30")
@@ -26,5 +27,7 @@ scale = Vector2(0.95, 0.95)
 position = Vector2(341, 161)
 
 [node name="HUD" parent="." instance=ExtResource("5_1fdjy")]
+
+[node name="PauseMenu" parent="." instance=ExtResource("7_4qrnb")]
 
 [connection signal="pressedb2" from="GameOver" to="." method="_on_game_over_pressedb_2"]
