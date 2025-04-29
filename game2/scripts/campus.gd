@@ -7,6 +7,7 @@ var arrow;
 var class_on_time;
 var out_of_time;
 var which_class;
+var free_mode;
 var player
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _ready() -> void:
 	# puts you in the correct area
 	$Panel.visible = false
 	player =  get_node("Wally")
+	free_mode =false;
 	
 	# Set player position
 	if Global.spawn_scene == "res://scenes/campus.tscn":
@@ -40,16 +42,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
 	#print(Global.markercount) # spams output, disabling it for release
-	if (Global.markercount <= 5):
-=======
 	if (Global.markercount < 5):
->>>>>>> Stashed changes
-=======
-	if (Global.markercount < 5):
->>>>>>> Stashed changes
 		which_class = get_node(Global.markers[Global.markercount])
 		arrow.rotation = player.position.angle_to_point(which_class.position)
 		#timer.wait_time = 30
@@ -60,11 +54,12 @@ func _process(delta: float) -> void:
 		#Global.markercount = (Global.markercount + 1)
 	else:
 		arrow.visible = false
+		free_mode = true
 		label.text = "Go back to any class to get a better score!"
 	
 
 func _on_db_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and (Global.buildings[Global.markercount] == "res://scenes/insideDB.tscn" or Global.markercount>5):
+	if body.is_in_group("Player") and (Global.markercount == 0 or Global.markercount>5):
 		get_tree().change_scene_to_file("res://scenes/insideDB.tscn")
 		if not out_of_time:
 			class_on_time = true
@@ -89,7 +84,7 @@ func _on_library_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_s
 
 
 func _on_bc_entrance_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
-	if body.is_in_group("Player") and (Global.buildings[Global.markercount] == "res://scenes/BC_interior.tscn" or Global.markercount>4):
+	if body.is_in_group("Player") and (Global.markercount == 2 or Global.markercount>4):
 		if not out_of_time:
 			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/BC_interior.tscn")
@@ -117,7 +112,7 @@ func _on_oak_pilot_house_body_exited(body: Node2D) -> void:
 
 
 func _on_franz_entrance_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player") and (Global.buildings[Global.markercount] == "res://scenes/franz_interior.tscn" or Global.markercount>4):
+	if body.is_in_group("Player") and (Global.markercount == 1 or Global.markercount>4):
 		if not out_of_time:
 			class_on_time = true
 		get_tree().change_scene_to_file("res://scenes/franz_interior.tscn")
