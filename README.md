@@ -9,20 +9,27 @@ The tile maps found in the artwork of the game have been put together from the o
 |-----------------------|------------------------------------|
 | Ground textures       | gfx0 - [Creative Commons](https://creativecommons.org/licenses/by/4.0/)            |
 | Trees, shrubbery      | (see APPENDIX: plantsCredits.txt) |
-| Brick buildings/walls | (see CREDITS-colonial.txt)         |
-| Roof types            | (see CREDITS-roofs.txt)            |
+| Brick buildings/walls | (see APPENDIX: CREDITS-colonial.txt)         |
+| Roof types            | (see APPENDIX: CREDITS-roofs.txt)            |
+|Cosmic Legacy for Computer Science Shiley minigame | (see APPENDIX: CREDITS-PetricakeGames) |
+|Neo Zero CyberPunk City Shiley Electrical Eng. minigame | (see APPENDIX: CREDITS-Yanin)|
+|RGP Urban Kit Civil Eng. Shiley Minigame | (see APPENDIX: CREDITS-Kenney) |
+|Sci-fi survival camp Mechanical Eng. Shiley Minigame | (see APPENDIX: CREDITS-Penusbmic) |
 --------------------------------------------------------------
 
 |    Pictures   |         Artist - License    |
 |---------------|-----------------------------|
 | Classroom pixel art | [LanaOnTheRoad](https://www.deviantart.com/lanaontheroad/art/Pixel-Art-Classroom-B-2-807285585) |
 | Menu scene background | Found at *[stockcake.com](https://www.google.com/url?) |
-| Books for library minigame | (see APPENDIX: CREDITS - Knowledge Vectors by Vecteezy ) |
+| Books for library minigame | (see APPENDIX: CREDITS - Knowledge Vectors by Vecteezy) |
+| Robot for Shiley minigame | (see APPENDIX: CREDITS-Hiskia Revaldo) |
+| Assests Free Laser Bullets for CS Shiley MiniGame |(see APPENDIX:CREDITS-Wenrexa) |
+
 -----------------------------------------------------------------------------------------
 |         Music        |         Artist - License           |
 |-----------------------|------------------------------------|
 | Porto mp3 (Main scene soundtrack) | Evan Frueh (UP student)|
-
+| Energetic Chiptune Adventure (Shiley Minigame soundtrack) | (see APPENDIX: CREDITS-Nicholas Panek)|
 *stockcake.com is currently not a working site.
 
 ## Acceptance Tests
@@ -60,4 +67,12 @@ Code coverage for unit tests: estimated directly by the CS341Game2 team as regul
 [plantsCredits.txt](https://github.com/user-attachments/files/18759349/plantsCredits.txt) \
 [CREDITS-colonial.txt](https://github.com/user-attachments/files/18759367/CREDITS-colonial.txt) \
 [CREDITS-roofs.txt](https://github.com/user-attachments/files/18759389/CREDITS-roofs.txt) \
-[CREDITS - Knowledge Vectors by Vecteezy](https://www.vecteezy.com/free-vector/knowledge)
+[CREDITS-Knowledge Vectors by Vecteezy](https://www.vecteezy.com/free-vector/knowledge) \
+[CREDITS-PetricakeGames](https://petricakegames.itch.io/cosmic-legacy-scifi-tileset) \
+[CREDITS-Yanin](https://yaninyunus.itch.io/neo-zero-cyberpunk-city-tileset?download#google_vignette) \
+[CREDITS-Kenney](https://creativecommons.org/publicdomain/zero/1.0/) \
+[CREDITS-Hiskia Revaldo](https://www.vecteezy.com/free-vector/80s) \
+[CREDITS-Wenrexa](https://wenrexa.itch.io/laser2020) \
+[CREDITS-Nicholas Panek](https://pixabay.com/music//?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=318348) 
+
+
