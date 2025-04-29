@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dxba8sh261qi8" path="res://S_miniGame_assets/CE_tilemap.png" id="1_67rpj"]
 [ext_resource type="Script" path="res://scripts/shiley_game_spawn_pos.gd" id="1_hk6oy"]
-[ext_resource type="PackedScene" uid="uid://b4d52iaekt230" path="res://CE_Player.tscn" id="3_5o48m"]
-[ext_resource type="PackedScene" uid="uid://co5qnu8amxpuw" path="res://ce_enemy.tscn" id="4_28qeb"]
+[ext_resource type="PackedScene" path="res://CE_Player.tscn" id="3_5o48m"]
+[ext_resource type="PackedScene" path="res://ce_enemy.tscn" id="4_28qeb"]
 [ext_resource type="Script" path="res://car.gd" id="5_foq6a"]
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_q1h7u"]
 [ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_oy01w"]
