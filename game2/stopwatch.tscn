@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv4o7kmue3oak"]
+
+[sub_resource type="GDScript" id="GDScript_gohvk"]
+script/source = "extends Node2D
+
+@onready var label = $TimeLabel
+@export var start_time: float = 0.0  # Set to 0 to start counting up from 0
+var time_elapsed = 0.0  # Timer will count up from this value
+var stopped = false
+
+func _ready():
+	reset()
+	start()
+
+func _process(delta):
+	if stopped:
+		return
+
+	time_elapsed += delta  # Count up
+
+	label.text = \"Timer: \" + format_time(time_elapsed)  # Update the display
+
+func reset():
+	time_elapsed = start_time  # Set to 0 initially, or use a custom start_time
+	label.text = \"Timer: \" + format_time(time_elapsed)
+
+func stop():
+	stopped = true
+
+func start():
+	stopped = false
+
+func format_time(seconds: float) -> String:
+	var mins = int(seconds) / 60
+	var secs = int(seconds) % 60
+	var ms = int((seconds - int(seconds)) * 1000)
+	return \"%02d:%02d:%03d\" % [mins, secs, ms]
+"
+
+[node name="Stopwatch" type="Node2D"]
+script = SubResource("GDScript_gohvk")

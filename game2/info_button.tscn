@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://by23smlc1vbie"]
+
+[ext_resource type="FontFile" uid="uid://b1g101qu7foq8" path="res://MightySouly-lxggD.ttf" id="1_21v85"]
+[ext_resource type="Script" path="res://info_button.gd" id="2_3v6r1"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Button" type="Button" parent="."]
+offset_left = 1021.0
+offset_top = 104.0
+offset_right = 1051.0
+offset_bottom = 174.0
+theme_override_fonts/font = ExtResource("1_21v85")
+theme_override_font_sizes/font_size = 50
+text = "?"
+script = ExtResource("2_3v6r1")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

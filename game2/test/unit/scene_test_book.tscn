@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dt58ftchvpmx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a37sn"]
+size = Vector2(819, 124)
+
+[node name="SceneTestBook" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["ground"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" groups=["ground"]]
+position = Vector2(0, 400)
+shape = SubResource("RectangleShape2D_a37sn")

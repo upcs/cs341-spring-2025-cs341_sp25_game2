@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwf3y663k5lja"]
+
+[ext_resource type="Script" path="res://me_player.gd" id="1_brocc"]
+[ext_resource type="Texture2D" uid="uid://ca6wsl74a7ego" path="res://S_miniGame_assets/gear.png" id="1_exbq5"]
+[ext_resource type="FontFile" uid="uid://bjfb0kqpviqg4" path="res://S_miniGame_assets/04B_30__.TTF" id="2_lnpc6"]
+[ext_resource type="Texture2D" uid="uid://d1o5ck6hqonnh" path="res://S_miniGame_assets/you_arrow.png" id="4_1ymiu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gxx3e"]
+radius = 17.0294
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lc14x"]
+radius = 19.0
+
+[node name="ME_Player" type="CharacterBody2D"]
+script = ExtResource("1_brocc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.06, 0.06)
+texture = ExtResource("1_exbq5")
+
+[node name="Label" type="Label" parent="Sprite2D"]
+offset_left = -702.857
+offset_top = -354.286
+offset_right = 837.143
+offset_bottom = -269.286
+theme_override_colors/font_color = Color(0.170899, 0.743548, 0.771311, 1)
+theme_override_constants/outline_size = 50
+theme_override_fonts/font = ExtResource("2_lnpc6")
+theme_override_font_sizes/font_size = 85
+text = "Mechanical Engineering "
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_gxx3e")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_lc14x")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -40)
+scale = Vector2(0.916667, 0.854166)
+texture = ExtResource("4_1ymiu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.935, 1.935)
+limit_smoothed = true
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

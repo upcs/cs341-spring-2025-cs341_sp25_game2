@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmu6waf22c5b1"]
+
+[ext_resource type="Texture2D" uid="uid://bhmcrsn0prvgc" path="res://ShileyPics/Shiley.jpg" id="1_3jy4t"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="2_vhkjs"]
+[ext_resource type="Script" path="res://button.gd" id="3_w6wwc"]
+
+[node name="ShileyStart" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(565.75, 359)
+scale = Vector2(0.973684, 0.844706)
+texture = ExtResource("1_3jy4t")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(16, -6)
+color = Color(0.0777883, 0.0322519, 0.0467784, 0.839216)
+polygon = PackedVector2Array(135, 82, 392, 85, 546, 87, 959, 86, 958, 382, 959, 610, 544, 609, 138, 610)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 173.0
+offset_top = 123.0
+offset_right = 955.0
+offset_bottom = 540.0
+theme_override_colors/font_color = Color(0.117647, 0.0862745, 0.337255, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_vhkjs")
+theme_override_font_sizes/font_size = 31
+text = "welcome to Shiley! 
+The Shiley School of Engineering at the University of Portland was established in 1989. 
+It became the Engineering Building in the early 2000s and was renamed  the Shiley School of Engineering in 2001, following a generous donation from alumnus Donald Shiley, who attended UP '51. 
+In this map, we feature a mini-game that represents each of the four engineering majors, where players must battle through challenges to reach the end"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 455.0
+offset_top = 620.0
+offset_right = 630.0
+offset_bottom = 672.0
+theme_override_fonts/font = ExtResource("2_vhkjs")
+theme_override_font_sizes/font_size = 35
+text = "Start Game"
+script = ExtResource("3_w6wwc")
+
+[connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

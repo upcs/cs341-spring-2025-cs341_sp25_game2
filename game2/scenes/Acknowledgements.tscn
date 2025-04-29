@@ -1,0 +1,109 @@
+[gd_scene load_steps=3 format=3 uid="uid://cj7wlvwurry5r"]
+
+[ext_resource type="Theme" uid="uid://c15l7vqvxx57p" path="res://text_box_theme.tres" id="1_xkcqr"]
+[ext_resource type="Script" path="res://scripts/acknowledgements.gd" id="2_ksdgq"]
+
+[node name="Acknowledgements" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 128.0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 64.0
+theme = ExtResource("1_xkcqr")
+script = ExtResource("2_ksdgq")
+
+[node name="Background2" type="Polygon2D" parent="."]
+show_behind_parent = true
+position = Vector2(-353.886, -283.077)
+scale = Vector2(4.57394, 13.6923)
+color = Color(0.117647, 0.0862745, 0.337255, 1)
+polygon = PackedVector2Array(49.3855, 16.1763, 296, 16, 296, 68, 49.3855, 68)
+
+[node name="Background" type="Panel" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -32.0
+offset_top = 64.0
+offset_right = 912.0
+offset_bottom = 616.0
+theme = ExtResource("1_xkcqr")
+
+[node name="LeaderboardLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_top = 112.0
+offset_right = 936.0
+offset_bottom = 605.0
+bbcode_enabled = true
+text = "Lucian Kennelly, Joshua Krasnogorov, Jacqui Bouchard, Kaitlyn Atalig, Tyler Crosbie
+
+
+Ground textures:
+gfx0
+
+Trees, shrubbery:
+Barbara Rivera, Casper Nilsson, Johann 
+Charlot, Chris Phillips, Lanea Zimmerman
+
+Brick buildings/walls:
+bluecarrot16, Lanea Zimmerman, 
+Wothera van Hövell tot Westerflier, Guido Bos
+
+
+Contributions in detail can be found on the github:
+https://github.com/upcs/cs341-spring-2025-cs341_sp25_game2"
+fit_content = true
+
+[node name="LeaderboardTitle" type="Label" parent="."]
+layout_mode = 0
+offset_left = -32.0
+offset_top = -40.0
+offset_right = 184.0
+offset_bottom = -4.0
+scale = Vector2(3, 3)
+text = "acknowledgements"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 664.0
+offset_top = -24.0
+offset_right = 824.0
+offset_bottom = 16.0
+scale = Vector2(1.5, 1.5)
+theme = ExtResource("1_xkcqr")
+text = "GO BACK"
+
+[node name="LeaderboardLabel2" type="RichTextLabel" parent="."]
+offset_left = 475.0
+offset_top = 200.0
+offset_right = 857.0
+offset_bottom = 568.0
+bbcode_enabled = true
+text = "Soundtrack:
+Evan Frueh
+
+Roof types:
+bluecarrot16, Lanea Zimmerman, Michele Bucelli, Xenodora, keith karnage, NaRNeRZz, Talosaurus, Casper Nilsson"
+
+[node name="LeaderboardTitle2" type="Label" parent="."]
+offset_top = 72.0
+offset_right = 216.0
+offset_bottom = 108.0
+scale = Vector2(1.5, 1.5)
+text = "developers"
+vertical_alignment = 1
+uppercase = true
+
+[node name="LeaderboardTitle3" type="Label" parent="."]
+offset_top = 152.0
+offset_right = 216.0
+offset_bottom = 188.0
+scale = Vector2(1.5, 1.5)
+text = "Artistic Credits"
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

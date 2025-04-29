@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccg6i1hqqbpf0"]
+
+[ext_resource type="Texture2D" uid="uid://b18a3bxvx1wqx" path="res://shileyBack.jpg" id="1_u4wyt"]
+[ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="2_uf5e5"]
+[ext_resource type="Script" path="res://returnGame.gd" id="3_m3ke2"]
+
+[node name="Controls" type="CanvasLayer"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(562.25, 355)
+scale = Vector2(0.879608, 0.832941)
+texture = ExtResource("1_u4wyt")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(16, -6)
+color = Color(0.0777883, 0.0322519, 0.0467784, 0.839216)
+polygon = PackedVector2Array(42, 69, 318, 69, 544, 68, 1039, 64, 1038, 652, 42, 653)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 74.0
+offset_top = 81.0
+offset_right = 1040.0
+offset_bottom = 628.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_uf5e5")
+theme_override_font_sizes/font_size = 36
+text = "Controls:
+w- up
+A- left
+S- down
+D-right
+-Touching the enemies will make you respawn at the beginning 
+of the level
+-your character follows where your mouse (this covers aiming) 
+-get through the levels as best as you can and follow the 
+objectives list "
+
+[node name="help" type="Button" parent="."]
+offset_left = 466.0
+offset_top = 568.0
+offset_right = 649.0
+offset_bottom = 615.0
+theme_override_fonts/font = ExtResource("2_uf5e5")
+theme_override_font_sizes/font_size = 30
+text = "Hit tab to exit
+"
+script = ExtResource("3_m3ke2")
+
+[connection signal="pressed" from="help" to="help" method="_on_pressed"]
