@@ -40,8 +40,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	scoreLabel.text = "Score: " + str(Global.score)
+<<<<<<< Updated upstream
 	#print(Global.markercount) # spams output, disabling it for release
 	if (Global.markercount <= 5):
+=======
+	if (Global.markercount < 5):
+>>>>>>> Stashed changes
 		which_class = get_node(Global.markers[Global.markercount])
 		arrow.rotation = player.position.angle_to_point(which_class.position)
 		#timer.wait_time = 30
@@ -51,6 +55,7 @@ func _process(delta: float) -> void:
 		#get_tree().change_scene_to_file(Global.buildings[Global.markercount])
 		#Global.markercount = (Global.markercount + 1)
 	else:
+		arrow.visible = false
 		label.text = "Go back to any class to get a better score!"
 	
 
