@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://tss34co47yv2"]
+[gd_scene load_steps=19 format=4 uid="uid://tss34co47yv2"]
 
 [ext_resource type="Texture2D" uid="uid://dxba8sh261qi8" path="res://S_miniGame_assets/CE_tilemap.png" id="1_67rpj"]
 [ext_resource type="Script" path="res://scripts/shiley_game_spawn_pos.gd" id="1_hk6oy"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://crhhutugwud2a" path="res://S_miniGame_assets/retro-chiptune-adventure-8-bit-video-game-music-318059.mp3" id="5_q1h7u"]
 [ext_resource type="FontFile" uid="uid://g3gwxhx81xj0" path="res://S_miniGame_assets/MightySouly-lxggD.ttf" id="7_oy01w"]
 [ext_resource type="PackedScene" uid="uid://gw5c6eponige" path="res://scenes/PauseMenu.tscn" id="8_fjca5"]
+[ext_resource type="PackedScene" uid="uid://ccg6i1hqqbpf0" path="res://controls.tscn" id="9_dbxeo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7djin"]
 texture = ExtResource("1_67rpj")
@@ -1943,11 +1944,26 @@ theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("7_oy01w")
 theme_override_font_sizes/font_size = 20
 text = "Objectives:
-Defeat the Bridge Sentinels (click the screen to shoot)
+Defeat the Bridge Sentinels 
 Find the right car to move to next level 
-(Hint: Not every yellow car will get you out, but find the one
+(Hint: Not every yellow car will get you out, but find the one to roll out in
 Make sure they don't touch you or else you'll restart"
 
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 923.0
+offset_top = 86.0
+offset_right = 1099.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.88, 0, 0.0146664, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("7_oy01w")
+theme_override_font_sizes/font_size = 27
+text = "Hit Tab For HELP"
+
 [node name="PauseMenu" parent="." instance=ExtResource("8_fjca5")]
+
+[node name="Controls" parent="." instance=ExtResource("9_dbxeo")]
+visible = false
 
 [connection signal="body_entered" from="car" to="car" method="_on_body_entered"]

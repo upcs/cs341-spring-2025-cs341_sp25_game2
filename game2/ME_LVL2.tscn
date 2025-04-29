@@ -687,17 +687,11 @@ polygon = PackedVector2Array(1014, 422, 1023, 422, 1017, 432, 1012, 431)
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(1076, 660, 1088, 659, 1086, 669, 1078, 670)
 
-[node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(982, 656, 981, 658, 983, 661, 999, 663, 1005, 667, 1017, 664, 1021, 659, 1019, 656)
-
 [node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(749, 657, 750, 668, 763, 685, 781, 670, 781, 656)
 
 [node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(531, 644, 544, 644, 537, 654)
-
-[node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="StaticBody2D"]
-polygon = PackedVector2Array(406, 575, 406, 580, 420, 584, 433, 587, 445, 578, 444, 574)
 
 [node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(193, 612, 208, 611, 204, 624, 197, 624)
@@ -724,7 +718,7 @@ position = Vector2(490, 409)
 position = Vector2(409, 655)
 
 [node name="ME_Player" parent="." instance=ExtResource("3_vqalm")]
-position = Vector2(54, 431)
+position = Vector2(52, 445)
 
 [node name="tent" type="Area2D" parent="." groups=["tent"]]
 script = ExtResource("4_p5r6x")
@@ -755,6 +749,18 @@ text = "Objectives:
 Defeat the Iron Wraiths
 Find the right tent to move to next level 
 (Hint: Follow the red puddles)"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+offset_left = 923.0
+offset_top = 86.0
+offset_right = 1099.0
+offset_bottom = 120.0
+theme_override_colors/font_color = Color(0.88, 0, 0.0146664, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_fonts/font = ExtResource("6_bttsd")
+theme_override_font_sizes/font_size = 27
+text = "Hit Tab For HELP"
 
 [node name="PauseMenu" parent="." instance=ExtResource("8_hcq8t")]
 

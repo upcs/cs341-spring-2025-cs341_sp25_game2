@@ -3078,7 +3078,7 @@ theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_fonts/normal_font = ExtResource("4_yjd2d")
 theme_override_font_sizes/normal_font_size = 20
 text = "Welcome to Franz Center! 
-This is a central bulding on campus where most Business and Core classes are taught. The building was completed in 1995 and has fostered innovation and collaboration every since. 
+This is a central bulding on campus where most Business and Core classes are taught. The building was completed in 1995 and has fostered innovation and collaboration ever since. 
 "
 tab_size = 2
 metadata/_edit_use_anchors_ = true

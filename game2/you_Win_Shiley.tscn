@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwxq4d4aseq38"]
+[gd_scene load_steps=5 format=3 uid="uid://jcc1fqynik5p"]
 
 [ext_resource type="Texture2D" uid="uid://enevihive1vm" path="res://S_miniGame_assets/you win.png" id="1_l1rm8"]
 [ext_resource type="AudioStream" uid="uid://ctbjs14w2d28e" path="res://S_miniGame_assets/fnaf-hooray.mp3" id="2_gu4nx"]
 [ext_resource type="FontFile" uid="uid://bjfb0kqpviqg4" path="res://S_miniGame_assets/04B_30__.TTF" id="3_q5t4w"]
 [ext_resource type="Script" path="res://returnShiley.gd" id="4_ih3sw"]
 
-[node name="Node2D" type="CanvasLayer"]
+[node name="Node2D2" type="CanvasLayer"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(560.5, 351.499)
