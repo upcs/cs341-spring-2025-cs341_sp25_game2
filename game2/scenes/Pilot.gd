@@ -12,7 +12,7 @@ func _physics_process(delta: float):
 			$AnimatedSprite2D.play("Idle")
 		else:
 			$PilotRun.disabled = false
-			if Input.is_action_pressed("ui_accept"):
+			if Input.is_action_pressed("ui_accept") or Input.is_action_pressed("Click"):
 				velocity.y = JUMP_SPEED
 			elif Input.is_action_pressed("ui_down"):
 				$AnimatedSprite2D.play("Walking") #duck
