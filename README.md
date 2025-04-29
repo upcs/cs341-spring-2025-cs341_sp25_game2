@@ -25,12 +25,14 @@ The tile maps found in the artwork of the game have been put together from the o
 | Robot for Shiley minigame | (see APPENDIX: CREDITS-Hiskia Revaldo) |
 | Assests Free Laser Bullets for CS Shiley MiniGame |(see APPENDIX:CREDITS-Wenrexa) |
 
+*stockcake.com is currently not a working site.
+
 -----------------------------------------------------------------------------------------
 |         Music        |         Artist - License           |
 |-----------------------|------------------------------------|
 | Porto mp3 (Main scene soundtrack) | Evan Frueh (UP student)|
 | Energetic Chiptune Adventure (Shiley Minigame soundtrack) | (see APPENDIX: CREDITS-Nicholas Panek)|
-*stockcake.com is currently not a working site.
+-----------------------------------------------
 
 ## Acceptance Tests
 - The game loads within 7 seconds on any standard browser
